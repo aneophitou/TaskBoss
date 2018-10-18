@@ -45,17 +45,4 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
-    private void highLightCurrentTab(int position){
-        for(int i=0; i< tabLayout.getTabCount();i++){
-            TabLayout.Tab tab = tabLayout.getTabAt(i);
-            assert tab != null;
-            tab.setCustomView(null);
-            tab.setCustomView(tabAdapter.getTabView(position));
-
-        }
-    }
-
-
-
-}
+  }
