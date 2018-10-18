@@ -22,7 +22,7 @@ import android.widget.TextView;
  * Use the {@link TasksFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class TasksFragment extends ListFragment {
+public class TasksFragment extends Fragment {
 
     String[] TASKS = {"Task 1", "Task 2", "Task 3", "Task 4"};
 
@@ -70,13 +70,18 @@ public class TasksFragment extends ListFragment {
 
     }
 
-//    @Override
-//    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-//                             Bundle savedInstanceState) {
-//        // Inflate the layout for this fragment
-//
-//        return inflater.inflate(R.layout.fragment_tasks, container, false);
-//    }
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View view = inflater.inflate(R.layout.fragment_tasks,container, false);
+        ListView listView = (ListView)view.findViewById(R.id.taskList);
+        CustomAdapter customAdapter = new CustomAdapter();
+        listView.setAdapter(customAdapter);
+
+
+        return view;
+    }
 
 //    @Override
 //    public void onViewCreated(View view, Bundle savedInstanceState){
@@ -88,9 +93,6 @@ public class TasksFragment extends ListFragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState){
         super.onActivityCreated(savedInstanceState);
-        CustomAdapter customAdapter = new CustomAdapter();
-        ListView listView = getListView();
-        listView.setAdapter(customAdapter);
     }
     class CustomAdapter extends BaseAdapter{
 
