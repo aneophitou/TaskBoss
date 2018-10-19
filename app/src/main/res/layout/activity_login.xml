@@ -55,9 +55,7 @@
         android:layout_marginTop="35dp"
         android:layout_centerHorizontal="true"
         android:gravity="center"
-        app:cardBackgroundColor="@color/cardview_dark_background"
-        app:cardCornerRadius="25dp"
-        app:cardElevation="10dp">
+        >
 
         <RelativeLayout
             android:layout_width="match_parent"
