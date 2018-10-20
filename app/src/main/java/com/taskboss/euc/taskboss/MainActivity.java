@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
      * {@link android.support.v4.app.FragmentStatePagerAdapter}.
      */
     private SectionsPagerAdapter mSectionsPagerAdapter;
-    private ListFragment testFrag = new ListFragment();
+
 
     /**
      * The {@link ViewPager} that will host the section contents.
@@ -154,7 +154,9 @@ public class MainActivity extends AppCompatActivity {
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
-            if (position  ==1){
+            if (position  ==0){
+                Fragment testFrag = new tasksFragment();
+
                 return testFrag;
 
             }else{

@@ -30,7 +30,9 @@ String[] TASKS = {"task 1", "task 2"};
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootView= inflater.inflate(R.layout.fragment_tasks, container, false);
-
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, TASKS) ;;
+        ListView listView = (ListView) rootView.findViewById(R.id.taskList);
+        listView.setAdapter(adapter);
 
         return rootView;
     }
@@ -40,9 +42,7 @@ String[] TASKS = {"task 1", "task 2"};
 
         super.onActivityCreated(savedInstanceState);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, TASKS) ;;
-        ListView listView = (ListView) getView().findViewById(R.id.taskList);
-        listView.setAdapter(adapter);
+
 
 
     }
