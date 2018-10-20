@@ -129,9 +129,10 @@ public class MainActivity extends AppCompatActivity {
             switch(getArguments().getInt(ARG_SECTION_NUMBER)){
                 case 1:
                     rootView = inflater.inflate(R.layout.fragment_tasks, container, false);
+
                     break;
                 case 2:
-                    rootView = inflater.inflate(R.layout.fragment_item_list, container, false);
+
                     break;
             }
 
@@ -159,11 +160,7 @@ public class MainActivity extends AppCompatActivity {
             }else{
                 return PlaceholderFragment.newInstance(position + 1);
             }
-
-
         }
-
-
 
         @Override
         public int getCount() {
@@ -182,8 +179,6 @@ public class MainActivity extends AppCompatActivity {
                 case 2:
                     return "Events";
             }
-
-
             return null;
         }
     }
