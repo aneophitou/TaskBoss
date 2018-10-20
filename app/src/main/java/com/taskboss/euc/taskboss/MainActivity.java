@@ -1,8 +1,11 @@
 package com.taskboss.euc.taskboss;
 
 import android.content.Intent;
+import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.ListFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
@@ -19,6 +22,8 @@ import android.view.ViewGroup;
 
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 public class MainActivity extends AppCompatActivity {
 
     /**
@@ -30,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
      * {@link android.support.v4.app.FragmentStatePagerAdapter}.
      */
     private SectionsPagerAdapter mSectionsPagerAdapter;
+    private ListFragment testFrag = new ListFragment();
 
     /**
      * The {@link ViewPager} that will host the section contents.
@@ -50,6 +56,11 @@ public class MainActivity extends AppCompatActivity {
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
+
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
+        tabLayout.setupWithViewPager(mViewPager);
+
+
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -120,9 +131,10 @@ public class MainActivity extends AppCompatActivity {
                     rootView = inflater.inflate(R.layout.fragment_tasks, container, false);
                     break;
                 case 2:
-                    rootView = inflater.inflate(R.layout.fragment_main, container, false);
+                    rootView = inflater.inflate(R.layout.fragment_item_list, container, false);
                     break;
             }
+
             return rootView;
         }
     }
@@ -141,13 +153,38 @@ public class MainActivity extends AppCompatActivity {
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
-            return PlaceholderFragment.newInstance(position + 1);
+            if (position  ==1){
+                return testFrag;
+
+            }else{
+                return PlaceholderFragment.newInstance(position + 1);
+            }
+
+
         }
+
+
 
         @Override
         public int getCount() {
             // Show 3 total pages.
             return 3;
+        }
+
+        @Nullable
+        @Override
+        public java.lang.CharSequence getPageTitle(int position) {
+            switch (position) {
+                case 0:
+                    return "Assigned Tasks";
+                case 1:
+                    return "All Tasks";
+                case 2:
+                    return "Events";
+            }
+
+
+            return null;
         }
     }
 }
