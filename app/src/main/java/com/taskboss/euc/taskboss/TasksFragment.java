@@ -1,11 +1,13 @@
 package com.taskboss.euc.taskboss;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -33,7 +35,13 @@ String[] TASKS = {"task 1", "task 2"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, TASKS) ;;
         ListView listView = (ListView) rootView.findViewById(R.id.taskList);
         listView.setAdapter(adapter);
-
+        listView.setOnItemClickListener( new AdapterView.OnItemClickListener(){
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id){
+                Intent intent = new Intent(getActivity(),TaskItem.class);
+                startActivity(intent);
+            }
+        });
         return rootView;
     }
 
@@ -41,10 +49,7 @@ String[] TASKS = {"task 1", "task 2"};
     public void onActivityCreated(Bundle savedInstanceState) {
 
         super.onActivityCreated(savedInstanceState);
-
-
-
-
     }
+
 
 }
