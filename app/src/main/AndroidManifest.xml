@@ -51,6 +51,9 @@
                 android:value="com.taskboss.euc.taskboss.MainActivity" />
 >>>>>>> 5984b1c9233152702164e87f54f8c79fb9a51d9a
         </activity>
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
