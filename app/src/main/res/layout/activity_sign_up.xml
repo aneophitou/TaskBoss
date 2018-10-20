@@ -13,7 +13,6 @@
         android:id="@+id/textView9"
         android:layout_width="150dp"
         android:layout_height="40dp"
-        android:layout_below="@+id/editText8"
         android:layout_alignStart="@+id/editText"
         android:layout_alignLeft="@id/editText"
         android:layout_alignParentTop="true"
@@ -30,16 +29,10 @@
         android:layout_height="80dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-<<<<<<< HEAD
-        android:text="Sign In"
-        android:textColor="@color/colorAccent"
-        android:textSize="30sp"
-=======
         android:gravity="center"
         android:text="Sign In"
         android:textColor="@color/colorAccent"
         android:textSize="36sp"
->>>>>>> 5b6fcad2f4924e8576a949a05aa5a44dadb03530
         android:textStyle="bold" />
 
     <EditText
