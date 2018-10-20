@@ -13,7 +13,10 @@ public class SignUpActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5b6fcad2f4924e8576a949a05aa5a44dadb03530
     }
 
 }

@@ -30,9 +30,16 @@
         android:layout_height="80dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
+<<<<<<< HEAD
         android:text="Sign In"
         android:textColor="@color/colorAccent"
         android:textSize="30sp"
+=======
+        android:gravity="center"
+        android:text="Sign In"
+        android:textColor="@color/colorAccent"
+        android:textSize="36sp"
+>>>>>>> 5b6fcad2f4924e8576a949a05aa5a44dadb03530
         android:textStyle="bold" />
 
     <EditText
