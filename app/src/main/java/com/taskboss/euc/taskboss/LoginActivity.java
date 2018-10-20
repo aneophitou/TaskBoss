@@ -22,12 +22,11 @@ public class LoginActivity extends Activity {
     EditText PasswordField;
     //Intent MainActivityConnection = new Intent(LoginActivity.this,MainActivity.class);
 
-    public void SignIn(View view) throws InterruptedException {
+    public void SignIn(View view) {
         // the sign in function goes to SignIn Activity (not yet created)
-        Toast.makeText(getApplicationContext(),"Loading...",Toast.LENGTH_SHORT).show();
         //Thread.sleep(1000);
-        Intent intent = new Intent(this,SignUpActivity.class);
-        startActivity(intent);
+        startActivity(new Intent(LoginActivity.this, SignUpActivity.class));
+
     }
 
     @Override

@@ -31,9 +31,13 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <meta-data
+                android:name="preloaded_fonts"
+                android:resource="@array/preloaded_fonts" />
+
         </activity>
         <activity
-<<<<<<< HEAD
+
             android:name=".SignUpActivity"
             android:label="@string/title_activity_sign_up"
             android:parentActivityName=".LoginActivity"
@@ -41,19 +45,18 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.taskboss.euc.taskboss.LoginActivity" />
-=======
-            android:name=".TaskItem"
-            android:label="@string/title_activity_task_item"
-            android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.taskboss.euc.taskboss.MainActivity" />
->>>>>>> 5984b1c9233152702164e87f54f8c79fb9a51d9a
+
         </activity>
+        <activity
+        android:name=".TaskItem"
+        android:label="@string/title_activity_task_item"
+        android:parentActivityName=".MainActivity"
+        android:theme="@style/AppTheme">
         <meta-data
-            android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts" />
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.taskboss.euc.taskboss.MainActivity" />
+    </activity>
+
     </application>
 
 </manifest>
