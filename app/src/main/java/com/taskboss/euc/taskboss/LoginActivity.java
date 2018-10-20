@@ -26,7 +26,7 @@ public class LoginActivity extends Activity {
         // the sign in function goes to SignIn Activity (not yet created)
         Toast.makeText(getApplicationContext(),"Loading...",Toast.LENGTH_SHORT).show();
         //Thread.sleep(1000);
-        Intent intent = new Intent(this,MainActivity.class);
+        Intent intent = new Intent(this,SignUpActivity.class);
         startActivity(intent);
     }
 
@@ -58,7 +58,7 @@ public class LoginActivity extends Activity {
                   (UsernameField.getText().toString().equals("Ola") && PasswordField.getText().toString().equals("OA1234"))) {
 
                     Toast.makeText(getApplicationContext(),"Signing In...",Toast.LENGTH_SHORT).show();
-                    //startActivity(MainActivityConnection);
+                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
                 }else{
                     Toast.makeText(getApplicationContext(), "Wrong Credentials",Toast.LENGTH_SHORT).show();
                 }

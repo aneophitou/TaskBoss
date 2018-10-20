@@ -57,6 +57,7 @@
         android:background="@drawable/login_button"
         android:onClick="SignIn"
         android:text="Login"
+        android:clickable="true"
         android:textAllCaps="false"
         android:textColor="#dfe9ff"
         android:textSize="30sp"
