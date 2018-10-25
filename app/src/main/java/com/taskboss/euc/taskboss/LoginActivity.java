@@ -14,8 +14,9 @@ import android.widget.Toast;
 public class LoginActivity extends Activity {
 
     private static final String TAG = "LoginActivity";
+//    private static final android.R.attr R = ;
 
-//    TextView mytv;
+    //    TextView mytv;
 //    Typeface myfont;
     Button LognInButton;
     EditText UsernameField;
