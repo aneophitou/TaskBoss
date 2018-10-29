@@ -3,25 +3,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".tasksFragment"
-    android:background="@color/colorPrimary">
+    tools:context=".allTasksFragment">
 
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
         <ListView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/taskList"
-            >
-
+            android:id="@+id/taskList">
 
         </ListView>
 
-        </LinearLayout>
-
+    </LinearLayout>
 
 </FrameLayout>
