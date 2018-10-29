@@ -10,9 +10,21 @@
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="title_activity_main">MainActivity</string>
-    <string name="title_activity_create_task">create_task</string>
+    <string name="title_activity_create_task">Task Creation</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="title_activity_sign_up">SignUpActivity</string>
     <string name="title_activity_task_item">TaskItem</string>
+<<<<<<< HEAD
     <string name="title_activity_main3">Main3Activity</string>
+=======
+    <string name="SpinnerDefaultValue">Assign task to Individual</string>
+
+    <string-array name="AssignToIndividualList">
+        <item>Andreas</item>
+        <item>Ahmed</item>
+        <item>Giannis</item>
+        <item>Ola</item>
+    </string-array>
+>>>>>>> f85b53071451a72a8af9f04fa11b9d59869b219d
 </resources>
+
