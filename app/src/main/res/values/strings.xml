@@ -14,9 +14,7 @@
     <string name="title_activity_login">LoginActivity</string>
     <string name="title_activity_sign_up">SignUpActivity</string>
     <string name="title_activity_task_item">TaskItem</string>
-<<<<<<< HEAD
     <string name="title_activity_main3">Main3Activity</string>
-=======
     <string name="SpinnerDefaultValue">Assign task to Individual</string>
 
     <string-array name="AssignToIndividualList">
@@ -25,6 +23,5 @@
         <item>Giannis</item>
         <item>Ola</item>
     </string-array>
->>>>>>> f85b53071451a72a8af9f04fa11b9d59869b219d
 </resources>
 
