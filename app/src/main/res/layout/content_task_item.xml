@@ -32,7 +32,6 @@
         android:inputType="textMultiLine" />
 
     <EditText
-        android:id="@+id/txtResolution"
         android:layout_width="334dp"
         android:layout_height="165dp"
         android:layout_alignStart="@+id/txtTaskTitle"
@@ -54,7 +53,6 @@
         android:inputType="date" />
 
     <EditText
-        android:id="@+id/txtTime"
         android:layout_width="182dp"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/txtDate"
@@ -65,7 +63,6 @@
         android:inputType="time" />
 
     <TextView
-        android:id="@+id/txtDueDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/txtDescription"
@@ -76,7 +73,6 @@
         android:text="Due Date" />
 
     <Button
-        android:id="@+id/btnClose"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/txtDescription"

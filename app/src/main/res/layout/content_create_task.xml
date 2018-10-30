@@ -10,7 +10,6 @@
     tools:showIn="@layout/activity_create_task">
 
     <TextView
-        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/editText4"
@@ -25,7 +24,7 @@
         android:text="Description" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/editText1"
         android:layout_width="355dp"
         android:layout_height="115dp"
         android:layout_alignParentStart="true"
@@ -58,7 +57,6 @@
         />
 
     <TextView
-        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/editText2"
@@ -115,8 +113,8 @@
         android:id="@+id/editText4"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/editText"
-        android:layout_alignRight="@+id/editText"
+        android:layout_alignEnd="@+id/editText1"
+        android:layout_alignRight="@+id/editText1"
         android:layout_alignParentTop="true"
         android:layout_marginTop="15dp"
         android:background="#f9f5f5"
@@ -129,12 +127,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/spinner"
-        android:layout_alignStart="@+id/editText"
+        android:layout_alignStart="@+id/editText1"
         android:layout_marginTop="-170dp"
         android:text="Switch" />
 
     <com.google.android.gms.maps.MapView
-        android:id="@+id/mapView"
         android:layout_width="356dp"
         android:layout_height="97dp"
         android:layout_below="@+id/switch1"

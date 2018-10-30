@@ -49,7 +49,7 @@ public class LoginActivity extends Activity {
 //        mytv.setTypeface(myfont);
 
         LognInButton = (Button)findViewById(R.id.button);
-        UsernameField = (EditText)findViewById(R.id.editText);
+        UsernameField = (EditText)findViewById(R.id.editText1);
         PasswordField = (EditText)findViewById(R.id.editText2);
 
         LognInButton.setOnClickListener(new View.OnClickListener() {
@@ -70,7 +70,7 @@ public class LoginActivity extends Activity {
                     Toast.makeText(getApplicationContext(),"Signing In...",Toast.LENGTH_SHORT).show();
                     setDelay.postDelayed(startDelay, 1000);
                 }else{
-                    Toast.makeText(getApplicationContext(), "Wrong Credentials",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Wrong Credentials...",Toast.LENGTH_SHORT).show();
                 }
             }
         });
