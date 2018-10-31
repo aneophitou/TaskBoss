@@ -16,6 +16,7 @@ import android.widget.ListView;
 public class eventsFragment extends Fragment {
 
     String[] Events = {"Business Meeting","Latest Patch discussion","Shareholders Meeting"};
+    String[] Places = {"Senate's Room","Conference Room A","Room 112"};
     String[] EventDate = {"7/11/2018","13/11/2018","8/11/2018"};
     String[] EventDescription = {"In our 4th business meeting we are going to discuss about the business benefits of" +
                                  " the new online store of our company.",
@@ -43,9 +44,10 @@ public class eventsFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id){
                 Intent intent = new Intent(getActivity(),EventItem.class);
-                intent.putExtra("Event Title", Events[position]);
-                intent.putExtra("Event Date", EventDate[position]);
-                intent.putExtra("Small Description", EventDescription[position]);
+                intent.putExtra("EventTitle", Events[position]);
+                intent.putExtra("EventPlace",Places[position]);
+                intent.putExtra("EventDate", EventDate[position]);
+                intent.putExtra("Description", EventDescription[position]);
                 startActivity(intent);
             }
         });

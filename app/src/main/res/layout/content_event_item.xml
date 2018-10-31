@@ -7,6 +7,100 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".EventItem"
-    tools:showIn="@layout/activity_event_item">
+    tools:showIn="@layout/activity_event_item"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    >
 
+    <TextView
+        android:id="@+id/Title"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:hint="Title"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/PlaceDateContainer"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <LinearLayout
+        android:id="@+id/PlaceDateContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/DescriptionText"
+        app:layout_constraintTop_toBottomOf="@id/Title">
+
+        <TextView
+            android:id="@+id/Date"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:hint="Date"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:textSize="20dp"
+            tools:layout_editor_absoluteX="16dp" />
+
+        <TextView
+            android:id="@+id/Place"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:hint="Place"
+            android:textSize="20dp"
+            tools:layout_editor_absoluteX="16dp" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/DescriptionText"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:ems="10"
+        android:hint="Description"
+        android:imeOptions="actionDone"
+        android:inputType="textMultiLine"
+        app:layout_constraintBottom_toTopOf="@id/RadioGroup"
+        app:layout_constraintTop_toBottomOf="@id/PlaceDateContainer"
+        />
+
+    <RadioGroup
+        android:id="@+id/RadioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@id/button1"
+        app:layout_constraintTop_toBottomOf="@+id/DescriptionText"
+        >
+
+        <RadioButton
+            android:id="@+id/radioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Attend" />
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Maybe" />
+
+        <RadioButton
+            android:id="@+id/radioButton3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Can not Attend" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Send Attendance"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/RadioGroup" />
 </android.support.constraint.ConstraintLayout>
