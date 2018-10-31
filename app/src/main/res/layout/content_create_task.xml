@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,35 +8,35 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".create_task"
     android:background="@drawable/gradient"
-    tools:showIn="@layout/activity_create_task">
+    tools:showIn="@layout/activity_create_task"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    >
 
     <TextView
+        android:id="@+id/Description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editText4"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginStart="50dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="68dp"
+        android:layout_below="@+id/TaskName"
+        android:layout_alignStart="@id/DescriptionText"
+        android:layout_alignLeft="@id/DescriptionText"
+        android:layout_marginTop="35dp"
         android:text="Description" />
 
     <EditText
-        android:id="@+id/editText1"
+        android:id="@+id/DescriptionText"
         android:layout_width="355dp"
         android:layout_height="115dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="14dp"
-        android:layout_marginLeft="14dp"
-        android:layout_marginTop="98dp"
-        android:background="#f9f5f5"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/radius_corners"
         android:ems="10"
         android:inputType="textMultiLine"
+        android:imeOptions="actionDone"
+        android:paddingLeft="10dp"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="63dp" />
 
@@ -44,82 +45,88 @@
         android:layout_width="381dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="3dp"
-        android:layout_marginBottom="170dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="310dp"
         android:entries="@array/AssignToIndividualList"
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="338dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="3dp"
         android:prompt="@string/SpinnerDefaultValue"
-        android:spinnerMode="dialog"
-        />
+        android:spinnerMode="dialog" />
 
     <TextView
+        android:id="@+id/TimeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/editText2"
-        android:layout_alignStart="@+id/textView3"
-        android:text="TextView"
+        android:layout_alignStart="@+id/Time"
+        android:layout_alignLeft="@+id/Time"
+        android:layout_marginTop="230dp"
+        android:layout_marginBottom="11dp"
+        android:text="Time"
         tools:layout_editor_absoluteX="162dp"
         tools:layout_editor_absoluteY="144dp" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/DateTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/spinner"
-        android:layout_alignStart="@+id/editText2"
-        android:layout_marginStart="1dp"
-        android:layout_marginBottom="92dp"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="319dp" />
+        android:layout_alignStart="@+id/Date"
+        android:layout_alignLeft="@id/Date"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="230dp"
+        android:text="Date"
+        tools:layout_editor_absoluteX="10dp"
+        tools:layout_editor_absoluteY="320dp" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/Date"
         android:layout_width="143dp"
         android:layout_height="45dp"
-        android:layout_alignTop="@+id/editText3"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:layout_marginStart="14dp"
-        android:layout_marginLeft="14dp"
-        android:layout_marginTop="16dp"
-        android:background="#f9f5f5"
+        android:layout_marginTop="255dp"
+        android:background="@drawable/radius_corners"
         android:ems="10"
         android:inputType="date"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="163dp" />
+        tools:layout_editor_absoluteX="15dp"
+        android:paddingLeft="10dp"
+        android:imeOptions="actionDone"
+        tools:layout_editor_absoluteY="160dp" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/Time"
         android:layout_width="129dp"
         android:layout_height="45dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="244dp"
-        android:layout_marginLeft="244dp"
-        android:layout_marginTop="238dp"
-        android:background="#f9f5f5"
+        android:layout_marginStart="230dp"
+        android:layout_marginLeft="230dp"
+        android:layout_marginTop="255dp"
+        android:background="@drawable/radius_corners"
         android:ems="10"
         android:inputType="time"
         tools:layout_editor_absoluteX="220dp"
-        tools:layout_editor_absoluteY="163dp" />
+        android:paddingLeft="10dp"
+        android:imeOptions="actionDone"
+        tools:layout_editor_absoluteY="160dp" />
 
     <EditText
-        android:id="@+id/editText4"
-        android:layout_width="350dp"
+        android:id="@+id/TaskName"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/editText1"
-        android:layout_alignRight="@+id/editText1"
+        android:layout_alignEnd="@+id/DescriptionText"
+        android:layout_alignRight="@+id/DescriptionText"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
         android:layout_marginTop="15dp"
-        android:background="#f9f5f5"
+        android:background="@drawable/radius_corners"
         android:ems="10"
         android:hint="Task Name"
+        android:paddingLeft="10dp"
+        android:imeOptions="actionDone"
         android:inputType="textPersonName" />
 
     <Switch
@@ -127,16 +134,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/spinner"
-        android:layout_alignStart="@+id/editText1"
-        android:layout_marginTop="-170dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="340dp"
         android:text="Switch" />
 
     <com.google.android.gms.maps.MapView
         android:layout_width="356dp"
         android:layout_height="97dp"
         android:layout_below="@+id/switch1"
-        android:layout_alignEnd="@+id/editText2"
-        android:layout_marginTop="11dp"
-        android:layout_marginEnd="-217dp" />
+        android:layout_alignTop="@+id/Date"
+        android:layout_marginTop="130dp" />
 
 </RelativeLayout>

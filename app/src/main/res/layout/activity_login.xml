@@ -29,7 +29,7 @@
         android:contentDescription="TODO" />
 
     <EditText
-        android:id="@+id/editText1"
+        android:id="@+id/DescriptionText"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_below="@+id/imageView1"
@@ -52,10 +52,10 @@
         android:textSize="22sp" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/Date"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:layout_below="@+id/editText1"
+        android:layout_below="@+id/DescriptionText"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentEnd="true"
@@ -78,7 +78,7 @@
         android:id="@+id/button"
         android:layout_width="80dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editText2"
+        android:layout_below="@+id/Date"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
@@ -101,7 +101,7 @@
         android:id="@+id/TextView1"
         android:layout_width="wrap_content"
         android:layout_height="65dp"
-        android:layout_below="@+id/editText4"
+        android:layout_below="@+id/TaskName"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentEnd="true"
@@ -140,7 +140,7 @@
         android:id="@+id/TextView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editText2"
+        android:layout_below="@+id/Date"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentEnd="true"
@@ -160,7 +160,7 @@
         android:id="@+id/TextView4"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
-        android:layout_below="@+id/editText2"
+        android:layout_below="@+id/Date"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentEnd="true"

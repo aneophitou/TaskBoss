@@ -3,8 +3,6 @@ package com.taskboss.euc.taskboss;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -38,9 +36,9 @@ public class SignUpActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         CreateButton = (Button)findViewById(R.id.button1);
-        UsernameField = (EditText)findViewById(R.id.editText1);
-        PasswordField = (EditText)findViewById(R.id.editText2);
-        PasswordCheck = (EditText)findViewById(R.id.editText3);
+        UsernameField = (EditText)findViewById(R.id.DescriptionText);
+        PasswordField = (EditText)findViewById(R.id.Date);
+        PasswordCheck = (EditText)findViewById(R.id.Time);
 
         CreateButton.setOnClickListener(new View.OnClickListener() {
             @Override
