@@ -5,9 +5,12 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.InputType;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.EditorInfo;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -23,6 +26,12 @@ String[] MEMBERS = {"Andreas", "Giannis", "Ahmed", "Ola","Assign this task"};
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_task_item);
+
+        EditText ActionDoneKeyboard = (EditText) findViewById(R.id.txtDescription);
+
+        ActionDoneKeyboard.setImeOptions(EditorInfo.IME_ACTION_DONE);
+        ActionDoneKeyboard.setRawInputType(InputType.TYPE_CLASS_TEXT);
+
         String title = getIntent().getStringExtra("title");
         String dateString = getIntent().getStringExtra("date");
         TextView txtTitle = (TextView) this.findViewById(R.id.txtTaskTitle);
