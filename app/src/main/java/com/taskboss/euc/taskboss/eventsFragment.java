@@ -16,8 +16,9 @@ import android.widget.ListView;
 public class eventsFragment extends Fragment {
 
     String[] Events = {"Business Meeting","Latest Patch discussion","Shareholders Meeting"};
-    String[] Places = {"Senate's Room","Conference Room A","Room 112"};
-    String[] EventDate = {"7/11/2018","13/11/2018","8/11/2018"};
+    String[] Places = {"Senate's Room EUC","6, Diogenis Str., 2404 Engomi, \n" +
+            "P.O. Box: 22006, 1516 Nicosia-Cyprus","Room 112 EUC"};
+    String[] EventDate = {"11:30 a.m 7/11/2018","12:45 p.m 13/11/2018","17:00 p.m 8/11/2018"};
     String[] EventDescription = {"In our 4th business meeting we are going to discuss about the business benefits of" +
                                  " the new online store of our company.",
             "In the upcoming meeting the software patch team will present the fixes and updates that were made to the online store website" +
