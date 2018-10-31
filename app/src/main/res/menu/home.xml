@@ -28,6 +28,7 @@
             android:orderInCategory="4"
             android:title="Hide bar" />
         <item
+            android:id="@+id/log_out"
             android:orderInCategory="5"
             android:title="Log Out"
             app:showAsAction="never"/>

@@ -44,7 +44,7 @@
         <activity
             android:name=".MainActivity"
             android:parentActivityName=".LoginActivity"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".SignUpActivity"
             android:label="Create Account"
@@ -53,6 +53,15 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.taskboss.euc.taskboss.LoginActivity" />
+        </activity>
+        <activity
+            android:name=".EventItem"
+            android:label="@string/title_activity_event_item"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.taskboss.euc.taskboss.MainActivity" />
         </activity>
     </application>
 

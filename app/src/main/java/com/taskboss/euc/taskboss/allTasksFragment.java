@@ -36,7 +36,6 @@ public class allTasksFragment extends Fragment {
                 TextView textView = (TextView) view.findViewById(android.R.id.text1);
                 textView.setTextColor(getResources().getColor(R.color.TextColor));
 
-
                 return view;
             }
         };

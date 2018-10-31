@@ -59,6 +59,7 @@ public class LoginActivity extends Activity {
                     @Override
                     public void run() {
                         startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                        finish();
                     }
                 };
 

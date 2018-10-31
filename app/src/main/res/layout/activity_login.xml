@@ -98,7 +98,6 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/TextView1"
         android:layout_width="wrap_content"
         android:layout_height="65dp"
         android:layout_below="@+id/TaskName"
@@ -120,7 +119,6 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/TextView2"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_alignParentStart="true"
@@ -157,7 +155,6 @@
         android:textColor="#dfe9ff" />
 
     <TextView
-        android:id="@+id/TextView4"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_below="@+id/Date"
@@ -179,7 +176,6 @@
         android:textStyle="bold" />
 
     <ImageView
-        android:id="@+id/LeftImageView"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_alignLeft="@id/TextView3"
@@ -199,7 +195,6 @@
         android:src="@drawable/line" />
 
     <ImageView
-        android:id="@+id/RightImageView"
         android:layout_width="wrap_content"
         android:layout_height="2dp"
         android:layout_alignRight="@id/TextView3"

@@ -82,6 +82,10 @@ public class MainActivity extends AppCompatActivity{
         if (id==R.id.action_settings){
             return true;
         }
+        if (id==R.id.log_out){
+            startActivity(new Intent(MainActivity.this, LoginActivity.class));
+            finish();
+        }
         return super.onOptionsItemSelected(item);
     }
 
