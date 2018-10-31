@@ -14,16 +14,12 @@
     <!--android:textColor="#f4f2f2"-->
     <TextView
         android:id="@+id/txtTaskTitle"
-<<<<<<< HEAD
+
         android:layout_width="340dp"
-=======
-        android:layout_width="match_parent"
->>>>>>> cc3aabef3a66c69c823160108da181b80da04756
         android:layout_height="37dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-<<<<<<< HEAD
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="80dp"
@@ -110,13 +106,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtTaskTitle"
         app:layout_constraintVertical_bias="0.027" />
-=======
-        android:layout_below="@id/spinnerAssign"
-        android:layout_marginTop="60dp"
-        android:textSize="24dp"
-        android:textColor="#ffffff"
-        android:hint="Task Name"
-        />
+
 
     <EditText
         android:id="@+id/txtDescription"
@@ -161,7 +151,7 @@
         android:ems="10"
         android:hint="Time"
         android:inputType="time" />
->>>>>>> cc3aabef3a66c69c823160108da181b80da04756
+
 
     <TextView
         android:id="@+id/textView"
@@ -169,18 +159,18 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/txtDescription"
         android:layout_alignStart="@+id/txtTaskTitle"
-<<<<<<< HEAD
+
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-=======
+
         android:textColor="#ffffff"
-        android:layout_marginTop="16dp"
+
         android:textSize="24dp"
->>>>>>> cc3aabef3a66c69c823160108da181b80da04756
+
         android:ems="10"
         android:text="Due Date"
         app:layout_constraintBottom_toBottomOf="@+id/txtResolution"
@@ -192,7 +182,7 @@
     <Button
         android:id="@+id/btnClose"
         android:layout_width="wrap_content"
-<<<<<<< HEAD
+
         android:layout_height="45dp"
         android:layout_alignStart="@+id/txtDescription"
         android:layout_alignParentTop="true"
@@ -205,7 +195,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
-=======
+
         android:layout_height="55dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
@@ -215,7 +205,7 @@
         android:layout_toEndOf="@+id/spinnerAssign"
         android:layout_toRightOf="@+id/spinnerAssign"
         android:text="Close Task" />
->>>>>>> cc3aabef3a66c69c823160108da181b80da04756
+
 
     <Spinner
         android:id="@+id/spinnerAssign"
@@ -224,7 +214,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-<<<<<<< HEAD
+
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
@@ -239,7 +229,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
-=======
+
         android:layout_marginStart="80dp"
         android:layout_marginLeft="80dp"
         android:layout_marginTop="8dp"
@@ -297,6 +287,6 @@
         android:layout_marginTop="3dp"
         android:text="Edit Priority"
         android:textSize="15dp" />
->>>>>>> cc3aabef3a66c69c823160108da181b80da04756
+
 
 </android.support.constraint.ConstraintLayout>
