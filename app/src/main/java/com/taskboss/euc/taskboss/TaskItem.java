@@ -1,5 +1,6 @@
 package com.taskboss.euc.taskboss;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -13,9 +14,11 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
+import java.sql.Time;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -46,6 +49,20 @@ String[] MEMBERS = {"Andreas", "Giannis", "Ahmed", "Ola","Assign this task"};
         String formattedDate = new SimpleDateFormat("dd MM YYYY").format(date);
         txtDate.setText(formattedDate);
 
+        String timeString = getIntent().getStringExtra("time");
+        TextView txtTime = (TextView) this.findViewById(R.id.txtTime);
+
+            SimpleDateFormat time = new SimpleDateFormat("hh:mm");
+        try{
+            Date dateTime = time.parse(timeString);
+
+            txtTime.setText(time.format(dateTime));
+        }catch(ParseException e){
+            e.printStackTrace();
+        }
+
+
+
         TextView txtDescription = (TextView) this.findViewById(R.id.txtDescription);
         txtDescription.setText(getIntent().getStringExtra("description"));
 
@@ -73,5 +90,14 @@ String[] MEMBERS = {"Andreas", "Giannis", "Ahmed", "Ola","Assign this task"};
 
 
     }
+
+
+    public void closeTask(View v){
+        Toast.makeText(getApplicationContext(),"Task Closed",Toast.LENGTH_LONG).show();
+
+        Intent intent = new Intent(TaskItem.this,MainActivity.class );
+        startActivity(intent);
+    }
+
 
 }

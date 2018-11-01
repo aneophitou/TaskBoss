@@ -103,7 +103,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/txtTime"
         android:layout_width="170dp"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/txtDate"
@@ -162,6 +162,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
+        android:onClick="closeTask"
         android:text="Close Task"
         app:layout_constraintBottom_toTopOf="@+id/txtTaskTitle"
         app:layout_constraintEnd_toEndOf="parent"
@@ -260,7 +261,7 @@
         android:textSize="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/PriorityTextView"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/txtTime" />
 
 
 </android.support.constraint.ConstraintLayout>

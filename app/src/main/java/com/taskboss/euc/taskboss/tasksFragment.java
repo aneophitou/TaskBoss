@@ -16,6 +16,7 @@ import android.widget.TextView;
 public class tasksFragment extends Fragment {
 String[] TASKS = {"task 1", "task 2", "task3"};
 String[] DATES = {"31/10/2018", "05/11/2018","06/11/2018"};
+String [] TIMES= {"11:20", "10:30", "12:00"};
 String[] DESCRIPTIONS = {"Get candy for Trick or Treat", "Get Some Sleep", "Doctors Appointment"};
 
     public tasksFragment() {
@@ -51,6 +52,9 @@ String[] DESCRIPTIONS = {"Get candy for Trick or Treat", "Get Some Sleep", "Doct
                 intent.putExtra("title", TASKS[position]);
                 intent.putExtra("date", DATES[position]);
                 intent.putExtra("description", DESCRIPTIONS[position]);
+                intent.putExtra("time", TIMES[position]);
+
+
                 startActivity(intent);
             }
         });
