@@ -2,6 +2,7 @@ package com.taskboss.euc.taskboss;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -12,6 +13,8 @@ import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -61,13 +64,22 @@ String[] MEMBERS = {"Andreas", "Giannis", "Ahmed", "Ola","Assign this task"};
             e.printStackTrace();
         }
 
+        RadioGroup radioGroup = (RadioGroup) findViewById(R.id.rgPriority);
+        String priority = getIntent().getStringExtra("priority");
+        if(priority.equals("1")){
+            radioGroup.check(R.id.rbLow);
+        }else if(priority.equals("2")){
+            radioGroup.check(R.id.rbMedium);
+        }else if(priority.equals("3")){
+            radioGroup.check(R.id.rbHigh);
+        }
+
 
 
         TextView txtDescription = (TextView) this.findViewById(R.id.txtDescription);
         txtDescription.setText(getIntent().getStringExtra("description"));
 
         Spinner spinner = (Spinner) findViewById(R.id.spinnerAssign);
-
         ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, MEMBERS){
           @Override
           public View getView(int position, View convertView, ViewGroup parent){

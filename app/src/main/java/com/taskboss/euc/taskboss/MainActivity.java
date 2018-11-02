@@ -1,6 +1,7 @@
 package com.taskboss.euc.taskboss;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -14,18 +15,23 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ListView;
 
 import java.util.ArrayList;
 import java.util.List;
+
+
 
 public class MainActivity extends AppCompatActivity{
     PageAdapter mPageAdapter;
     ViewPager mViewPager;
     TabLayout tabLayout;
 
+
     public class PageAdapter extends FragmentStatePagerAdapter{
         private final List<Fragment> fragmentList = new ArrayList<>();
         private final List<String> fragmentTitleList = new ArrayList<>();
+
 
         public PageAdapter(FragmentManager fm){
             super(fm);
@@ -67,7 +73,13 @@ public class MainActivity extends AppCompatActivity{
         mPageAdapter.addFragment(new eventsFragment(), "Events");
         mViewPager.setAdapter(mPageAdapter);
         tabLayout.setupWithViewPager(mViewPager);
+
+
+
+
+
     }
+
     //code for inflating the menu
     @Override
     public boolean onCreateOptionsMenu (Menu menu){
