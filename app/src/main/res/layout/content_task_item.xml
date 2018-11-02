@@ -168,16 +168,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
         android:layout_alignLeft="@+id/txtDescription" />
->>>>>>> a6662685e2a0ae9f5ff1d27e7ef78d035eccbf79
-=======
-        android:layout_alignLeft="@+id/txtDescription" />
->>>>>>> a6662685e2a0ae9f5ff1d27e7ef78d035eccbf79
-
-
 
     <Spinner
         android:id="@+id/spinnerAssign"
