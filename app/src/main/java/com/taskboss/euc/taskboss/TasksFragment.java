@@ -1,11 +1,14 @@
 package com.taskboss.euc.taskboss;
 
 
+import android.app.Activity;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,27 +17,34 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class tasksFragment extends Fragment {
-String[] TASKS = {"task 1", "task 2", "task3"};
-String[] DATES = {"31/10/2018", "05/11/2018","06/11/2018"};
-String[] TIMES= {"11:20", "10:30", "12:00"};
-String[] DESCRIPTIONS = {"Get candy for Trick or Treat", "Get Some Sleep", "Doctors Appointment"};
-String[] PRIORITIES = {"1","2","3"};
-
-
-
+ArrayList<String> TASKS = new ArrayList<String>(Arrays.asList("task 1", "task 2", "task3"));
+ArrayList<String> DATES = new ArrayList<String>(Arrays.asList("31/10/2018", "05/11/2018","06/11/2018"));
+ArrayList<String> TIMES = new ArrayList<String>(Arrays.asList("11:20", "10:30", "12:00"));
+ArrayList<String> DESCRIPTIONS = new ArrayList<String>(Arrays.asList("Get candy for Trick or Treat", "Get Some Sleep", "Doctors Appointment"));
+ArrayList<String> PRIORITIES = new ArrayList<String>(Arrays.asList("1","2","3"));
+    ArrayAdapter<String> adapter;
     public tasksFragment() {
         // Required empty public constructor
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        Log.e("added",("test3"));
+
         // Inflate the layout for this fragment
         View rootView= inflater.inflate(R.layout.fragment_tasks, container, false);
             ListView listView = (ListView) rootView.findViewById(R.id.taskList);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, TASKS) {
+            Bundle bundle =this.getArguments();
+        if (bundle!= null) {
+            TASKS.add(bundle.getString("test1"));
+            Log.e("added",bundle.getString("test1"));
+        }
+        adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, TASKS) {
 
             //code to change the color of the text in the list
             @Override
@@ -53,26 +63,25 @@ String[] PRIORITIES = {"1","2","3"};
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id){
                 Intent intent = new Intent(getActivity(),TaskItem.class);
-                intent.putExtra("title", TASKS[position]);
-                intent.putExtra("date", DATES[position]);
-                intent.putExtra("description", DESCRIPTIONS[position]);
-                intent.putExtra("time", TIMES[position]);
-                intent.putExtra("priority", PRIORITIES[position]);
+                intent.putExtra("title", TASKS.get(position));
+                intent.putExtra("date", DATES.get(position));
+                intent.putExtra("description", DESCRIPTIONS.get(position));
+                intent.putExtra("time", TIMES.get(position));
+                intent.putExtra("priority", PRIORITIES.get(position));
 
-
-                startActivity(intent);
+                startActivityForResult(intent,10001);
             }
         });
 
-        if (getArguments()!= null) {
-            String string = getArguments().getString("test1");
-        }
 
         return rootView;
     }
 
+    public void putArguments(Bundle args){
+        TASKS.add(args.getString("test1"));
 
-
+        Log.e("added",args.getString("test1"));
+    }
 
 
     @Override
@@ -81,5 +90,12 @@ String[] PRIORITIES = {"1","2","3"};
         super.onActivityCreated(savedInstanceState);
     }
 
-
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data){
+        super.onActivityResult(requestCode,resultCode,data);
+        if((requestCode==10001) && (resultCode==Activity.RESULT_OK)){
+            FragmentTransaction fragmentTransaction= getFragmentManager().beginTransaction();
+            fragmentTransaction.detach(frag).attach(frag).commit();
+        }
+    }
 }

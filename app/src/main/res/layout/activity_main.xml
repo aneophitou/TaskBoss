@@ -13,7 +13,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:minHeight="?attr/actionBarSize"
-            android:background="?attr/colorPrimary">
+            android:background="?attr/colorPrimary"
+            android:gravity="top">
 
             <Button
                 android:layout_width="wrap_content"
@@ -23,31 +24,38 @@
 
         </android.support.v7.widget.Toolbar>
 
-        <android.support.design.widget.TabLayout
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:id="@+id/tabs"
-            android:minHeight="?actionBarSize"
-            app:tabIndicatorColor="@color/TextColor"
-            app:tabTextColor="@color/TextColor"
-            app:tabIndicatorHeight="5dp"
-            app:tabBackground="@color/colorPrimary"
-            app:tabMode="fixed"
-            app:tabGravity="fill">
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="-2dp"
+        android:minHeight="?actionBarSize"
+        app:tabBackground="@color/colorPrimary"
+        app:tabGravity="fill"
+        app:tabIndicatorColor="@color/TextColor"
+        app:tabIndicatorHeight="5dp"
+        app:tabMode="fixed"
+        app:tabTextColor="@color/TextColor">
 
-        </android.support.design.widget.TabLayout>
+    </android.support.design.widget.TabLayout>
 
-        <android.support.v4.view.ViewPager
-            android:id="@+id/pageview"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_above="@id/bottom_nav"/>
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pageview"
+        android:layout_width="match_parent"
+        android:layout_height="439dp"
+        android:layout_above="@id/bottom_nav"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginBottom="-2dp" />
 
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/bottom_nav"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="42dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="0dp"
