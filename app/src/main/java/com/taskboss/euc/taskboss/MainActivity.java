@@ -1,7 +1,9 @@
 package com.taskboss.euc.taskboss;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -67,6 +69,9 @@ public class MainActivity extends AppCompatActivity{
         mPageAdapter.addFragment(new eventsFragment(), "Events");
         mViewPager.setAdapter(mPageAdapter);
         tabLayout.setupWithViewPager(mViewPager);
+
+        BottomNavigationView bottomNav = findViewById(R.id.bottom_nav);
+        bottomNav.setOnNavigationItemSelectedListener(navListener);
     }
     //code for inflating the menu
     @Override
@@ -95,5 +100,34 @@ public class MainActivity extends AppCompatActivity{
         startActivity(intent);
 
     }
+
+    //code for Bottom navigation view
+    private BottomNavigationView.OnNavigationItemSelectedListener navListener =
+            new BottomNavigationView.OnNavigationItemSelectedListener() {
+                @Override
+                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                    Fragment selectedFragment = null;
+
+                    switch(item.getItemId()){
+                        case R.id.nav_home:
+                            selectedFragment = new ProjectFragment();
+                            break;
+                        case R.id.nav_notification:
+                            selectedFragment = new NotificationFragment();
+                            break;
+                        case R.id.nav_assign:
+                            selectedFragment = new AssignedFragment();
+                            break;
+                        case R.id.nav_calendar:
+                            selectedFragment = new CalendarFragment();
+                            break;
+                    }
+
+                    getSupportFragmentManager().beginTransaction().replace(R.id.pageview, selectedFragment).commit();
+
+                    return true;
+                }
+            };
+
 
 }

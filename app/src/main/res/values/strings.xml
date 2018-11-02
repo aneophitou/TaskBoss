@@ -7,13 +7,23 @@
     <string name="title_activity_task_item">Task Details</string>
     <string name="SpinnerDefaultValue">Assign task to Individual</string>
 
+    <!--creates an array to content_create_task spinner-->
     <string-array name="AssignToIndividualList">
         <item>Andreas</item>
         <item>Ahmed</item>
         <item>Giannis</item>
         <item>Ola</item>
     </string-array>
+
     <string name="title_activity_event_item">EventItem</string>
+
+    <!--creates an array to content_create_project spinner-->
+    <string-array name="AddIndividualToList">
+        <item>Andreas</item>
+        <item>Ahmed</item>
+        <item>Giannis</item>
+        <item>Ola</item>
+    </string-array>
 
     <!-- TODO: Remove or change this placeholder text -->
 
