@@ -1,48 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     tools:context=".MainActivity"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
 
-     <android.support.v7.widget.Toolbar
-         android:id="@+id/toolbar"
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         android:minHeight="?attr/actionBarSize"
-         android:background="?attr/colorPrimary">
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="?attr/actionBarSize"
+            android:background="?attr/colorPrimary">
 
-         <Button
-             android:layout_width="wrap_content"
-             android:layout_height="match_parent"
-             android:onClick="createTask"
-             android:text="Add Task" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:onClick="createTask"
+                android:text="Add Task" />
 
-     </android.support.v7.widget.Toolbar>
+        </android.support.v7.widget.Toolbar>
 
-    <android.support.design.widget.TabLayout
-        android:layout_height="wrap_content"
+        <android.support.design.widget.TabLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:id="@+id/tabs"
+            android:minHeight="?actionBarSize"
+            app:tabIndicatorColor="@color/TextColor"
+            app:tabTextColor="@color/TextColor"
+            app:tabIndicatorHeight="5dp"
+            app:tabBackground="@color/colorPrimary"
+            app:tabMode="fixed"
+            app:tabGravity="fill">
+
+        </android.support.design.widget.TabLayout>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/pageview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/bottom_nav"/>
+
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/bottom_nav"
         android:layout_width="match_parent"
-        android:id="@+id/tabs"
-        android:minHeight="?actionBarSize"
-        app:tabIndicatorColor="@color/TextColor"
-        app:tabTextColor="@color/TextColor"
-        app:tabIndicatorHeight="5dp"
-        app:tabBackground="@color/colorPrimary"
-        app:tabMode="fixed"
-        app:tabGravity="fill">
-
-    </android.support.design.widget.TabLayout>
-
-    <android.support.v4.view.ViewPager
-        android:id="@+id/pageview"
-        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        >
-    </android.support.v4.view.ViewPager>
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="0dp"
+        android:background="?android:attr/windowBackground"
+        app:itemTextColor="@color/cardview_dark_background"
+        app:menu="@menu/bottom_navigation" />
 
 
-</LinearLayout>
+</RelativeLayout>

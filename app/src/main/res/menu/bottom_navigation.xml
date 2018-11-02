@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="Projects"></item>
+
+    <item
+        android:id="@+id/nav_notification"
+        android:icon="@drawable/ic_notifications_none_black_24dp"
+        android:title="Notifications"></item>
+
+    <item
+        android:id="@+id/nav_assign"
+        android:icon="@drawable/ic_assign_me_black_24dp"
+        android:title="Assigned To Me"></item>
+
+    <item
+        android:id="@+id/nav_calendar"
+        android:icon="@drawable/ic_calendar_black_24dp"
+        android:title="Events Calendar"></item>
+
+
+</menu>
