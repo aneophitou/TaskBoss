@@ -6,6 +6,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 public class create_task extends AppCompatActivity {
 
@@ -26,10 +27,11 @@ public class create_task extends AppCompatActivity {
     }
 
     public void submit(View view){
-        EditText title = (EditText) view.findViewById(R.id.txtTaskName);
+        TextView title = (TextView) view.findViewById(R.id.txtTaskName);
 
         Bundle args = new Bundle();
-        args.putString("test1", title.getText().toString());
+        String taskName = title.getText().toString();
+        args.putString("test1", taskName);
         tasksFragment fragment = new tasksFragment();
         fragment.setArguments(args);
     }

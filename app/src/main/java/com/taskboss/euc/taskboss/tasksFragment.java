@@ -64,8 +64,9 @@ String[] PRIORITIES = {"1","2","3"};
             }
         });
 
-        String string = getArguments().getString("test1");
-
+        if (getArguments()!= null) {
+            String string = getArguments().getString("test1");
+        }
 
         return rootView;
     }
