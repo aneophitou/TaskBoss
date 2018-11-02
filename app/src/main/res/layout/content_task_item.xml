@@ -39,12 +39,12 @@
 
     <EditText
         android:id="@+id/txtResolution"
-        android:layout_width="0dp"
-        android:layout_height="139dp"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
         android:layout_alignStart="@+id/txtTaskTitle"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="8dp"
-        android:layout_marginLeft="16dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
@@ -53,7 +53,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.421"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_alignLeft="@+id/txtTaskTitle"
+        android:background="@drawable/radius_corners"
+        android:hint="Resolution"/>
 
 
     <EditText
@@ -121,7 +124,8 @@
         android:paddingLeft="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/txtDate"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        android:layout_alignParentRight="true" />
 
 
     <TextView
@@ -130,18 +134,14 @@
         android:layout_height="32dp"
         android:layout_below="@+id/txtDescription"
         android:layout_alignStart="@+id/txtTaskTitle"
-
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-
         android:ems="10"
-
         android:text="Due Date"
-
         android:textColor="#ffffff"
         android:textSize="24dp"
         app:layout_constraintBottom_toBottomOf="@+id/txtResolution"
@@ -149,12 +149,12 @@
         app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtTaskTitle"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        android:layout_alignLeft="@+id/txtTaskTitle" />
 
     <Button
         android:id="@+id/btnClose"
         android:layout_width="wrap_content"
-
         android:layout_height="45dp"
         android:layout_alignStart="@+id/txtDescription"
         android:layout_alignParentTop="true"
@@ -167,7 +167,8 @@
         app:layout_constraintBottom_toTopOf="@+id/txtTaskTitle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        android:layout_alignLeft="@+id/txtDescription" />
 
 
 
@@ -178,7 +179,6 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
@@ -195,35 +195,39 @@
         app:layout_constraintVertical_bias="0.0" />
 
 
-
     <RadioGroup
-        android:id="@+id/radioGroup"
+        android:id="@+id/rgPriority"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/txtDescription"
-        app:layout_constraintTop_toBottomOf="@+id/PriorityTextView"
-        tools:layout_editor_absoluteX="10dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PriorityTextView">
 
         <RadioButton
-            android:id="@+id/radioButton6"
+            android:id="@+id/rbLow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Low" />
 
         <RadioButton
-            android:id="@+id/radioButton5"
+            android:id="@+id/rbMedium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Medium" />
 
         <RadioButton
-            android:id="@+id/radioButton4"
+            android:id="@+id/rbHigh"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -243,7 +247,8 @@
         android:textColor="@android:color/white"
         android:textSize="24dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtDate" />
+        app:layout_constraintTop_toBottomOf="@+id/txtDate"
+        android:layout_alignLeft="@+id/txtDate" />
 
     <Switch
         android:id="@+id/switch2"

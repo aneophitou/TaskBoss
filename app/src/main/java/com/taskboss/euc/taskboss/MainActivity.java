@@ -1,6 +1,7 @@
 package com.taskboss.euc.taskboss;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.BottomNavigationView;
@@ -10,7 +11,6 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -20,14 +20,17 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class MainActivity extends AppCompatActivity{
     PageAdapter mPageAdapter;
     ViewPager mViewPager;
     TabLayout tabLayout;
 
+
     public class PageAdapter extends FragmentStatePagerAdapter{
         private final List<Fragment> fragmentList = new ArrayList<>();
         private final List<String> fragmentTitleList = new ArrayList<>();
+
 
         public PageAdapter(FragmentManager fm){
             super(fm);
@@ -58,9 +61,9 @@ public class MainActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mViewPager = (ViewPager) findViewById(R.id.pageview);
-        tabLayout = (TabLayout) findViewById(R.id.tabs);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        mViewPager = findViewById(R.id.pageview);
+        tabLayout = findViewById(R.id.tabs);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(null);
         mPageAdapter = new PageAdapter(getSupportFragmentManager());
@@ -72,7 +75,11 @@ public class MainActivity extends AppCompatActivity{
 
         BottomNavigationView bottomNav = findViewById(R.id.bottom_nav);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
+
+
+
     }
+
     //code for inflating the menu
     @Override
     public boolean onCreateOptionsMenu (Menu menu){

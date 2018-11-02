@@ -1,12 +1,10 @@
 package com.taskboss.euc.taskboss;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
 
 public class create_task extends AppCompatActivity {
@@ -24,5 +22,17 @@ public class create_task extends AppCompatActivity {
         Spinner spinner = (Spinner)findViewById(R.id.spinner);
 
         //ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(this,R.layout.@values/strings,AssignToIndividualList);
+
     }
+
+    public void submit(View view){
+        EditText title = (EditText) view.findViewById(R.id.txtTaskName);
+
+        Bundle args = new Bundle();
+        args.putString("test1", title.getText().toString());
+        tasksFragment fragment = new tasksFragment();
+        fragment.setArguments(args);
+    }
+
+
 }

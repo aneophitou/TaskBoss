@@ -3,6 +3,7 @@ package com.taskboss.euc.taskboss;
 
 import android.content.Intent;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -16,8 +17,11 @@ import android.widget.TextView;
 public class tasksFragment extends Fragment {
 String[] TASKS = {"task 1", "task 2", "task3"};
 String[] DATES = {"31/10/2018", "05/11/2018","06/11/2018"};
-String [] TIMES= {"11:20", "10:30", "12:00"};
+String[] TIMES= {"11:20", "10:30", "12:00"};
 String[] DESCRIPTIONS = {"Get candy for Trick or Treat", "Get Some Sleep", "Doctors Appointment"};
+String[] PRIORITIES = {"1","2","3"};
+
+
 
     public tasksFragment() {
         // Required empty public constructor
@@ -53,13 +57,22 @@ String[] DESCRIPTIONS = {"Get candy for Trick or Treat", "Get Some Sleep", "Doct
                 intent.putExtra("date", DATES[position]);
                 intent.putExtra("description", DESCRIPTIONS[position]);
                 intent.putExtra("time", TIMES[position]);
+                intent.putExtra("priority", PRIORITIES[position]);
 
 
                 startActivity(intent);
             }
         });
+
+        String string = getArguments().getString("test1");
+
+
         return rootView;
     }
+
+
+
+
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
