@@ -31,18 +31,12 @@ public class create_task extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 EditText title = (EditText) findViewById(R.id.txtTaskName);
-                Log.e("test", title.getText().toString());
+
                 Intent intent = new Intent();
                 String taskName = title.getText().toString();
-                args.putString("test1", taskName);
-                tasksFragment fragment = new tasksFragment();
-                fragment.putArguments(args);
-                Log.e("test", "teeere");
-                setResult(Activity.RESULT_OK);
-                Log.e("test Onclick Button", "I run when you create a task!");
+
                 intent.putExtra("title", taskName);
-                tasksFragment fragment = new tasksFragment();
-                fragment.putArguments(intent);
+
                 setResult(Activity.RESULT_OK, intent);
                 finish();
             }
