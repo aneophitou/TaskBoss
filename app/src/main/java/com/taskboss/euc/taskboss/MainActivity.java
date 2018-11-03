@@ -1,7 +1,6 @@
 package com.taskboss.euc.taskboss;
 
 import android.app.Activity;
-import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -70,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
         mViewPager = findViewById(R.id.pageview);
         tabLayout = findViewById(R.id.tabs);
         Toolbar toolbar = findViewById(R.id.toolbar);
-        SwitchActionButton = (Button) findViewById(R.id.MainActionButton);
+        SwitchActionButton = findViewById(R.id.MainActionButton);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(null);
         mPageAdapter = new PageAdapter(getSupportFragmentManager());
@@ -168,30 +167,22 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode,resultCode,data);
         if((requestCode==10001) && (resultCode==Activity.RESULT_OK)){
 
-            Log.e("test","test35");
-            //FragmentTransaction fragmentTransaction= getFragmentManager().beginTransaction();
-            // the below command creates an error by the compiler - c/o Giannis A.
-            //fragmentTransaction.detach(tasksFragment.this).attach(tasksFragment.this).commit();
-            //mPageAdapter.notifyDataSetChanged();
+
             Bundle bundle = new Bundle();
             String putTitle = data.getExtras().getString("title");
             bundle.putString("title",putTitle);
-            Log.e("mainAdd",putTitle);
+
             Fragment tfrag= new tasksFragment();
             tfrag.setArguments(bundle);
 
-            getSupportFragmentManager().beginTransaction().replace(R.id.pageview, tfrag).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.taskFragmentFrame, tfrag).commit();
+
         }
     }
 
     @Override
     public void onResume(){
         super.onResume();
-        //mPageAdapter.notifyDataSetChanged();
-
-
-
-        //Log.e("added","teeeeeeest1");
 
     }
     //code for Bottom navigation view
@@ -221,6 +212,4 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 }
             };
-
-
 }

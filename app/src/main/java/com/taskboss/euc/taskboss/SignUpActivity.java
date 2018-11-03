@@ -29,16 +29,16 @@ public class SignUpActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up);
         setDelay = new Handler();
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-        CreateButton = (Button)findViewById(R.id.button1);
-        UsernameField = (EditText)findViewById(R.id.DescriptionText);
-        PasswordField = (EditText)findViewById(R.id.Date);
-        PasswordCheck = (EditText)findViewById(R.id.Time);
+        CreateButton = findViewById(R.id.button1);
+        UsernameField = findViewById(R.id.DescriptionText);
+        PasswordField = findViewById(R.id.Date);
+        PasswordCheck = findViewById(R.id.Time);
 
         CreateButton.setOnClickListener(new View.OnClickListener() {
             @Override

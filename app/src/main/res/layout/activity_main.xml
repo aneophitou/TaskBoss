@@ -40,7 +40,9 @@
         app:tabIndicatorColor="@color/TextColor"
         app:tabIndicatorHeight="5dp"
         app:tabMode="fixed"
-        app:tabTextColor="@color/TextColor">
+        app:tabTextColor="@color/TextColor"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="0dp">
 
     </android.support.design.widget.TabLayout>
 
