@@ -87,17 +87,32 @@ public class MainActivity extends AppCompatActivity {
                 if(tab.getPosition() == 0)
                 {
                     SwitchActionButton.setText("Add Task");
-                    startActivity(new Intent(MainActivity.this, create_task.class));
+                    SwitchActionButton.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            startActivity(new Intent(MainActivity.this, create_task.class));
+                        }
+                    });
                 }
                 else if(tab.getPosition() == 1)
                 {
                     SwitchActionButton.setText("Add Task");
-                    startActivity(new Intent(MainActivity.this, create_task.class));
+                    SwitchActionButton.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            startActivity(new Intent(MainActivity.this, create_task.class));
+                        }
+                    });
                 }
                 else if(tab.getPosition() == 2)
                 {
                     SwitchActionButton.setText("Add Event");
-                    startActivity(new Intent(MainActivity.this, create_event.class));
+                    SwitchActionButton.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            startActivity(new Intent(MainActivity.this, create_event.class));
+                        }
+                    });
                 }
             }
 
@@ -137,6 +152,8 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+
+    // The createTask function is redundant c/o Giannis A.
     //code for add task button
     public void createTask(View view){
         Intent intent = new Intent(MainActivity.this,create_task.class );

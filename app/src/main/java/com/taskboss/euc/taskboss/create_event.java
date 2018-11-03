@@ -1,11 +1,16 @@
 package com.taskboss.euc.taskboss;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.InputType;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
+import android.widget.EditText;
+import android.widget.Toast;
 
 public class create_event extends AppCompatActivity {
 
@@ -15,16 +20,35 @@ public class create_event extends AppCompatActivity {
         setContentView(R.layout.activity_create_event);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        // change the keyboard bottom-right-corner key to "DONE" mode for all EditTexts
+        EditText ActionDoneKeyboard1 = (EditText) findViewById(R.id.txtDescription);
+        EditText ActionDoneKeyboard2 = (EditText) findViewById(R.id.txtEventName);
+        EditText ActionDoneKeyboard3 = (EditText) findViewById(R.id.txtTimeIn);
+        EditText ActionDoneKeyboard4 = (EditText) findViewById(R.id.txtTimeOut);
+        EditText ActionDoneKeyboard5 = (EditText) findViewById(R.id.txtDate);
+
+        ActionDoneKeyboard1.setImeOptions(EditorInfo.IME_ACTION_DONE);
+        ActionDoneKeyboard1.setRawInputType(InputType.TYPE_CLASS_TEXT);
+
+        ActionDoneKeyboard2.setImeOptions(EditorInfo.IME_ACTION_DONE);
+        ActionDoneKeyboard2.setRawInputType(InputType.TYPE_CLASS_TEXT);
+
+        ActionDoneKeyboard3.setImeOptions(EditorInfo.IME_ACTION_DONE);
+        ActionDoneKeyboard3.setRawInputType(InputType.TYPE_CLASS_TEXT);
+
+        ActionDoneKeyboard4.setImeOptions(EditorInfo.IME_ACTION_DONE);
+        ActionDoneKeyboard4.setRawInputType(InputType.TYPE_CLASS_TEXT);
+
+        ActionDoneKeyboard5.setImeOptions(EditorInfo.IME_ACTION_DONE);
+        ActionDoneKeyboard5.setRawInputType(InputType.TYPE_CLASS_TEXT);
+    }
+
+    public void SubmitEvent(View view)
+    {
+        Toast.makeText(this.getApplicationContext(),"Submiting Event...",Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(create_event.this, MainActivity.class));
     }
 
 }

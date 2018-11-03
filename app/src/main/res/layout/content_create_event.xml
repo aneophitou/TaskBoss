@@ -1,11 +1,192 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".create_event"
-    tools:showIn="@layout/activity_create_event">
+    tools:showIn="@layout/activity_create_event"
+    android:padding="3dp"
+    android:orientation="vertical"
+    android:background="@drawable/gradient">
 
-</android.support.constraint.ConstraintLayout>
+    <EditText
+        android:id="@+id/txtEventName"
+        android:layout_width="250dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="5dp"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        android:gravity="center"
+        android:imeOptions="actionDone"
+        android:layout_gravity="center"
+        android:hint="Enter Event Name"
+        android:background="@drawable/event_item_title"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
+
+        <EditText
+            android:id="@+id/txtTimeIn"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:textSize="16dp"
+            android:layout_marginRight="5dp"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:gravity="center"
+            android:paddingLeft="5dp"
+            android:imeOptions="actionDone"
+            android:layout_weight="1"
+            android:hint="When Event Starts?"
+            android:background="@drawable/event_item_title"
+            />
+
+        <EditText
+            android:id="@+id/txtTimeOut"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="5dp"
+            android:textColor="#ffffff"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:paddingLeft="5dp"
+            android:imeOptions="actionDone"
+            android:textSize="16dp"
+            android:hint="When Event Finishes?"
+            android:layout_weight="1"
+            android:background="@drawable/event_item_title"
+            />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/txtDate"
+        android:layout_width="170dp"
+        android:layout_height="35dp"
+        android:hint="Enter Date"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:textColor="#ffffff"
+        android:paddingLeft="5dp"
+        android:textStyle="bold"
+        android:imeOptions="actionDone"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/event_item_title"
+        />
+
+    <EditText
+        android:id="@+id/txtDescription"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="10dp"
+        android:padding="5dp"
+        android:layout_gravity="center"
+        android:textColor="#ffffff"
+        android:imeOptions="actionDone"
+        android:inputType="textMultiLine"
+        android:hint="Event Description"
+        android:background="@drawable/event_item_title"
+        />
+
+    <TextView
+        android:id="@+id/txtInvitation"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textSize="25dp"
+        android:layout_marginTop="10dp"
+        android:text="Send Invitations"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        android:background="@drawable/event_item_title"/>
+
+    <CheckBox
+        android:id="@+id/CheckBoxInviteAll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:paddingLeft="5dp"
+        android:textColor="#ffffff"
+        android:paddingRight="5dp"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:textSize="15dp"
+        android:text="Invite All Members"
+        android:layout_gravity="center"
+        android:background="@drawable/event_item_title"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/event_item_title"
+        >
+
+        <CheckBox
+            android:id="@+id/CheckBoxMember4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:text="Andreas" />
+
+        <CheckBox
+            android:id="@+id/CheckBoxMember3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:text="Ahmed" />
+
+        <CheckBox
+            android:id="@+id/CheckBoxMember2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:text="Giannis" />
+
+        <CheckBox
+            android:id="@+id/CheckBoxMember1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:textColor="#ffffff"
+            android:text="Ola" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnSubmitEvent"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        android:text="submit"
+        android:onClick="SubmitEvent"
+        android:background="@drawable/event_item_title"
+        />
+
+</LinearLayout>

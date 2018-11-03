@@ -156,7 +156,6 @@
         android:layout_alignLeft="@+id/txtTaskTitle" />
 
     <Button
-        android:id="@+id/btnClose"
         android:layout_width="wrap_content"
         android:layout_height="45dp"
         android:layout_alignStart="@+id/txtDescription"
@@ -252,7 +251,6 @@
         android:layout_alignLeft="@+id/txtDate" />
 
     <Switch
-        android:id="@+id/switch2"
         android:layout_width="149dp"
         android:layout_height="22dp"
         android:layout_alignTop="@+id/PriorityTextView"
