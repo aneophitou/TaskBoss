@@ -38,9 +38,13 @@ ArrayList<String> PRIORITIES = new ArrayList<String>(Arrays.asList("1","2","3"))
         Log.e("added",("test3"));
 
         // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.fragment_tasks, container, false);
-        ListView listView = (ListView) rootView.findViewById(R.id.taskList);
-
+        View rootView= inflater.inflate(R.layout.fragment_tasks, container, false);
+            ListView listView = (ListView) rootView.findViewById(R.id.taskList);
+            Bundle bundle =this.getArguments();
+        if (bundle!= null) {
+            TASKS.add(bundle.getString("test1"));
+            Log.e("added",bundle.getString("test1"));
+        }
         adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, TASKS) {
 
             //code to change the color of the text in the list
@@ -54,13 +58,7 @@ ArrayList<String> PRIORITIES = new ArrayList<String>(Arrays.asList("1","2","3"))
             }
         };
         listView.setAdapter(adapter);
-        Bundle bundle = this.getArguments();
-        if (bundle!= null) {
-            TASKS.add(bundle.getString("title"));
-            adapter.notifyDataSetChanged();
 
-            Log.e("added",bundle.getString("title"));
-        }
         //code to handle clicks of the items in the list
         listView.setOnItemClickListener( new AdapterView.OnItemClickListener(){
             @Override
@@ -72,7 +70,7 @@ ArrayList<String> PRIORITIES = new ArrayList<String>(Arrays.asList("1","2","3"))
                 intent.putExtra("time", TIMES.get(position));
                 intent.putExtra("priority", PRIORITIES.get(position));
 
-                startActivity(intent);
+                startActivityForResult(intent,10001);
             }
         });
 
@@ -81,9 +79,9 @@ ArrayList<String> PRIORITIES = new ArrayList<String>(Arrays.asList("1","2","3"))
     }
 
     public void putArguments(Bundle args){
-        Log.e("added",args.getString("test1"));
         TASKS.add(args.getString("test1"));
 
+        Log.e("added",args.getString("test1"));
     }
 
 
@@ -99,9 +97,8 @@ ArrayList<String> PRIORITIES = new ArrayList<String>(Arrays.asList("1","2","3"))
         if((requestCode==10001) && (resultCode==Activity.RESULT_OK)){
             android.support.v4.app.FragmentTransaction fragmentTransaction= getFragmentManager().beginTransaction();
             // the below command creates an error by the compiler - c/o Giannis A.
-            // Log.e("Test function", "I run up to here!");
-            //fragmentTransaction.detach(tasksFragment.this).attach(tasksFragment.this).commit();
+            Log.e("Test function", "I run up to here!");
+            fragmentTransaction.detach(tasksFragment.this).attach(tasksFragment.this).commit();
         }
     }
-
 }
