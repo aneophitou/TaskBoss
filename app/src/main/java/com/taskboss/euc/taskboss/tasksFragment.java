@@ -93,6 +93,15 @@ ArrayList<String> PRIORITIES = new ArrayList<String>(Arrays.asList("1","2","3"))
         super.onActivityCreated(savedInstanceState);
     }
 
-
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data){
+        super.onActivityResult(requestCode,resultCode,data);
+        if((requestCode==10001) && (resultCode==Activity.RESULT_OK)){
+            android.support.v4.app.FragmentTransaction fragmentTransaction= getFragmentManager().beginTransaction();
+            // the below command creates an error by the compiler - c/o Giannis A.
+            // Log.e("Test function", "I run up to here!");
+            //fragmentTransaction.detach(tasksFragment.this).attach(tasksFragment.this).commit();
+        }
+    }
 
 }

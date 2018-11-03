@@ -132,8 +132,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
-
     //code for inflating the menu
     @Override
     public boolean onCreateOptionsMenu (Menu menu){
