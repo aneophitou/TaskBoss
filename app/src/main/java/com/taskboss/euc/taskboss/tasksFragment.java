@@ -97,7 +97,8 @@ ArrayList<String> PRIORITIES = new ArrayList<String>(Arrays.asList("1","2","3"))
         if((requestCode==10001) && (resultCode==Activity.RESULT_OK)){
             android.support.v4.app.FragmentTransaction fragmentTransaction= getFragmentManager().beginTransaction();
             // the below command creates an error by the compiler - c/o Giannis A.
-            //fragmentTransaction.detach(frag).attach(frag).commit();
+            Log.e("Test function", "I run up to here!");
+            fragmentTransaction.detach(tasksFragment.this).attach(tasksFragment.this).commit();
         }
     }
 }

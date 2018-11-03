@@ -38,12 +38,11 @@ public class create_task extends AppCompatActivity {
                 fragment.putArguments(args);
                 Log.e("test", "teeere");
                 setResult(Activity.RESULT_OK);
+                Log.e("test Onclick Button", "I run when you create a task!");
                 finish();
             }
         });
 
 
     }
-
-
 }
