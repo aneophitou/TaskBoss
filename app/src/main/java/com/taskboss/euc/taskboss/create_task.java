@@ -43,9 +43,5 @@ public class create_task extends AppCompatActivity {
                 finish();
             }
         });
-
-
     }
-
-
 }
