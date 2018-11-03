@@ -27,6 +27,7 @@ ArrayList<String> TIMES = new ArrayList<String>(Arrays.asList("11:20", "10:30", 
 ArrayList<String> DESCRIPTIONS = new ArrayList<String>(Arrays.asList("Get candy for Trick or Treat", "Get Some Sleep", "Doctors Appointment"));
 ArrayList<String> PRIORITIES = new ArrayList<String>(Arrays.asList("1","2","3"));
     ArrayAdapter<String> adapter;
+
     public tasksFragment() {
         // Required empty public constructor
     }
@@ -94,8 +95,8 @@ ArrayList<String> PRIORITIES = new ArrayList<String>(Arrays.asList("1","2","3"))
     public void onActivityResult(int requestCode, int resultCode, Intent data){
         super.onActivityResult(requestCode,resultCode,data);
         if((requestCode==10001) && (resultCode==Activity.RESULT_OK)){
-            FragmentTransaction fragmentTransaction= getFragmentManager().beginTransaction();
-            fragmentTransaction.detach(frag).attach(frag).commit();
+            android.support.v4.app.FragmentTransaction fragmentTransaction= getFragmentManager().beginTransaction();
+            //fragmentTransaction.detach(frag).attach(frag).commit();
         }
     }
 }
