@@ -16,25 +16,27 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class MainActivity extends AppCompatActivity{
+public class MainActivity extends AppCompatActivity {
     PageAdapter mPageAdapter;
     ViewPager mViewPager;
     TabLayout tabLayout;
+    Button SwitchActionButton;
 
-
-    public class PageAdapter extends FragmentStatePagerAdapter{
+    public class PageAdapter extends FragmentStatePagerAdapter {
         private final List<Fragment> fragmentList = new ArrayList<>();
         private final List<String> fragmentTitleList = new ArrayList<>();
 
 
-        public PageAdapter(FragmentManager fm){
+        public PageAdapter(FragmentManager fm) {
             super(fm);
         }
+
         //this code is for retrieving the fragment with a bundle of parameters
         @Override
         public Fragment getItem(int position) {
@@ -48,9 +50,10 @@ public class MainActivity extends AppCompatActivity{
 
         @Nullable
         @Override
-        public CharSequence getPageTitle(int position){
+        public CharSequence getPageTitle(int position) {
             return fragmentTitleList.get(position);
         }
+
         public void addFragment(Fragment fragment, String title) {
             fragmentList.add(fragment);
             fragmentTitleList.add(title);
@@ -64,6 +67,7 @@ public class MainActivity extends AppCompatActivity{
         mViewPager = findViewById(R.id.pageview);
         tabLayout = findViewById(R.id.tabs);
         Toolbar toolbar = findViewById(R.id.toolbar);
+        SwitchActionButton = (Button) findViewById(R.id.MainActionButton);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(null);
         mPageAdapter = new PageAdapter(getSupportFragmentManager());
@@ -76,9 +80,41 @@ public class MainActivity extends AppCompatActivity{
         BottomNavigationView bottomNav = findViewById(R.id.bottom_nav);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
 
+        // code to switch the top-left button to "ADD TASK" or "ADD EVENT" mode
+        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                if(tab.getPosition() == 0)
+                {
+                    SwitchActionButton.setText("Add Task");
+                    startActivity(new Intent(MainActivity.this, create_task.class));
+                }
+                else if(tab.getPosition() == 1)
+                {
+                    SwitchActionButton.setText("Add Task");
+                    startActivity(new Intent(MainActivity.this, create_task.class));
+                }
+                else if(tab.getPosition() == 2)
+                {
+                    SwitchActionButton.setText("Add Event");
+                    startActivity(new Intent(MainActivity.this, create_event.class));
+                }
+            }
 
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
 
     }
+
+
 
     //code for inflating the menu
     @Override

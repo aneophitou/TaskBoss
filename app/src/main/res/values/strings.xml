@@ -24,6 +24,7 @@
         <item>Giannis</item>
         <item>Ola</item>
     </string-array>
+    <string name="title_activity_create_event">create_event</string>
 
     <!-- TODO: Remove or change this placeholder text -->
 

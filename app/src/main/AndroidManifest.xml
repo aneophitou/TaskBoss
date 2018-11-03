@@ -63,6 +63,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.taskboss.euc.taskboss.MainActivity" />
         </activity>
+        <activity
+            android:name=".create_event"
+            android:label="@string/title_activity_create_event"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.taskboss.euc.taskboss.MainActivity" />
+        </activity>
     </application>
 
 </manifest>
