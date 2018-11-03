@@ -1,5 +1,7 @@
 package com.taskboss.euc.taskboss;
 
+import android.app.Activity;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -12,6 +14,7 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -157,10 +160,42 @@ public class MainActivity extends AppCompatActivity {
     //code for add task button
     public void createTask(View view){
         Intent intent = new Intent(MainActivity.this,create_task.class );
-        startActivity(intent);
+
+        startActivityForResult(intent, 10001);
 
     }
 
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data){
+        super.onActivityResult(requestCode,resultCode,data);
+        if((requestCode==10001) && (resultCode==Activity.RESULT_OK)){
+
+            Log.e("test","test35");
+            //FragmentTransaction fragmentTransaction= getFragmentManager().beginTransaction();
+            // the below command creates an error by the compiler - c/o Giannis A.
+            //fragmentTransaction.detach(tasksFragment.this).attach(tasksFragment.this).commit();
+            //mPageAdapter.notifyDataSetChanged();
+            Bundle bundle = new Bundle();
+            String putTitle = data.getExtras().getString("title");
+            bundle.putString("title",putTitle);
+            Log.e("mainAdd",putTitle);
+            Fragment tfrag= new tasksFragment();
+            tfrag.setArguments(bundle);
+
+            getSupportFragmentManager().beginTransaction().replace(R.id.pageview, tfrag).commit();
+        }
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+        //mPageAdapter.notifyDataSetChanged();
+
+
+
+        //Log.e("added","teeeeeeest1");
+
+    }
     //code for Bottom navigation view
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =
             new BottomNavigationView.OnNavigationItemSelectedListener() {

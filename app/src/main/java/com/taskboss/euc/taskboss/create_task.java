@@ -1,6 +1,7 @@
 package com.taskboss.euc.taskboss;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -31,13 +32,14 @@ public class create_task extends AppCompatActivity {
             public void onClick(View view) {
                 EditText title = (EditText) findViewById(R.id.txtTaskName);
                 Log.e("test", title.getText().toString());
-                Bundle args = new Bundle();
+                Intent intent = new Intent();
                 String taskName = title.getText().toString();
-                args.putString("test1", taskName);
-                tasksFragment fragment = new tasksFragment();
-                fragment.putArguments(args);
-                Log.e("test", "teeere");
-                setResult(Activity.RESULT_OK);
+                intent.putExtra("title", taskName);
+//                tasksFragment fragment = new tasksFragment();
+//                fragment.putArguments(intent);
+
+                setResult(Activity.RESULT_OK, intent);
+
                 finish();
             }
         });
