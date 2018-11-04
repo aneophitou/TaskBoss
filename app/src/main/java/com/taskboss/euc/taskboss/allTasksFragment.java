@@ -26,14 +26,13 @@ public class allTasksFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootView= inflater.inflate(R.layout.fragment_all_tasks, container, false);
-        ListView listView = (ListView) rootView.findViewById(R.id.taskList);
+        ListView listView = rootView.findViewById(R.id.taskList);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, TASKS) {
-
 
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {
                 View view = super.getView(position, convertView, parent);
-                TextView textView = (TextView) view.findViewById(android.R.id.text1);
+                TextView textView = view.findViewById(android.R.id.text1);
                 textView.setTextColor(getResources().getColor(R.color.TextColor));
 
                 return view;

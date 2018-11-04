@@ -19,10 +19,10 @@ public class EventItem extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_item);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        EditText ActionDoneKeyboard = (EditText) findViewById(R.id.DescriptionText);
+        EditText ActionDoneKeyboard = findViewById(R.id.DescriptionText);
 
         ActionDoneKeyboard.setImeOptions(EditorInfo.IME_ACTION_DONE);
         ActionDoneKeyboard.setRawInputType(InputType.TYPE_CLASS_TEXT);
@@ -32,17 +32,17 @@ public class EventItem extends AppCompatActivity {
         String Date = getIntent().getStringExtra("EventDate");
         String Description = getIntent().getStringExtra("Description");
 
-        TextView TitleText = (TextView) this.findViewById(R.id.Title);
-        TextView PlaceText = (TextView) this.findViewById(R.id.Place);
-        TextView DateText = (TextView) this.findViewById(R.id.Date);
-        TextView DescriptionText = (TextView) this.findViewById(R.id.DescriptionText);
+        TextView TitleText = this.findViewById(R.id.Title);
+        TextView PlaceText = this.findViewById(R.id.Place);
+        TextView DateText = this.findViewById(R.id.Date);
+        TextView DescriptionText = this.findViewById(R.id.DescriptionText);
 
         TitleText.setText(Title);
         PlaceText.setText(Place);
         DateText.setText(Date);
         DescriptionText.setText(Description);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.AddEvent);
+        FloatingActionButton fab = findViewById(R.id.AddEvent);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

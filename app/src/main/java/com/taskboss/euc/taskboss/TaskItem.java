@@ -33,16 +33,16 @@ String[] MEMBERS = {"Andreas", "Giannis", "Ahmed", "Ola","Assign this task"};
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_task_item);
 
-        EditText ActionDoneKeyboard = (EditText) findViewById(R.id.txtDescription);
+        EditText ActionDoneKeyboard = findViewById(R.id.txtDescription);
 
         ActionDoneKeyboard.setImeOptions(EditorInfo.IME_ACTION_DONE);
         ActionDoneKeyboard.setRawInputType(InputType.TYPE_CLASS_TEXT);
 
         String title = getIntent().getStringExtra("title");
         String dateString = getIntent().getStringExtra("date");
-        TextView txtTitle = (TextView) this.findViewById(R.id.txtTaskTitle);
+        TextView txtTitle = this.findViewById(R.id.txtTaskTitle);
         txtTitle.setText(title);
-        TextView txtDate = (TextView) this.findViewById(R.id.txtDate);
+        TextView txtDate = this.findViewById(R.id.txtDate);
         Date date = null;
         try {
             date = new SimpleDateFormat("dd/MM/YYYY").parse(dateString);
@@ -53,7 +53,7 @@ String[] MEMBERS = {"Andreas", "Giannis", "Ahmed", "Ola","Assign this task"};
         txtDate.setText(formattedDate);
 
         String timeString = getIntent().getStringExtra("time");
-        TextView txtTime = (TextView) this.findViewById(R.id.txtTime);
+        TextView txtTime = this.findViewById(R.id.txtTime);
 
             SimpleDateFormat time = new SimpleDateFormat("hh:mm");
         try{
@@ -64,7 +64,7 @@ String[] MEMBERS = {"Andreas", "Giannis", "Ahmed", "Ola","Assign this task"};
             e.printStackTrace();
         }
 
-        RadioGroup radioGroup = (RadioGroup) findViewById(R.id.rgPriority);
+        RadioGroup radioGroup = findViewById(R.id.rgPriority);
         String priority = getIntent().getStringExtra("priority");
         if(priority.equals("1")){
             radioGroup.check(R.id.rbLow);
@@ -76,10 +76,10 @@ String[] MEMBERS = {"Andreas", "Giannis", "Ahmed", "Ola","Assign this task"};
 
 
 
-        TextView txtDescription = (TextView) this.findViewById(R.id.txtDescription);
+        TextView txtDescription = this.findViewById(R.id.txtDescription);
         txtDescription.setText(getIntent().getStringExtra("description"));
 
-        Spinner spinner = (Spinner) findViewById(R.id.spinnerAssign);
+        Spinner spinner = findViewById(R.id.spinnerAssign);
         ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, MEMBERS){
           @Override
           public View getView(int position, View convertView, ViewGroup parent){

@@ -18,16 +18,16 @@ public class create_event extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_event);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         // change the keyboard bottom-right-corner key to "DONE" mode for all EditTexts
-        EditText ActionDoneKeyboard1 = (EditText) findViewById(R.id.txtDescription);
-        EditText ActionDoneKeyboard2 = (EditText) findViewById(R.id.txtEventName);
-        EditText ActionDoneKeyboard3 = (EditText) findViewById(R.id.txtTimeIn);
-        EditText ActionDoneKeyboard4 = (EditText) findViewById(R.id.txtTimeOut);
-        EditText ActionDoneKeyboard5 = (EditText) findViewById(R.id.txtDate);
+        EditText ActionDoneKeyboard1 = findViewById(R.id.txtDescription);
+        EditText ActionDoneKeyboard2 = findViewById(R.id.txtEventName);
+        EditText ActionDoneKeyboard3 = findViewById(R.id.txtTimeIn);
+        EditText ActionDoneKeyboard4 = findViewById(R.id.txtTimeOut);
+        EditText ActionDoneKeyboard5 = findViewById(R.id.txtDate);
 
         ActionDoneKeyboard1.setImeOptions(EditorInfo.IME_ACTION_DONE);
         ActionDoneKeyboard1.setRawInputType(InputType.TYPE_CLASS_TEXT);

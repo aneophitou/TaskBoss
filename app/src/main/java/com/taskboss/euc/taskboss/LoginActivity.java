@@ -38,7 +38,7 @@ public class LoginActivity extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_login);
         Log.d(TAG, "onCreate: started.");
-        ImageView firstImage = (ImageView) findViewById(R.id.imageView1);
+        ImageView firstImage = findViewById(R.id.imageView1);
         setDelay = new Handler();
 
         int imageResourse = getResources().getIdentifier("@drawable/icons8_task_planning_100", null, this.getPackageName());
@@ -48,9 +48,9 @@ public class LoginActivity extends Activity {
 //        myfont = Typeface.createFromAsset(this.getAssets(),"fonts/Pacifico.ttf");
 //        mytv.setTypeface(myfont);
 
-        LognInButton = (Button)findViewById(R.id.button);
-        UsernameField = (EditText)findViewById(R.id.DescriptionText);
-        PasswordField = (EditText)findViewById(R.id.Date);
+        LognInButton = findViewById(R.id.button);
+        UsernameField = findViewById(R.id.DescriptionText);
+        PasswordField = findViewById(R.id.Date);
 
         LognInButton.setOnClickListener(new View.OnClickListener() {
             @Override

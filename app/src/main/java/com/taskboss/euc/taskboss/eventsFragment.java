@@ -3,6 +3,7 @@ package com.taskboss.euc.taskboss;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.ListFragment;
 import android.util.Log;
@@ -12,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CalendarView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -20,6 +22,7 @@ import java.util.Arrays;
 
 
 public class eventsFragment extends Fragment {
+    CalendarView calendarView;
 
     ArrayList<String> Events = new ArrayList<String>(Arrays.asList("Business Meeting", "Latest Patch discussion", "Shareholders Meeting"));
     ArrayList<String> Places = new ArrayList<String>(Arrays.asList("Senate's Room EUC",
@@ -58,13 +61,16 @@ public class eventsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_events, container, false);
-        // Inflate the layout for this fragment
-        ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_events,container,false);
 
-        ListView listView = (ListView) view.findViewById(R.id.ListView);
+        calendarView = (CalendarView) view.findViewById(R.id.calendarView);
+        calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+            @Override
+            public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
+                //NEED FUNCTION TO SHOW ONLY SELECTED DATE
+            }
+        });
 
-        //Button fab = (Button) Button.findViewById(R.id.AddEvent);
-        //fab.setOnClickListener(CloseEvent());
+        ListView listView = view.findViewById(R.id.ListView);
 
         ArrayAdapter<String> ListViewAdapter = new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,Events);
 

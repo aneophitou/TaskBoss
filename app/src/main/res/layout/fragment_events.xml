@@ -7,7 +7,13 @@
     tools:context=".eventsFragment"
     android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
+    <CalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="match_parent"
+        android:layout_height="295dp"
+        android:scrollbarAlwaysDrawVerticalTrack="true">
+
+    </CalendarView>
 
     <ListView
         android:id="@+id/ListView"

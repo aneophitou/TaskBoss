@@ -152,8 +152,6 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-
-    // The createTask function is redundant c/o Giannis A.
     //code for add task button
     public void createTask(View view){
         Intent intent = new Intent(MainActivity.this,create_task.class );
@@ -161,12 +159,11 @@ public class MainActivity extends AppCompatActivity {
         startActivityForResult(intent, 10001);
 
     }
-
+    //Code to receive the result from the newly generated activity and then reload the fragment
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data){
         super.onActivityResult(requestCode,resultCode,data);
         if((requestCode==10001) && (resultCode==Activity.RESULT_OK)){
-
 
             Bundle bundle = new Bundle();
             String putTitle = data.getExtras().getString("title");
@@ -176,15 +173,11 @@ public class MainActivity extends AppCompatActivity {
             tfrag.setArguments(bundle);
 
             getSupportFragmentManager().beginTransaction().replace(R.id.taskFragmentFrame, tfrag).commit();
-
         }
     }
 
-    @Override
-    public void onResume(){
-        super.onResume();
 
-    }
+
     //code for Bottom navigation view
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =
             new BottomNavigationView.OnNavigationItemSelectedListener() {
