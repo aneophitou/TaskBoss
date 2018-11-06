@@ -1,5 +1,6 @@
 package com.taskboss.euc.taskboss;
 
+import android.app.Dialog;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -7,16 +8,16 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CalendarView;
 
-import com.taskboss.euc.taskboss.R;
-
-public class CalendarFragment extends Fragment {
-
+public class CreateProjectFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.fragment_create_project, container, false);
 
-        return inflater.inflate(R.layout.fragment_calendar, container, false);
+
+
+
     }
+
 }

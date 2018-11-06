@@ -144,7 +144,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
         int id=item.getItemId();
-        if (id==R.id.action_settings){
+        if (id==R.id.profile_settings){
             return true;
         }
         else if (id==R.id.log_out){
@@ -152,7 +152,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(new Intent(MainActivity.this, LoginActivity.class));
             finish();
         }
-        else if (id==R.id.action_about)
+        else if (id==R.id.nav_about)
         {
             Intent i = new Intent(this, AboutActivity.class);
             startActivity(i);
@@ -196,24 +196,24 @@ public class MainActivity extends AppCompatActivity {
             new BottomNavigationView.OnNavigationItemSelectedListener() {
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                    Fragment selectedFragment = null;
 
                     switch(item.getItemId()){
                         case R.id.nav_home:
-                            selectedFragment = new ProjectFragment();
+                            startActivity(new Intent(MainActivity.this, ProjectActivity.class));
+
                             break;
                         case R.id.nav_notification:
-                            selectedFragment = new NotificationFragment();
+
                             break;
-                        case R.id.nav_assign:
-                            selectedFragment = new AssignedFragment();
+                        case R.id.nav_tasks:
+                            startActivity(new Intent(MainActivity.this, MainActivity.class));
+
                             break;
-                        case R.id.nav_calendar:
-                            selectedFragment = new CalendarFragment();
+                        case R.id.nav_settings:
+                            startActivity(new Intent(MainActivity.this, SettingsActivity.class));
+
                             break;
                     }
-
-                    getSupportFragmentManager().beginTransaction().replace(R.id.pageview, selectedFragment).commit();
 
                     return true;
                 }

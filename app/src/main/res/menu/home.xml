@@ -5,18 +5,28 @@
 
         <item
             android:icon="@drawable/ic_search_black_24dp"
-            android:orderInCategory="1"
+            android:orderInCategory="2"
             android:title="Search"
             app:actionViewClass="android.widget.SearchView"
             app:showAsAction="always"/>
         <item
-            android:id="@+id/action_settings"
+            android:id="@+id/projectHome"
+            android:icon="@drawable/ic_home_black_24dp"
+            android:orderInCategory="1"
+            android:title="Home"
+            app:showAsAction="always"/>
+        <item
+            android:id="@+id/profile_settings"
             android:orderInCategory="1"
             android:title="@string/action_settings"
 
             app:showAsAction="never" />
         <item
+<<<<<<< HEAD
+            android:id="@+id/nav_about"
+=======
             android:id="@+id/action_about"
+>>>>>>> f902310f4b2e7b4c7f8ead4e4df85147bb27fdc1
             android:orderInCategory="2"
             android:title="About"
             app:showAsAction="never" />
@@ -27,6 +37,13 @@
             android:title="Help us"
             app:showAsAction="never" />
         <item
+<<<<<<< HEAD
+            android:id="@+id/nav_rateUs"
+            android:orderInCategory="4"
+            android:title="Rate us" />
+        <item
+=======
+>>>>>>> f902310f4b2e7b4c7f8ead4e4df85147bb27fdc1
             android:id="@+id/log_out"
             android:orderInCategory="5"
             android:title="Log Out"

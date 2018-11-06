@@ -6,6 +6,7 @@
     <string name="title_activity_create_task">Task Creation</string>
     <string name="title_activity_task_item">Task Details</string>
     <string name="SpinnerDefaultValue">Assign task to Individual</string>
+    <string name="ComboBoxDefaultValue">Add Individual to Project</string>
     <string name="title_activity_create_event">Create Event</string>
 
     <!--creates an array to content_create_task spinner-->
@@ -15,6 +16,17 @@
         <item>Giannis</item>
         <item>Ola</item>
     </string-array>
+
+    <!--creates an array to content_create_project comboBox-->
+    <string-array name="AddToProject">
+        <item>Andreas</item>
+        <item>Ahmed</item>
+        <item>Giannis</item>
+        <item>Ola</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <!--creates an array to content_create_project spinner-->
 

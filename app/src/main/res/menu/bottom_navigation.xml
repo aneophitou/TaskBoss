@@ -11,14 +11,14 @@
         android:title="Notifications"></item>
 
     <item
-        android:id="@+id/nav_assign"
-        android:icon="@drawable/ic_assign_me_black_24dp"
-        android:title="Assigned To Me"></item>
+        android:id="@+id/nav_tasks"
+        android:icon="@drawable/ic_tasks_black_24dp"
+        android:title="Tasks"></item>
 
     <item
-        android:id="@+id/nav_calendar"
-        android:icon="@drawable/ic_calendar_black_24dp"
-        android:title="Events Calendar"></item>
+        android:id="@+id/nav_settings"
+        android:icon="@drawable/ic_settings_black_24dp"
+        android:title="Settings"></item>
 
 
 </menu>
