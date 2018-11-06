@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.taskboss.euc.taskboss">
-
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/icons8_task_planning_100"
@@ -72,14 +72,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.taskboss.euc.taskboss.MainActivity" />
         </activity>
-<<<<<<< HEAD
+
         <activity android:name=".ProjectActivity"></activity>
-=======
+
         <activity
             android:name=".AboutActivity"
             android:parentActivityName=".MainActivity"></activity>
         <activity android:name=".HelpActivity"></activity>
->>>>>>> f902310f4b2e7b4c7f8ead4e4df85147bb27fdc1
+
     </application>
 
 </manifest>
