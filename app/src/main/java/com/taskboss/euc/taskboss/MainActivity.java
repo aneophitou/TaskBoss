@@ -80,8 +80,6 @@ public class MainActivity extends AppCompatActivity {
         mViewPager.setAdapter(mPageAdapter);
         tabLayout.setupWithViewPager(mViewPager);
 
-        BottomNavigationView bottomNav = findViewById(R.id.bottom_nav);
-        bottomNav.setOnNavigationItemSelectedListener(navListener);
 
         // code to switch the top-left button to "ADD TASK" or "ADD EVENT" mode
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -145,6 +143,8 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item){
         int id=item.getItemId();
         if (id==R.id.profile_settings){
+            Intent i = new Intent(this, SettingsActivity.class);
+            startActivity(i);
             return true;
         }
         else if (id==R.id.log_out){
@@ -160,6 +160,16 @@ public class MainActivity extends AppCompatActivity {
         else if (id==R.id.action_help)
         {
             Intent i = new Intent(this, HelpActivity.class);
+            startActivity(i);
+        }
+        else if (id==R.id.nav_home)
+        {
+            Intent i = new Intent(this, ProjectActivity.class);
+            startActivity(i);
+        }
+        else if (id==R.id.nav_tasks)
+        {
+            Intent i = new Intent(this, MainActivity.class);
             startActivity(i);
         }
         return super.onOptionsItemSelected(item);
@@ -190,32 +200,4 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
-    //code for Bottom navigation view
-    private BottomNavigationView.OnNavigationItemSelectedListener navListener =
-            new BottomNavigationView.OnNavigationItemSelectedListener() {
-                @Override
-                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
-                    switch(item.getItemId()){
-                        case R.id.nav_home:
-                            startActivity(new Intent(MainActivity.this, ProjectActivity.class));
-
-                            break;
-                        case R.id.nav_notification:
-
-                            break;
-                        case R.id.nav_tasks:
-                            startActivity(new Intent(MainActivity.this, MainActivity.class));
-
-                            break;
-                        case R.id.nav_settings:
-                            startActivity(new Intent(MainActivity.this, SettingsActivity.class));
-
-                            break;
-                    }
-
-                    return true;
-                }
-            };
 }

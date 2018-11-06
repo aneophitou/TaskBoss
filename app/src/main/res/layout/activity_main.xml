@@ -49,24 +49,10 @@
     <android.support.v4.view.ViewPager
         android:id="@+id/pageview"
         android:layout_width="match_parent"
-        android:layout_height="426dp"
-        android:layout_above="@id/bottom_nav"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tabs"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_marginBottom="-2dp"
         />
-
-
-    <android.support.design.widget.BottomNavigationView
-        android:id="@+id/bottom_nav"
-        android:layout_width="match_parent"
-        android:layout_height="42dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="0dp"
-        android:background="?android:attr/windowBackground"
-        app:itemTextColor="@color/cardview_dark_background"
-        app:menu="@menu/bottom_navigation" />
-
-
 </RelativeLayout>
