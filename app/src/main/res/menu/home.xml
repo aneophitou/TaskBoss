@@ -21,9 +21,10 @@
             android:title="About"
             app:showAsAction="never" />
         <item
+            android:id="@+id/action_help"
             android:icon="@android:drawable/ic_menu_help"
             android:orderInCategory="3"
-            android:title="Help"
+            android:title="Help us"
             app:showAsAction="never" />
         <item
             android:id="@+id/log_out"

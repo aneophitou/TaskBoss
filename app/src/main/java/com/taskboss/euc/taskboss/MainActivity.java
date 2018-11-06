@@ -117,6 +117,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                     });
                 }
+
             }
 
             @Override
@@ -154,6 +155,11 @@ public class MainActivity extends AppCompatActivity {
         else if (id==R.id.action_about)
         {
             Intent i = new Intent(this, AboutActivity.class);
+            startActivity(i);
+        }
+        else if (id==R.id.action_help)
+        {
+            Intent i = new Intent(this, HelpActivity.class);
             startActivity(i);
         }
         return super.onOptionsItemSelected(item);
