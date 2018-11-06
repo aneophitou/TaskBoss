@@ -19,6 +19,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -145,9 +146,15 @@ public class MainActivity extends AppCompatActivity {
         if (id==R.id.action_settings){
             return true;
         }
-        if (id==R.id.log_out){
+        else if (id==R.id.log_out){
+            Toast.makeText(getApplicationContext(), "Logged Out",Toast.LENGTH_SHORT).show();
             startActivity(new Intent(MainActivity.this, LoginActivity.class));
             finish();
+        }
+        else if (id==R.id.action_about)
+        {
+            Intent i = new Intent(this, AboutActivity.class);
+            startActivity(i);
         }
         return super.onOptionsItemSelected(item);
     }
