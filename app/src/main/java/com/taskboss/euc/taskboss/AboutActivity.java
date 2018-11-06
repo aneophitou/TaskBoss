@@ -17,24 +17,24 @@ public class AboutActivity extends AppCompatActivity {
     }
     public void loadUrl(View v)
     {
-        WebView w = (WebView) findViewById(R.id.web);
+        WebView w = findViewById(R.id.web);
         w.setWebViewClient(new WebViewClient());
 
-        Button f = (Button) findViewById(R.id.facebook);
-        Button t = (Button) findViewById(R.id.twitter);
-        Button r = (Button) findViewById(R.id.reddit);
+        Button f = findViewById(R.id.facebook);
+        Button t = findViewById(R.id.twitter);
+        Button r = findViewById(R.id.reddit);
 
         if (f.getId() == v.getId())
         {
-            w.loadUrl(("http://www.facebook.com"));
+            w.loadUrl(("https://www.facebook.com"));
         }
         else if (t.getId() == v.getId())
         {
-            w.loadUrl(("http://twitter.com"));
+            w.loadUrl(("https://www.twitter.com"));
         }
         else if (r.getId() == v.getId())
         {
-            w.loadUrl(("http://reddit.com"));
+            w.loadUrl(("https://www.reddit.com"));
         }
 
 
