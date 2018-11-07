@@ -40,14 +40,6 @@ public class EventItem extends AppCompatActivity {
         DateText.setText(Date);
         DescriptionText.setText(Description);
 
-        FloatingActionButton fab = findViewById(R.id.AddEvent);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "** Note: This button will probably be removed **", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
