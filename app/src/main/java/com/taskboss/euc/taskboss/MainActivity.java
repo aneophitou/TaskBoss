@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.BottomNavigationView;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -30,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     ViewPager mViewPager;
     TabLayout tabLayout;
     Button SwitchActionButton;
-
+    FloatingActionButton fab;
     public class PageAdapter extends FragmentStatePagerAdapter {
         private final List<Fragment> fragmentList = new ArrayList<>();
         private final List<String> fragmentTitleList = new ArrayList<>();
@@ -70,7 +71,8 @@ public class MainActivity extends AppCompatActivity {
         mViewPager = findViewById(R.id.pageview);
         tabLayout = findViewById(R.id.tabs);
         Toolbar toolbar = findViewById(R.id.toolbar);
-        SwitchActionButton = findViewById(R.id.MainActionButton);
+        fab = findViewById(R.id.MainActionButton);
+        //SwitchActionButton = findViewById(R.id.MainActionButton);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(null);
         mPageAdapter = new PageAdapter(getSupportFragmentManager());
@@ -86,24 +88,27 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 if (tab.getPosition() == 0) {
-                    SwitchActionButton.setText("Add Task");
-                    SwitchActionButton.setOnClickListener(new View.OnClickListener() {
+          //          SwitchActionButton.setText("Add Task");
+            //        SwitchActionButton.setOnClickListener(new View.OnClickListener() {
+                    fab.setOnClickListener(new View.OnClickListener(){
                         @Override
                         public void onClick(View view) {
                             startActivity(new Intent(MainActivity.this, create_task.class));
                         }
                     });
                 } else if (tab.getPosition() == 1) {
-                    SwitchActionButton.setText("Add Task");
-                    SwitchActionButton.setOnClickListener(new View.OnClickListener() {
+                    //SwitchActionButton.setText("Add Task");
+                    //SwitchActionButton.setOnClickListener(new View.OnClickListener() {
+                    fab.setOnClickListener(new View.OnClickListener(){
                         @Override
                         public void onClick(View view) {
                             startActivity(new Intent(MainActivity.this, create_task.class));
                         }
                     });
                 } else if (tab.getPosition() == 2) {
-                    SwitchActionButton.setText("Add Event");
-                    SwitchActionButton.setOnClickListener(new View.OnClickListener() {
+                    //SwitchActionButton.setText("Add Event");
+                    //SwitchActionButton.setOnClickListener(new View.OnClickListener() {
+                    fab.setOnClickListener(new View.OnClickListener(){
                         @Override
                         public void onClick(View view) {
                             startActivity(new Intent(MainActivity.this, create_event.class));

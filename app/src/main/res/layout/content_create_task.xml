@@ -48,10 +48,10 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="310dp"
         android:entries="@array/AssignToIndividualList"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="338dp"
         android:prompt="@string/SpinnerDefaultValue"
-        android:spinnerMode="dialog" />
+        android:spinnerMode="dialog"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="338dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -135,12 +135,5 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="340dp"
         android:text="Switch" />
-
-    <com.google.android.gms.maps.MapView
-        android:layout_width="356dp"
-        android:layout_height="97dp"
-        android:layout_below="@+id/switch1"
-        android:layout_alignTop="@+id/editTxtPass"
-        android:layout_marginTop="130dp" />
 
 </RelativeLayout>

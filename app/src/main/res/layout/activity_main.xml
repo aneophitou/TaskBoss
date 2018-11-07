@@ -17,15 +17,25 @@
         android:gravity="top"
         android:minHeight="?attr/actionBarSize">
 
-        <Button
-
-            android:id="@+id/MainActionButton"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:onClick="createTask"
-            android:text="Add Task" />
-
     </android.support.v7.widget.Toolbar>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/MainActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="28dp"
+        android:layout_marginRight="35dp"
+        android:layout_marginBottom="35dp"
+        android:onClick="createTask"
+        android:src="@drawable/add"
+        app:backgroundTintMode="src_over"
+        app:elevation="1dp"
+        app:rippleColor="@color/TextColor">
+
+    </android.support.design.widget.FloatingActionButton>
 
     <android.support.design.widget.TabLayout
         android:id="@+id/tabs"
@@ -56,6 +66,9 @@
         android:layout_alignParentLeft="true"
         android:layout_marginBottom="-2dp"
 
-        android:background="@drawable/bgrepeat" />
+        android:background="@drawable/bgrepeat" >
+
+    </android.support.v4.view.ViewPager>
+
 
 </RelativeLayout>

@@ -11,12 +11,6 @@
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay">
 
-        <Button
-            android:id="@+id/btnSubmit"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Button" />
-
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
@@ -26,13 +20,18 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_create_task" />
+    <include
+        android:id="@+id/include"
+        layout="@layout/content_create_task"
+        android:layout_height="467dp"
+        android:layout_width="match_parent" />
 
-    <android.support.design.widget.FloatingActionButton
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/btnSubmit"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@drawable/add" />
+        android:text="Button"
+        app:layout_anchor="@+id/include"
+        app:layout_anchorGravity="bottom|center" />
 
 </android.support.design.widget.CoordinatorLayout>
