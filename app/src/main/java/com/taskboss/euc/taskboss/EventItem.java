@@ -1,12 +1,9 @@
 package com.taskboss.euc.taskboss;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.InputType;
-import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -20,7 +17,7 @@ public class EventItem extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        EditText ActionDoneKeyboard = findViewById(R.id.DescriptionText);
+        EditText ActionDoneKeyboard = findViewById(R.id.editTxtUsername);
 
         ActionDoneKeyboard.setImeOptions(EditorInfo.IME_ACTION_DONE);
         ActionDoneKeyboard.setRawInputType(InputType.TYPE_CLASS_TEXT);
@@ -33,7 +30,7 @@ public class EventItem extends AppCompatActivity {
         TextView TitleText = this.findViewById(R.id.Title);
         TextView PlaceText = this.findViewById(R.id.Place);
         TextView DateText = this.findViewById(R.id.editTxtPass);
-        TextView DescriptionText = this.findViewById(R.id.DescriptionText);
+        TextView DescriptionText = this.findViewById(R.id.editTxtUsername);
 
         TitleText.setText(Title);
         PlaceText.setText(Place);

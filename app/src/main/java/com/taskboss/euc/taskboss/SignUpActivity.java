@@ -1,20 +1,26 @@
 package com.taskboss.euc.taskboss;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class SignUpActivity extends AppCompatActivity {
 
+    TextView PassLabel;
+
     EditText UsernameField;
     EditText PasswordField;
     EditText PasswordCheck;
+
     Button CreateButton;
     String Username = "";
     String Password = "";
@@ -22,6 +28,10 @@ public class SignUpActivity extends AppCompatActivity {
 
     Handler setDelay;
     Runnable startDelay;
+    Bundle bundle;
+
+    String ActivityName = "-1";
+    String TextSwitch = "Creating Account...";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,10 +45,28 @@ public class SignUpActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-        CreateButton = findViewById(R.id.button1);
-        UsernameField = findViewById(R.id.DescriptionText);
+        CreateButton = findViewById(R.id.btnCreateAccount);
+        UsernameField = findViewById(R.id.editTxtUsername);
         PasswordField = findViewById(R.id.editTxtPass);
-        PasswordCheck = findViewById(R.id.Time);
+        PasswordCheck = findViewById(R.id.editTxtPassCheck);
+        PassLabel = findViewById(R.id.txtPassword);
+
+        bundle = getIntent().getExtras();
+
+        if(ActivityName.equals("FORGOT_PASS") && bundle != null)
+        {
+            ActivityName = bundle.getString("ACTIVITY_NAME");
+            String RecoverUser = bundle.getString("USERNAME_KEY");
+
+            UsernameField.setText(RecoverUser);
+            UsernameField.setEnabled(false);
+            UsernameField.setBackgroundResource(R.drawable.greying_field);
+            UsernameField.setTextColor(Color.parseColor("#ffffff"));
+            UsernameField.setGravity(Gravity.CENTER);
+            PassLabel.setText("New Password");
+            CreateButton.setText("Recover Account");
+            TextSwitch = "Recovery Succeeded!";
+        }
 
         CreateButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,7 +74,8 @@ public class SignUpActivity extends AppCompatActivity {
                 startDelay =  new Runnable() {
                     @Override
                     public void run() {
-                        startActivity(new Intent(SignUpActivity.this, MainActivity.class));
+                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                        startActivity(intent);
                         finish();
                     }
                 };
@@ -57,7 +86,7 @@ public class SignUpActivity extends AppCompatActivity {
 
                 if(Password.equals(PasswordVerify) && !Username.equals("") && (!Password.equals("") && !PasswordVerify.equals(""))) {
 
-                    Toast.makeText(getApplicationContext(),"Creating Account...",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),TextSwitch,Toast.LENGTH_SHORT).show();
                     setDelay.postDelayed(startDelay, 1000);
                 }
                 else if(!Password.equals(PasswordVerify) && !Username.equals("")){ // Check if Password = PasswordVerify && Username = ""

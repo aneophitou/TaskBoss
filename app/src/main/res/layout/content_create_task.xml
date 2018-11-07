@@ -17,13 +17,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/txtTaskName"
-        android:layout_alignStart="@id/DescriptionText"
-        android:layout_alignLeft="@id/DescriptionText"
+        android:layout_alignStart="@id/editTxtUsername"
+        android:layout_alignLeft="@id/editTxtUsername"
         android:layout_marginTop="35dp"
         android:text="Description" />
 
     <EditText
-        android:id="@+id/DescriptionText"
+        android:id="@+id/editTxtUsername"
         android:layout_width="355dp"
         android:layout_height="115dp"
         android:layout_alignParentStart="true"
@@ -56,8 +56,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/Time"
-        android:layout_alignLeft="@+id/Time"
+        android:layout_alignStart="@+id/editTxtPassCheck"
+        android:layout_alignLeft="@+id/editTxtPassCheck"
         android:layout_marginTop="230dp"
         android:layout_marginBottom="11dp"
         android:text="Time"
@@ -65,7 +65,7 @@
         tools:layout_editor_absoluteY="144dp" />
 
     <TextView
-        android:id="@+id/DateTextView"
+        android:id="@+id/txtPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/editTxtPass"
@@ -92,7 +92,7 @@
         tools:layout_editor_absoluteY="160dp" />
 
     <EditText
-        android:id="@+id/Time"
+        android:id="@+id/editTxtPassCheck"
         android:layout_width="129dp"
         android:layout_height="45dp"
         android:layout_alignParentStart="true"
@@ -113,8 +113,8 @@
         android:id="@+id/txtTaskName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/DescriptionText"
-        android:layout_alignRight="@+id/DescriptionText"
+        android:layout_alignEnd="@+id/editTxtUsername"
+        android:layout_alignRight="@+id/editTxtUsername"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"

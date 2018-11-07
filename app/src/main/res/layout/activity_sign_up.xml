@@ -33,7 +33,7 @@
         android:textStyle="bold" />
     -->
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/txtUsername"
         android:layout_width="150dp"
         android:layout_height="40dp"
         android:layout_alignParentStart="true"
@@ -51,10 +51,10 @@
         android:textSize="30sp" />
 
     <EditText
-        android:id="@+id/DescriptionText"
+        android:id="@+id/editTxtUsername"
         android:layout_width="wrap_content"
         android:layout_height="45dp"
-        android:layout_below="@+id/textView2"
+        android:layout_below="@+id/txtUsername"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentEnd="true"
@@ -72,8 +72,8 @@
         android:textSize="22sp" />
 
     <TextView
-        android:id="@+id/DateTextView"
-        android:layout_width="150dp"
+        android:id="@+id/txtPassword"
+        android:layout_width="230dp"
         android:layout_height="40dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
@@ -93,7 +93,7 @@
         android:id="@+id/editTxtPass"
         android:layout_width="wrap_content"
         android:layout_height="45dp"
-        android:layout_below="@+id/DateTextView"
+        android:layout_below="@+id/txtPassword"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentEnd="true"
@@ -104,14 +104,14 @@
         android:layout_marginEnd="62dp"
         android:layout_marginRight="62dp"
         android:background="@drawable/radius_corners"
-        android:paddingLeft="15dp"
         android:ems="10"
-        android:inputType="textPassword"
         android:imeOptions="actionDone"
+        android:inputType="textPassword"
+        android:paddingLeft="15dp"
         android:textSize="22sp" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/txtPassCheck"
         android:layout_width="230dp"
         android:layout_height="40dp"
         android:layout_below="@+id/editTxtPass"
@@ -130,11 +130,11 @@
         android:textSize="30sp" />
 
     <EditText
-        android:id="@+id/Time"
+        android:id="@+id/editTxtPassCheck"
         android:layout_width="wrap_content"
         android:layout_height="45dp"
-        android:layout_above="@+id/button1"
-        android:layout_below="@+id/textView4"
+        android:layout_above="@+id/btnCreateAccount"
+        android:layout_below="@+id/txtPassCheck"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentEnd="true"
@@ -153,7 +153,7 @@
         android:textSize="22sp" />
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/btnCreateAccount"
         android:layout_width="147dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
