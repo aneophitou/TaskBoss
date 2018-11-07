@@ -33,7 +33,7 @@
         android:layout_height="130dp"
         android:gravity="center"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/DescriptionText"
+        app:layout_constraintBottom_toTopOf="@+id/editTxtUsername"
         app:layout_constraintTop_toBottomOf="@id/Title">
 
         <TextView
@@ -68,7 +68,7 @@
     </LinearLayout>
 
     <EditText
-        android:id="@+id/DescriptionText"
+        android:id="@+id/editTxtUsername"
         android:layout_width="match_parent"
         android:layout_height="180dp"
         android:hint="Description"
@@ -87,8 +87,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@id/button1"
-        app:layout_constraintTop_toBottomOf="@+id/DescriptionText"
+        app:layout_constraintBottom_toTopOf="@id/btnCreateAccount"
+        app:layout_constraintTop_toBottomOf="@+id/editTxtUsername"
         android:background="@drawable/event_item_title"
         >
 
@@ -118,7 +118,7 @@
     </RadioGroup>
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/btnCreateAccount"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:text="Send Attendance"

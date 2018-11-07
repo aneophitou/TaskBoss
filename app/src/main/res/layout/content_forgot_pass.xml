@@ -67,46 +67,46 @@
         android:textColor="#ffff"/>
 
     <RadioGroup
+        android:id="@+id/radioGroup"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_gravity="center"
         android:layout_marginBottom="20dp"
-        android:background="@drawable/event_item_title">
+        android:background="@drawable/event_item_title"
+        android:orientation="horizontal">
 
         <RadioButton
             android:id="@+id/radioButton1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Country"
             android:gravity="center"
-            android:textSize="18dp"
+            android:text="Country"
             android:textColor="#ffff"
-            />
+            android:textSize="18dp" />
 
         <RadioButton
             android:id="@+id/radioButton2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Birthday"
             android:gravity="center"
-            android:textSize="18dp"
-            android:textColor="#ffff"/>
+            android:text="Birthday"
+            android:textColor="#ffff"
+            android:textSize="18dp" />
 
     </RadioGroup>
 
     <TextView
         android:id="@+id/txtQuestion"
         android:layout_width="240dp"
-        android:layout_height="wrap_content"
-        android:text="Choose a security question for recovery!"
-        android:textSize="20sp"
+        android:layout_height="60dp"
         android:layout_gravity="center"
-        android:gravity="center"
         android:layout_marginBottom="20dp"
-        android:textColor="#ffff"/>
+        android:gravity="center"
+        android:text="Choose a security question for recovery!"
+        android:textColor="#ffff"
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/editTxtEnterAnswer"
@@ -116,12 +116,12 @@
         android:hint="Answer"
         android:paddingLeft="10dp"
         android:inputType="textPersonName"
-        android:layout_marginBottom="25dp"
+        android:layout_marginBottom="50dp"
         android:layout_gravity="center"
         android:background="@drawable/radius_corners"/>
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/btnCreateAccount"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"

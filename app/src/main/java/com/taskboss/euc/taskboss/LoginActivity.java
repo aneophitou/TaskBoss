@@ -15,10 +15,9 @@ import android.widget.Toast;
 public class LoginActivity extends Activity {
 
     private static final String TAG = "LoginActivity";
-//    private static final android.R.attr R = ;
 
     //    TextView mytv;
-//    Typeface myfont;
+    //    Typeface myfont;
     Button LognInButton;
     EditText UsernameField;
     EditText PasswordField;
@@ -49,7 +48,7 @@ public class LoginActivity extends Activity {
 //        mytv.setTypeface(myfont);
 
         LognInButton = findViewById(R.id.button);
-        UsernameField = findViewById(R.id.DescriptionText);
+        UsernameField = findViewById(R.id.editTxtUsername);
         PasswordField = findViewById(R.id.editTxtPass);
 
         LognInButton.setOnClickListener(new View.OnClickListener() {
@@ -58,7 +57,8 @@ public class LoginActivity extends Activity {
                 startDelay =  new Runnable() {
                     @Override
                     public void run() {
-                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                        startActivity(intent);
                         finish();
                     }
                 };
@@ -79,6 +79,7 @@ public class LoginActivity extends Activity {
 
     public void ForgotPass(View v)
     {
-        startActivity(new Intent(LoginActivity.this, ForgotPassActivity.class));
+        Intent intent = new Intent(getApplicationContext(), ForgotPassActivity.class);
+        startActivity(intent);
     }
 }
