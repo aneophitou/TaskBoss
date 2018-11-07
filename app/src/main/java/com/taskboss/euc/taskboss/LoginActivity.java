@@ -38,7 +38,7 @@ public class LoginActivity extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_login);
         Log.d(TAG, "onCreate: started.");
-        ImageView firstImage = findViewById(R.id.imageView1);
+        ImageView firstImage = findViewById(R.id.AppImage);
         setDelay = new Handler();
 
         int imageResourse = getResources().getIdentifier("@drawable/icons8_task_planning_100", null, this.getPackageName());
@@ -50,7 +50,7 @@ public class LoginActivity extends Activity {
 
         LognInButton = findViewById(R.id.button);
         UsernameField = findViewById(R.id.DescriptionText);
-        PasswordField = findViewById(R.id.Date);
+        PasswordField = findViewById(R.id.editTxtPass);
 
         LognInButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,5 +75,10 @@ public class LoginActivity extends Activity {
                 }
             }
         });
+    }
+
+    public void ForgotPass(View v)
+    {
+        startActivity(new Intent(LoginActivity.this, ForgotPassActivity.class));
     }
 }

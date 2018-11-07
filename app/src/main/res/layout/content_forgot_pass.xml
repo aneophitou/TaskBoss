@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".ForgotPassActivity"
+    tools:showIn="@layout/activity_forgot_pass"
+    android:padding="10dp"
+    android:orientation="vertical"
+    android:background="@drawable/gradient">
+
+
+    <TextView
+        android:id="@+id/txtRecoveryEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter recovery email"
+        android:textSize="22sp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
+        android:textColor="#ffff"/>
+
+    <EditText
+        android:id="@+id/editTxtEmail"
+        android:layout_width="330dp"
+        android:layout_height="30dp"
+        android:ems="10"
+        android:hint="Email"
+        android:paddingLeft="10dp"
+        android:inputType="textEmailAddress"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/radius_corners"/>
+
+    <TextView
+        android:id="@+id/txtEnterUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter Username"
+        android:textSize="22sp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
+        android:textColor="#ffff"/>
+
+    <EditText
+        android:id="@+id/editTxtUsername"
+        android:layout_width="330dp"
+        android:layout_height="30dp"
+        android:ems="10"
+        android:hint="Username"
+        android:paddingLeft="10dp"
+        android:inputType="textPersonName"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/radius_corners"/>
+
+    <TextView
+        android:id="@+id/txtSecurityQuestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Security Question"
+        android:textSize="22sp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:textColor="#ffff"/>
+
+    <RadioGroup
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/event_item_title">
+
+        <RadioButton
+            android:id="@+id/radioButton1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Country"
+            android:gravity="center"
+            android:textSize="18dp"
+            android:textColor="#ffff"
+            />
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Birthday"
+            android:gravity="center"
+            android:textSize="18dp"
+            android:textColor="#ffff"/>
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/txtQuestion"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:text="Choose a security question for recovery!"
+        android:textSize="20sp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginBottom="20dp"
+        android:textColor="#ffff"/>
+
+    <EditText
+        android:id="@+id/editTxtEnterAnswer"
+        android:layout_width="300dp"
+        android:layout_height="30dp"
+        android:ems="10"
+        android:hint="Answer"
+        android:paddingLeft="10dp"
+        android:inputType="textPersonName"
+        android:layout_marginBottom="25dp"
+        android:layout_gravity="center"
+        android:background="@drawable/radius_corners"/>
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="submit"
+        android:background="@drawable/login_button"
+        android:textColor="#ffff"/>
+
+</LinearLayout>

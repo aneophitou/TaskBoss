@@ -11,8 +11,6 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import java.util.Date;
-
 public class EventItem extends AppCompatActivity {
 
     @Override
@@ -34,7 +32,7 @@ public class EventItem extends AppCompatActivity {
 
         TextView TitleText = this.findViewById(R.id.Title);
         TextView PlaceText = this.findViewById(R.id.Place);
-        TextView DateText = this.findViewById(R.id.Date);
+        TextView DateText = this.findViewById(R.id.editTxtPass);
         TextView DescriptionText = this.findViewById(R.id.DescriptionText);
 
         TitleText.setText(Title);

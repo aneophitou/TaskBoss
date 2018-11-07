@@ -37,7 +37,7 @@
         app:layout_constraintTop_toBottomOf="@id/Title">
 
         <TextView
-            android:id="@+id/Date"
+            android:id="@+id/editTxtPass"
             android:layout_width="match_parent"
             android:layout_height="120dp"
             android:hint="Date"

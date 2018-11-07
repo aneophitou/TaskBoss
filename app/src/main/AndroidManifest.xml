@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.taskboss.euc.taskboss">
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/icons8_task_planning_100"
@@ -72,14 +74,20 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.taskboss.euc.taskboss.MainActivity" />
         </activity>
-
-        <activity android:name=".ProjectActivity"></activity>
-
+        <activity android:name=".ProjectActivity" />
         <activity
             android:name=".AboutActivity"
-            android:parentActivityName=".MainActivity"></activity>
-        <activity android:name=".HelpActivity"></activity>
-
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".HelpActivity" />
+        <activity
+            android:name=".ForgotPassActivity"
+            android:label="@string/title_activity_forgot_pass"
+            android:parentActivityName=".LoginActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.taskboss.euc.taskboss.LoginActivity" />
+        </activity>
     </application>
 
 </manifest>

@@ -37,7 +37,7 @@ public class SignUpActivity extends AppCompatActivity {
 
         CreateButton = findViewById(R.id.button1);
         UsernameField = findViewById(R.id.DescriptionText);
-        PasswordField = findViewById(R.id.Date);
+        PasswordField = findViewById(R.id.editTxtPass);
         PasswordCheck = findViewById(R.id.Time);
 
         CreateButton.setOnClickListener(new View.OnClickListener() {
@@ -47,6 +47,7 @@ public class SignUpActivity extends AppCompatActivity {
                     @Override
                     public void run() {
                         startActivity(new Intent(SignUpActivity.this, MainActivity.class));
+                        finish();
                     }
                 };
 

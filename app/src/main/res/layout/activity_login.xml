@@ -9,9 +9,9 @@
     tools:context=".LoginActivity">
 
     <ImageView
-        android:id="@+id/imageView1"
+        android:id="@+id/AppImage"
         android:layout_width="130dp"
-        android:layout_alignRight="@id/TextView3"
+        android:layout_alignRight="@id/txtCreateAccountLabel"
         android:layout_height="120dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
@@ -32,7 +32,7 @@
         android:id="@+id/DescriptionText"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:layout_below="@+id/imageView1"
+        android:layout_below="@+id/AppImage"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentEnd="true"
@@ -52,7 +52,7 @@
         android:textSize="22sp" />
 
     <EditText
-        android:id="@+id/Date"
+        android:id="@+id/editTxtPass"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_below="@+id/DescriptionText"
@@ -78,7 +78,7 @@
         android:id="@+id/button"
         android:layout_width="80dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/Date"
+        android:layout_below="@+id/editTxtPass"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
@@ -98,6 +98,7 @@
         android:textStyle="bold" />
 
     <TextView
+        android:id="@+id/btnCreateAccount"
         android:layout_width="wrap_content"
         android:layout_height="65dp"
         android:layout_below="@+id/txtTaskName"
@@ -119,6 +120,7 @@
         android:textStyle="bold" />
 
     <TextView
+        android:id="@+id/txtTitle"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_alignParentStart="true"
@@ -135,10 +137,10 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/TextView3"
+        android:id="@+id/txtCreateAccountLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/Date"
+        android:layout_below="@+id/editTxtPass"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentEnd="true"
@@ -155,9 +157,10 @@
         android:textColor="#dfe9ff" />
 
     <TextView
+        android:id="@+id/btnforgotPass"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
-        android:layout_below="@+id/Date"
+        android:layout_below="@+id/editTxtPass"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentEnd="true"
@@ -168,17 +171,18 @@
         android:layout_marginEnd="210dp"
         android:layout_marginRight="210dp"
         android:background="@drawable/login_button"
-        android:clickable="true"
         android:gravity="center"
+        android:onClick="ForgotPass"
         android:text="Forgot Password?"
         android:textColor="#dfe9ff"
         android:textSize="15sp"
         android:textStyle="bold" />
 
     <ImageView
+        android:id="@+id/LeftTxtBar"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_alignLeft="@id/TextView3"
+        android:layout_alignLeft="@id/txtCreateAccountLabel"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
@@ -195,9 +199,10 @@
         android:src="@drawable/line" />
 
     <ImageView
+        android:id="@+id/RightTxtBar"
         android:layout_width="wrap_content"
         android:layout_height="2dp"
-        android:layout_alignRight="@id/TextView3"
+        android:layout_alignRight="@id/txtCreateAccountLabel"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
