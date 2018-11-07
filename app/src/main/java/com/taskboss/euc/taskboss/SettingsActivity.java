@@ -14,38 +14,6 @@ public class SettingsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
-        //
-
-
     }
 
-    //code for Bottom navigation view
-    private BottomNavigationView.OnNavigationItemSelectedListener navListener =
-            new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-
-                @Override
-                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
-                    switch(item.getItemId()){
-                        case R.id.nav_home:
-                            startActivity(new Intent(SettingsActivity.this, ProjectActivity.class));
-
-                            break;
-                        case R.id.nav_notification:
-
-                            break;
-                        case R.id.nav_tasks:
-                            startActivity(new Intent(SettingsActivity.this, MainActivity.class));
-
-                            break;
-                        case R.id.nav_settings:
-                            startActivity(new Intent(SettingsActivity.this, SettingsActivity.class));
-
-                            break;
-                    }
-
-                    return true;
-                }
-            };
 }

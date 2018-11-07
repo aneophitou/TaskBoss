@@ -10,21 +10,21 @@
             app:actionViewClass="android.widget.SearchView"
             app:showAsAction="always"/>
         <item
-            android:id="@+id/projectHome"
+            android:id="@+id/nav_home"
             android:icon="@drawable/ic_home_black_24dp"
+            android:title="Projects"
             android:orderInCategory="1"
-            android:title="Home"
             app:showAsAction="always"/>
         <item
-            android:id="@+id/profile_settings"
-            android:orderInCategory="1"
-            android:title="@string/action_settings"
-
-            app:showAsAction="never" />
+            android:id="@+id/nav_tasks"
+            android:icon="@drawable/ic_tasks_black_24dp"
+            android:title="Tasks"/>
         <item
-
+            android:id="@+id/profile_settings"
+            android:title="Settings" />
+        <item
             android:id="@+id/nav_about"
-                    android:orderInCategory="2"
+            android:orderInCategory="2"
             android:title="About"
             app:showAsAction="never" />
         <item
