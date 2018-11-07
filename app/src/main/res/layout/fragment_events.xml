@@ -11,7 +11,10 @@
         android:id="@+id/calendarView"
         android:layout_width="match_parent"
         android:layout_height="295dp"
-        android:scrollbarAlwaysDrawVerticalTrack="true">
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:dateTextAppearance="@style/CalendarViewText"
+        android:weekDayTextAppearance="@style/CalendarViewTextAlternate"
+        >
 
     </CalendarView>
 
@@ -20,10 +23,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:text="Events for:" />
+        android:text="Events for:"
+        android:textColor="@color/TextColor"
+        android:textStyle="bold" />
 
     <ListView
         android:id="@+id/ListView"
         android:layout_width="match_parent"
-        android:layout_height="209dp"></ListView>
+        android:layout_height="209dp"
+        >
+
+    </ListView>
 </LinearLayout>

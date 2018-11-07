@@ -2,6 +2,7 @@ package com.taskboss.euc.taskboss;
 
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
@@ -90,8 +91,9 @@ public class eventsFragment extends Fragment {
                     startActivity(intent);
                 }
             });
-        txtDate = (TextView) view.findViewById(R.id.txtTodaysEvents);
-        calendarView = (CalendarView) view.findViewById(R.id.calendarView);
+        txtDate = view.findViewById(R.id.txtTodaysEvents);
+        calendarView = view.findViewById(R.id.calendarView);
+
         calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {

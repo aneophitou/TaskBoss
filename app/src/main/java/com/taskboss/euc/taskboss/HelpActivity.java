@@ -17,8 +17,8 @@ public class HelpActivity extends AppCompatActivity {
     }
     public void rateMessage(View v)
     {
-        RatingBar r = (RatingBar) findViewById(R.id.ratingBar);
-        TextView t = (TextView) findViewById(R.id.rateText);
+        RatingBar r = findViewById(R.id.ratingBar);
+        TextView t = findViewById(R.id.rateText);
 
         if (r.getRating() > 3)
         {
