@@ -18,5 +18,10 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
-
+    <style name="CalendarViewText" parent = "TextAppearance.AppCompat.Button">
+        <item name="android:textColor">@color/TextColor</item>
+    </style>
+    <style name="CalendarViewTextAlternate" parent = "TextAppearance.AppCompat.Button">
+        <item name="android:textColor">@color/TextColorAlternate</item>
+    </style>
 </resources>

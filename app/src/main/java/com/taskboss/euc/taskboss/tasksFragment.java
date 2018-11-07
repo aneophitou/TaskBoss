@@ -51,13 +51,7 @@ ArrayList<String> PRIORITIES = new ArrayList<String>(Arrays.asList("1","2","3"))
             }
         };
         listView.setAdapter(adapter);
-//        Bundle bundle = this.getArguments();
-//        if (bundle!= null) {
-//            TASKS.add(bundle.getString("title"));
-//            adapter.notifyDataSetChanged();
-//
-//            Log.e("added",bundle.getString("title"));
-//        }
+
         //code to handle clicks of the items in the list
         listView.setOnItemClickListener( new AdapterView.OnItemClickListener(){
             @Override

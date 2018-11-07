@@ -1,28 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/taskFragmentFrame"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".tasksFragment"
-    android:background="@color/colorPrimary"
-    android:id="@+id/taskFragmentFrame">
+    tools:context=".tasksFragment">
 
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
         <ListView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
             android:id="@+id/taskList"
-            >
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
 
         </ListView>
 
-        </LinearLayout>
+    </LinearLayout>
 
 
 </FrameLayout>
