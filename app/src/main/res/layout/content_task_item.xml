@@ -22,7 +22,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
@@ -32,38 +32,38 @@
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="@+id/txtResolution"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.642"
+        app:layout_constraintHorizontal_bias="0.714"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/txtResolution"
-        android:layout_width="match_parent"
-        android:layout_height="140dp"
+        android:layout_width="347dp"
+        android:layout_height="110dp"
         android:layout_alignStart="@+id/txtTaskTitle"
+        android:layout_alignLeft="@+id/txtTaskTitle"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
+        android:layout_marginTop="312dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:ems="10"
-        android:inputType="textMultiLine"
-        android:imeOptions="actionDone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.421"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_alignLeft="@+id/txtTaskTitle"
         android:background="@drawable/radius_corners"
-        android:hint="Resolution"/>
+        android:ems="10"
+        android:hint="Resolution"
+        android:imeOptions="actionDone"
+        android:inputType="textMultiLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <EditText
         android:id="@+id/txtDescription"
-        android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_width="344dp"
+        android:layout_height="106dp"
         android:layout_below="@id/txtTaskTitle"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
@@ -72,21 +72,19 @@
         android:layout_alignParentRight="true"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="200dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
         android:background="@drawable/radius_corners"
         android:ems="10"
         android:hint="Description"
         android:imeOptions="actionDone"
         android:inputType="textMultiLine"
         android:padding="10dp"
-        app:layout_constraintBottom_toBottomOf="@+id/txtResolution"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.661" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/txtDate"
@@ -133,66 +131,57 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="32dp"
+        android:layout_width="281dp"
+        android:layout_height="23dp"
         android:layout_below="@+id/txtDescription"
         android:layout_alignStart="@+id/txtTaskTitle"
+        android:layout_alignLeft="@+id/txtTaskTitle"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="48dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
         android:ems="10"
         android:text="Due Date"
         android:textColor="#ffffff"
-        android:textSize="24dp"
-        app:layout_constraintBottom_toBottomOf="@+id/txtResolution"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtTaskTitle"
-        app:layout_constraintVertical_bias="0.0"
-        android:layout_alignLeft="@+id/txtTaskTitle" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="45dp"
         android:layout_alignStart="@+id/txtDescription"
+        android:layout_alignLeft="@+id/txtDescription"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
         android:onClick="closeTask"
         android:text="Close Task"
-        app:layout_constraintBottom_toTopOf="@+id/txtTaskTitle"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        android:layout_alignLeft="@+id/txtDescription" />
+        app:layout_constraintTop_toBottomOf="@+id/txtResolution" />
 
     <Spinner
         android:id="@+id/spinnerAssign"
-        android:layout_width="155dp"
-        android:layout_height="45dp"
+        android:layout_width="128dp"
+        android:layout_height="52dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginBottom="8dp"
         android:background="@android:drawable/spinner_dropdown_background"
         android:spinnerMode="dropdown"
-        app:layout_constraintBottom_toTopOf="@+id/txtTaskTitle"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.414"
+        app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/txtResolution" />
 
 
     <RadioGroup
@@ -202,15 +191,14 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="16dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/txtDescription"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/PriorityTextView">
+        app:layout_constraintHorizontal_bias="0.35"
+        app:layout_constraintStart_toStartOf="parent">
 
         <RadioButton
             android:id="@+id/rbLow"
@@ -239,16 +227,16 @@
         android:layout_width="159dp"
         android:layout_height="30dp"
         android:layout_alignStart="@+id/txtDate"
+        android:layout_alignLeft="@+id/txtDate"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:text="Priority"
         android:textColor="@android:color/white"
-        android:textSize="24dp"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtDate"
-        android:layout_alignLeft="@+id/txtDate" />
+        app:layout_constraintTop_toBottomOf="@+id/txtDate" />
 
     <Switch
         android:layout_width="149dp"
@@ -266,6 +254,22 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/PriorityTextView"
         app:layout_constraintTop_toBottomOf="@+id/txtTime" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="Assigned To:"
+        android:textColor="#fff"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/spinnerAssign"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtResolution" />
 
 
 </android.support.constraint.ConstraintLayout>

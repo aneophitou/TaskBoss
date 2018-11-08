@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
         fab = findViewById(R.id.MainActionButton);
         //SwitchActionButton = findViewById(R.id.MainActionButton);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle(null);
+        getSupportActionBar().setTitle("TaskBoss");
         mPageAdapter = new PageAdapter(getSupportFragmentManager());
         mPageAdapter.addFragment(new tasksFragment(), "Assigned Tasks");
         mPageAdapter.addFragment(new allTasksFragment(), "All Tasks");

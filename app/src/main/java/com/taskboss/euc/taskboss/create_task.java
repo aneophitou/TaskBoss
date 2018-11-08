@@ -23,6 +23,7 @@ public class create_task extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         Spinner spinner = findViewById(R.id.spinner);
+
         Button btnSubmit = findViewById(R.id.btnSubmit);
         btnSubmit.setOnClickListener(new View.OnClickListener(){
 

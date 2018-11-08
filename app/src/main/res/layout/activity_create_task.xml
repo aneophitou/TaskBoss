@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".create_task">
+    tools:context=".create_task"
+    android:orientation="vertical">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -23,15 +24,13 @@
     <include
         android:id="@+id/include"
         layout="@layout/content_create_task"
-        android:layout_height="467dp"
-        android:layout_width="match_parent" />
-
-    <Button
-        android:id="@+id/btnSubmit"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        app:layout_anchor="@+id/include"
-        app:layout_anchorGravity="bottom|center" />
+        android:layout_height="match_parent"
+        >
 
-</android.support.design.widget.CoordinatorLayout>
+
+    </include>
+
+
+
+</LinearLayout>

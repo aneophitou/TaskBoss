@@ -33,6 +33,12 @@ String[] MEMBERS = {"Andreas", "Giannis", "Ahmed", "Ola","Assign this task"};
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_task_item);
 
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar2);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Currently Viewing Task");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+toolbar.setTitle("Currently Viewing Task");
+
         EditText ActionDoneKeyboard = findViewById(R.id.txtDescription);
 
         ActionDoneKeyboard.setImeOptions(EditorInfo.IME_ACTION_DONE);
