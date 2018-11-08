@@ -7,13 +7,24 @@
     android:background="#e68f8f"
     tools:context=".AboutActivity">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar3"
+        android:layout_width="match_parent"
+        android:layout_height="41dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        android:layout_alignParentLeft="true" />
+
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="82dp"
+        android:layout_marginTop="124dp"
         android:layout_marginRight="10dp"
         android:text="If you want to find more about us visit our"
         android:textAllCaps="false"
@@ -29,7 +40,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="11dp"
+        android:layout_marginTop="45dp"
         android:layout_marginRight="10dp"
         android:text="We are a group of students that will help you manage your tasks with out very simple and powerful app..."
         android:textAllCaps="false"
@@ -47,7 +58,7 @@
         android:layout_alignParentTop="false"
         android:layout_marginStart="15dp"
         android:layout_marginLeft="15dp"
-        android:layout_marginTop="116dp"
+        android:layout_marginTop="156dp"
         android:onClick="loadUrl"
         android:text="facebook" />
 
@@ -57,6 +68,7 @@
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/facebook"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="2dp"
         android:onClick="loadUrl"
         android:text="twitter" />
 
@@ -67,18 +79,22 @@
         android:layout_alignTop="@+id/facebook"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginEnd="22dp"
-        android:layout_marginRight="22dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginRight="18dp"
         android:onClick="loadUrl"
         android:text="reddit" />
 
     <WebView
         android:id="@+id/web"
         android:layout_width="match_parent"
-        android:layout_height="397dp"
+        android:layout_height="444dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginBottom="0dp"
         android:background="@color/TextColor" />
 
 </RelativeLayout>

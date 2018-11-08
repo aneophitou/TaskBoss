@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/TextColor"
-    tools:context=".HelpActivity">
+    tools:context=".RateActivity">
 
     <RatingBar
         android:id="@+id/ratingBar"
@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="109dp"
+        android:layout_marginTop="159dp"
         android:background="@color/colorPrimaryDark"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="33dp"
+        android:layout_marginTop="72dp"
         android:text="Help us reach\nRate our app"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -47,12 +47,12 @@
 
     <Button
         android:id="@+id/rateButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="104dp"
+        android:layout_height="59dp"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="-117dp"
-        android:layout_marginLeft="-117dp"
-        android:layout_marginTop="174dp"
+        android:layout_marginStart="-134dp"
+        android:layout_marginLeft="-134dp"
+        android:layout_marginTop="233dp"
         android:layout_toEndOf="@+id/textView5"
         android:layout_toRightOf="@+id/textView5"
         android:onClick="rateMessage"
@@ -82,5 +82,15 @@
         android:onClick="share"
         android:title="Share"
         app:srcCompat="?attr/actionModeShareDrawable" />
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar4"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme" />
 
 </RelativeLayout>

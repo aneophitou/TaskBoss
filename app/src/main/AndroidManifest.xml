@@ -78,7 +78,8 @@
         <activity
             android:name=".AboutActivity"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".HelpActivity" />
+        <activity
+            android:name=".RateActivity" />
         <activity
             android:name=".ForgotPassActivity"
             android:label="@string/title_activity_forgot_pass"

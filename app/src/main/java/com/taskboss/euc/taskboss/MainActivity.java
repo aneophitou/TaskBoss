@@ -3,9 +3,7 @@ package com.taskboss.euc.taskboss;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -14,7 +12,6 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -157,7 +154,7 @@ public class MainActivity extends AppCompatActivity {
             Intent i = new Intent(this, AboutActivity.class);
             startActivity(i);
         } else if (id == R.id.action_help) {
-            Intent i = new Intent(this, HelpActivity.class);
+            Intent i = new Intent(this, RateActivity.class);
             startActivity(i);
         }
         else if (id==R.id.nav_home)
