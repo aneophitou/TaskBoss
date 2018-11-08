@@ -14,11 +14,11 @@
         <activity
             android:name=".create_task"
             android:label="@string/title_activity_create_task"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName=".TaskActivity"
             android:theme="@style/AppTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.taskboss.euc.taskboss.MainActivity" />
+                android:value="com.taskboss.euc.taskboss.TaskActivity" />
         </activity>
         <activity
             android:name=".LoginActivity"
@@ -37,14 +37,14 @@
         <activity
             android:name=".TaskItem"
             android:label="@string/title_activity_task_item"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName=".TaskActivity"
             android:theme="@style/AppTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.taskboss.euc.taskboss.MainActivity" />
+                android:value="com.taskboss.euc.taskboss.TaskActivity" />
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".TaskActivity"
             android:parentActivityName=".LoginActivity"
             android:theme="@style/AppTheme" />
         <activity
@@ -59,27 +59,26 @@
         <activity
             android:name=".EventItem"
             android:label="Event Details"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName=".TaskActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.taskboss.euc.taskboss.MainActivity" />
+                android:value="com.taskboss.euc.taskboss.TaskActivity" />
         </activity>
         <activity
             android:name=".create_event"
             android:label="@string/title_activity_create_event"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName=".TaskActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.taskboss.euc.taskboss.MainActivity" />
+                android:value="com.taskboss.euc.taskboss.TaskActivity" />
         </activity>
-        <activity android:name=".ProjectActivity" />
+        <activity android:name=".MainActivity" />
         <activity
             android:name=".AboutActivity"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".RateActivity" />
+            android:parentActivityName=".TaskActivity" />
+        <activity android:name=".RateActivity" />
         <activity
             android:name=".ForgotPassActivity"
             android:label="@string/title_activity_forgot_pass"
@@ -89,6 +88,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.taskboss.euc.taskboss.LoginActivity" />
         </activity>
+        <activity android:name=".SettingsActivity"></activity>
     </application>
 
 </manifest>

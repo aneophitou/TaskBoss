@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SettingsActivity"
-    android:orientation="vertical">
-
+    tools:context=".CreateProject"
+    android:background="@drawable/gradient">
 
     <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar7"
+        android:id="@+id/toolbar5"
         android:layout_width="match_parent"
         android:layout_height="41dp"
         android:layout_alignParentStart="true"
@@ -19,5 +18,12 @@
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         android:layout_alignParentLeft="true" />
+
+
+        <include layout="@layout/content_create_project"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/toolbar5"/>
+
 
 </RelativeLayout>

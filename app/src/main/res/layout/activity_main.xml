@@ -7,7 +7,7 @@
     android:background="@drawable/bgrepeat"
 
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".TaskActivity">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"

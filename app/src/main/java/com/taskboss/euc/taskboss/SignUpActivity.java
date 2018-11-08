@@ -74,7 +74,7 @@ public class SignUpActivity extends AppCompatActivity {
                 startDelay =  new Runnable() {
                     @Override
                     public void run() {
-                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                        Intent intent = new Intent(getApplicationContext(), TaskActivity.class);
                         startActivity(intent);
                         finish();
                     }

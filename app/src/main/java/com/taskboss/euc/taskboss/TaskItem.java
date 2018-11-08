@@ -2,9 +2,6 @@ package com.taskboss.euc.taskboss;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.MediaStore;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.InputType;
@@ -13,15 +10,11 @@ import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.w3c.dom.Text;
-
-import java.sql.Time;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -113,7 +106,7 @@ toolbar.setTitle("Currently Viewing Task");
     public void closeTask(View v){
         Toast.makeText(getApplicationContext(),"Task Closed",Toast.LENGTH_LONG).show();
 
-        Intent intent = new Intent(TaskItem.this,MainActivity.class );
+        Intent intent = new Intent(TaskItem.this,TaskActivity.class );
         startActivity(intent);
     }
 

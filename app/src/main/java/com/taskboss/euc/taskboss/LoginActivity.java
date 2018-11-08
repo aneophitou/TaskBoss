@@ -21,7 +21,7 @@ public class LoginActivity extends Activity {
     Button LognInButton;
     EditText UsernameField;
     EditText PasswordField;
-    //Intent MainActivityConnection = new Intent(LoginActivity.this,MainActivity.class);
+    //Intent MainActivityConnection = new Intent(LoginActivity.this,TaskActivity.class);
     Handler setDelay;
     Runnable startDelay;
 

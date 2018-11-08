@@ -5,11 +5,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".ProjectActivity"
+    tools:context=".MainActivity"
     android:orientation="vertical">
 
     <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar8"
+        android:layout_width="match_parent"
+        android:layout_height="41dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        android:layout_alignParentLeft="true" />
+
+    <android.support.v7.widget.Toolbar
         android:id="@+id/projectBar"
+        android:layout_below="@+id/toolbar8"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:minHeight="?attr/actionBarSize"
@@ -21,8 +33,13 @@
             android:id="@+id/createProjectButton"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:onClick="createProject"
             android:text="Create Project" />
+
+        <Button
+            android:id="@+id/goTask"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="To Tasks" />
 
     </android.support.v7.widget.Toolbar>
 
@@ -51,7 +68,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/projectBar"
-        android:id="@+id/fragmentView">
+        android:id="@+id/fragmentView"
+        android:background="@drawable/bgrepeat">
 
     </FrameLayout>
 
