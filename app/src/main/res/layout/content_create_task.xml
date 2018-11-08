@@ -16,10 +16,10 @@
 
     <EditText
         android:id="@+id/txtTaskName"
-        android:layout_width="354dp"
+        android:layout_width="345dp"
         android:layout_height="35dp"
-        android:layout_alignEnd="@+id/editTxtUsername"
-        android:layout_alignRight="@+id/editTxtUsername"
+        android:layout_alignEnd="@+id/txtDescription"
+        android:layout_alignRight="@+id/txtDescription"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
@@ -44,8 +44,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/txtTaskName"
-        android:layout_alignStart="@id/editTxtUsername"
-        android:layout_alignLeft="@id/editTxtUsername"
+        android:layout_alignStart="@id/txtDescription"
+        android:layout_alignLeft="@id/txtDescription"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
@@ -56,8 +56,8 @@
         app:layout_constraintTop_toBottomOf="@+id/txtTaskName" />
 
     <EditText
-        android:id="@+id/editTxtUsername"
-        android:layout_width="333dp"
+        android:id="@+id/txtDescription"
+        android:layout_width="345dp"
         android:layout_height="106dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
@@ -96,14 +96,14 @@
         android:spinnerMode="dialog"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:layout_constraintTop_toBottomOf="@+id/editTxtPassCheck" />
+        app:layout_constraintTop_toBottomOf="@+id/txtTime" />
 
     <TextView
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/editTxtPassCheck"
-        android:layout_alignLeft="@+id/editTxtPassCheck"
+        android:layout_alignStart="@+id/txtTime"
+        android:layout_alignLeft="@+id/txtTime"
         android:layout_alignParentTop="true"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
@@ -116,14 +116,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.761"
         app:layout_constraintStart_toEndOf="@+id/txtPassword"
-        app:layout_constraintTop_toBottomOf="@+id/editTxtUsername" />
+        app:layout_constraintTop_toBottomOf="@+id/txtDescription" />
 
     <TextView
         android:id="@+id/txtPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/editTxtPass"
-        android:layout_alignLeft="@id/editTxtPass"
+        android:layout_alignStart="@+id/txtDate"
+        android:layout_alignLeft="@id/txtDate"
         android:layout_alignParentTop="true"
 
         android:layout_marginStart="52dp"
@@ -133,27 +133,27 @@
         android:textColor="#fff"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTxtUsername" />
+        app:layout_constraintTop_toBottomOf="@+id/txtDescription" />
 
     <EditText
-        android:id="@+id/editTxtPass"
+        android:id="@+id/txtDate"
         android:layout_width="143dp"
         android:layout_height="45dp"
 
-        android:layout_alignTop="@+id/editTxtPassCheck"
+        android:layout_alignTop="@+id/txtTime"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/radius_corners"
         android:ems="10"
         android:imeOptions="actionDone"
-        android:inputType="date"
+        android:inputType="datetime|date"
         android:paddingLeft="10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtPassword" />
 
     <EditText
-        android:id="@+id/editTxtPassCheck"
+        android:id="@+id/txtTime"
         android:layout_width="129dp"
         android:layout_height="45dp"
         android:layout_alignParentTop="true"
@@ -194,12 +194,14 @@
         android:layout_height="53dp"
 
         android:layout_alignParentBottom="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:text="Assign this task to someone!"
         android:textColor="#fff"
         android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@+id/editTxtPass"
-        tools:layout_editor_absoluteX="6dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtDate" />
 
     <RadioGroup
         android:layout_width="wrap_content"
@@ -209,11 +211,14 @@
         android:layout_marginBottom="96dp" />
 
     <RadioGroup
+        android:id="@+id/rgPriority"
         android:layout_width="166dp"
         android:layout_height="59dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/textView8"
-        tools:layout_editor_absoluteX="0dp">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8">
 
         <RadioButton
             android:id="@+id/rbLow"

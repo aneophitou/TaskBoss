@@ -27,7 +27,9 @@ public class TaskActivity extends AppCompatActivity {
     PageAdapter mPageAdapter;
     ViewPager mViewPager;
     TabLayout tabLayout;
-    Button SwitchActionButton;
+
+    String currentUser;
+
     FloatingActionButton fab;
     public class PageAdapter extends FragmentStatePagerAdapter {
         private final List<Fragment> fragmentList = new ArrayList<>();
@@ -69,7 +71,7 @@ public class TaskActivity extends AppCompatActivity {
         tabLayout = findViewById(R.id.tabs);
         Toolbar toolbar = findViewById(R.id.toolbar);
         fab = findViewById(R.id.MainActionButton);
-        //SwitchActionButton = findViewById(R.id.MainActionButton);
+
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("TaskBoss");
         mPageAdapter = new PageAdapter(getSupportFragmentManager());
@@ -85,8 +87,7 @@ public class TaskActivity extends AppCompatActivity {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 if (tab.getPosition() == 0) {
-          //          SwitchActionButton.setText("Add Task");
-            //        SwitchActionButton.setOnClickListener(new View.OnClickListener() {
+
                     fab.setOnClickListener(new View.OnClickListener(){
                         @Override
                         public void onClick(View view) {
@@ -94,8 +95,7 @@ public class TaskActivity extends AppCompatActivity {
                         }
                     });
                 } else if (tab.getPosition() == 1) {
-                    //SwitchActionButton.setText("Add Task");
-                    //SwitchActionButton.setOnClickListener(new View.OnClickListener() {
+
                     fab.setOnClickListener(new View.OnClickListener(){
                         @Override
                         public void onClick(View view) {
@@ -103,8 +103,7 @@ public class TaskActivity extends AppCompatActivity {
                         }
                     });
                 } else if (tab.getPosition() == 2) {
-                    //SwitchActionButton.setText("Add Event");
-                    //SwitchActionButton.setOnClickListener(new View.OnClickListener() {
+
                     fab.setOnClickListener(new View.OnClickListener(){
                         @Override
                         public void onClick(View view) {
@@ -187,11 +186,16 @@ public class TaskActivity extends AppCompatActivity {
             Bundle bundle = new Bundle();
             String putTitle = data.getExtras().getString("title");
             bundle.putString("title", putTitle);
+            bundle.putString("description", data.getExtras().getString("description"));
+            bundle.putString("date", data.getExtras().getString("date"));
+            bundle.putString("time", data.getExtras().getString("time"));
+            bundle.putString("priority", data.getExtras().getString("priority"));
+            bundle.putString("assignedTo", data.getExtras().getString("assignedTo"));
 
-            Fragment tfrag = new tasksFragment();
+            Fragment tfrag = new allTasksFragment();
             tfrag.setArguments(bundle);
 
-            getSupportFragmentManager().beginTransaction().replace(R.id.taskFragmentFrame, tfrag).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.allTasksFragment, tfrag).commit();
         }
     }
 

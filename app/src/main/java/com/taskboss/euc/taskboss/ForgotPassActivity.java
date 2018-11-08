@@ -41,7 +41,7 @@ public class ForgotPassActivity extends AppCompatActivity {
         setDelay = new Handler();
 
         EmailField = findViewById(R.id.editTxtEmail);
-        UsernameField = findViewById(R.id.editTxtUsername);
+        UsernameField = findViewById(R.id.txtDescription);
         AnswerField = findViewById(R.id.editTxtEnterAnswer);
         RadioButton1 = findViewById(R.id.radioButton1);
         RadioButton2 = findViewById(R.id.radioButton2);

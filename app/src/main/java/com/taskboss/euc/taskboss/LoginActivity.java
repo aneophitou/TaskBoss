@@ -48,8 +48,8 @@ public class LoginActivity extends Activity {
 //        mytv.setTypeface(myfont);
 
         LognInButton = findViewById(R.id.button);
-        UsernameField = findViewById(R.id.editTxtUsername);
-        PasswordField = findViewById(R.id.editTxtPass);
+        UsernameField = findViewById(R.id.txtDescription);
+        PasswordField = findViewById(R.id.txtDate);
 
         LognInButton.setOnClickListener(new View.OnClickListener() {
             @Override

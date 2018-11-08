@@ -46,7 +46,11 @@
         <activity
             android:name=".TaskActivity"
             android:parentActivityName=".LoginActivity"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/AppTheme" >
+
+
+        </activity>
+
         <activity
             android:name=".SignUpActivity"
             android:label="Create Account"
@@ -89,6 +93,14 @@
                 android:value="com.taskboss.euc.taskboss.LoginActivity" />
         </activity>
         <activity android:name=".SettingsActivity"></activity>
+        <activity android:name=".ProfileActivity"
+            android:label="Profile"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.taskboss.euc.taskboss.MainActivity"/>
+        </activity>
     </application>
 
 </manifest>

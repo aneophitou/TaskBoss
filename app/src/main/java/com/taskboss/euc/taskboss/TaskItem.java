@@ -65,14 +65,15 @@ toolbar.setTitle("Currently Viewing Task");
 
         RadioGroup radioGroup = findViewById(R.id.rgPriority);
         String priority = getIntent().getStringExtra("priority");
-        if(priority.equals("1")){
-            radioGroup.check(R.id.rbLow);
-        }else if(priority.equals("2")){
-            radioGroup.check(R.id.rbMedium);
-        }else if(priority.equals("3")){
-            radioGroup.check(R.id.rbHigh);
+        if(priority != null) {
+            if (priority.equals("1")) {
+                radioGroup.check(R.id.rbLow);
+            } else if (priority.equals("2")) {
+                radioGroup.check(R.id.rbMedium);
+            } else if (priority.equals("3")) {
+                radioGroup.check(R.id.rbHigh);
+            }
         }
-
 
 
         TextView txtDescription = this.findViewById(R.id.txtDescription);
@@ -96,7 +97,15 @@ toolbar.setTitle("Currently Viewing Task");
           }
         };
         spinner.setAdapter(spinnerAdapter);
+
+        String assignedTo = getIntent().getStringExtra("assignedTo");
         spinner.setSelection(spinnerAdapter.getCount());
+        for(int i = 0; i<MEMBERS.length -1; i++){
+            if (MEMBERS[i].equals(assignedTo)){
+                spinner.setSelection(spinnerAdapter.getPosition(assignedTo));
+            }
+        }
+
 
 
 

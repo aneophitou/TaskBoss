@@ -23,6 +23,7 @@ ArrayList<String> DATES = new ArrayList<String>(Arrays.asList("31/10/2018", "05/
 ArrayList<String> TIMES = new ArrayList<String>(Arrays.asList("11:20", "10:30", "12:00"));
 ArrayList<String> DESCRIPTIONS = new ArrayList<String>(Arrays.asList("Get candy for Trick or Treat", "Get Some Sleep", "Doctors Appointment"));
 ArrayList<String> PRIORITIES = new ArrayList<String>(Arrays.asList("1","2","3"));
+
     ArrayAdapter<String> adapter;
 
     public tasksFragment() {

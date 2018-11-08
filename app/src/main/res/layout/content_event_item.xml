@@ -33,11 +33,11 @@
         android:layout_height="130dp"
         android:gravity="center"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/editTxtUsername"
+        app:layout_constraintBottom_toTopOf="@+id/txtDescription"
         app:layout_constraintTop_toBottomOf="@id/Title">
 
         <TextView
-            android:id="@+id/editTxtPass"
+            android:id="@+id/txtDate"
             android:layout_width="match_parent"
             android:layout_height="120dp"
             android:hint="Date"
@@ -68,7 +68,7 @@
     </LinearLayout>
 
     <EditText
-        android:id="@+id/editTxtUsername"
+        android:id="@+id/txtDescription"
         android:layout_width="match_parent"
         android:layout_height="180dp"
         android:hint="Description"
@@ -88,7 +88,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@id/btnCreateAccount"
-        app:layout_constraintTop_toBottomOf="@+id/editTxtUsername"
+        app:layout_constraintTop_toBottomOf="@+id/txtDescription"
         android:background="@drawable/event_item_title"
         >
 
