@@ -41,7 +41,7 @@ public class AboutActivity extends AppCompatActivity {
         }
         else if (R.id.ourwebsite == v.getId())
         {
-            Toast.makeText(this, "Soryy, out website is under maintenance", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Sorry, our website is under maintenance", Toast.LENGTH_LONG).show();
         }
 
 
