@@ -1,74 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/bgrepeat"
-
-    android:orientation="vertical"
-    tools:context=".TaskActivity">
+    tools:context=".MainActivity"
+    android:orientation="vertical">
 
     <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
+        android:id="@+id/toolbar8"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
-        android:gravity="top"
-        android:minHeight="?attr/actionBarSize">
+        android:layout_height="41dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/gradient"
+        android:minHeight="?attr/actionBarSize"
+        android:layout_alignParentLeft="true"/>
 
-    </android.support.v7.widget.Toolbar>
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/MainActionButton"
-        android:layout_width="wrap_content"
+    <include
+        android:id="@+id/includeProj"
+        layout="@layout/content_project"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="28dp"
-        android:layout_marginRight="35dp"
-        android:layout_marginBottom="35dp"
-        android:onClick="createTask"
-        android:src="@drawable/add"
-        app:backgroundTintMode="src_over"
-        app:elevation="1dp"
-        app:rippleColor="@color/TextColor">
-
-    </android.support.design.widget.FloatingActionButton>
-
-    <android.support.design.widget.TabLayout
-        android:id="@+id/tabs"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/toolbar"
+        android:layout_below="@+id/toolbar8"
         android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
+        android:layout_marginTop="0dp"
+        android:layout_alignParentLeft="true">
+
+
+    </include>
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerVertical="false"
         android:layout_marginStart="0dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="-2dp"
-        android:minHeight="?actionBarSize"
-        app:tabBackground="@color/colorPrimary"
-        app:tabGravity="fill"
-        app:tabIndicatorColor="@color/TextColor"
-        app:tabIndicatorHeight="5dp"
-        app:tabMode="fixed"
-        app:tabTextColor="@color/TextColor">
-
-    </android.support.design.widget.TabLayout>
-
-    <android.support.v4.view.ViewPager
-        android:id="@+id/pageview"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tabs"
-        android:layout_alignParentStart="true"
+        android:layout_marginTop="98dp"
+        android:text="Button"
+        android:visibility="visible"
         android:layout_alignParentLeft="true"
-        android:layout_marginBottom="-2dp"
+        android:layout_marginLeft="0dp" />
 
-        android:background="@drawable/bgrepeat" >
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerVertical="false"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="241dp"
+        android:text="Button"
+        android:visibility="visible"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="0dp" />
 
-    </android.support.v4.view.ViewPager>
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerVertical="false"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="168dp"
+        android:text="Button"
+        android:visibility="visible"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="0dp" />
 
-
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerVertical="false"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="98dp"
+        android:text="Button"
+        android:visibility="visible"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="0dp" />
 </RelativeLayout>

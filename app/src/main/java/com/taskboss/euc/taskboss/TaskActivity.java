@@ -16,7 +16,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -66,14 +65,18 @@ public class TaskActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_task);
         mViewPager = findViewById(R.id.pageview);
         tabLayout = findViewById(R.id.tabs);
         Toolbar toolbar = findViewById(R.id.toolbar);
         fab = findViewById(R.id.MainActionButton);
 
+////        setSupportActionBar(toolbar);
+////        getSupportActionBar().setTitle("TaskBoss");
+//        Toolbar toolbar = findViewById(R.id.toolbar7);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("TaskBoss");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         mPageAdapter = new PageAdapter(getSupportFragmentManager());
         mPageAdapter.addFragment(new tasksFragment(), "Assigned Tasks");
         mPageAdapter.addFragment(new allTasksFragment(), "All Tasks");

@@ -46,11 +46,7 @@
         <activity
             android:name=".TaskActivity"
             android:parentActivityName=".LoginActivity"
-            android:theme="@style/AppTheme" >
-
-
-        </activity>
-
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".SignUpActivity"
             android:label="Create Account"
@@ -78,11 +74,11 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.taskboss.euc.taskboss.TaskActivity" />
         </activity>
-        <activity android:name=".MainActivity" />
-        <activity
-            android:name=".AboutActivity"
-            android:parentActivityName=".TaskActivity" />
-        <activity android:name=".RateActivity" />
+        <activity android:name=".MainActivity"
+            android:theme="@style/AppTheme">
+        </activity>
+        <activity android:name=".RateActivity"
+            android:theme="@style/AppTheme"></activity>
         <activity
             android:name=".ForgotPassActivity"
             android:label="@string/title_activity_forgot_pass"
@@ -92,15 +88,17 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.taskboss.euc.taskboss.LoginActivity" />
         </activity>
-        <activity android:name=".SettingsActivity"></activity>
+        <activity android:name=".SettingsActivity"
+            android:theme="@style/AppTheme"></activity>
+        <activity android:name=".AboutActivity"
+            android:theme="@style/AppTheme"></activity>
         <activity android:name=".ProfileActivity"
-            android:label="Profile"
-            android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.taskboss.euc.taskboss.MainActivity"/>
+                android:value="com.taskboss.euc.taskboss.TaskActivity" />
         </activity>
+        <activity android:name=".CreateProject"></activity>
     </application>
 
 </manifest>
