@@ -31,6 +31,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button OurProj = findViewById(R.id.ourProjButton);
+        Button HalkProj = findViewById(R.id.halkosButton);
+        OurProj.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, TaskActivity.class));
+            }
+        });
+
 
     }
 
