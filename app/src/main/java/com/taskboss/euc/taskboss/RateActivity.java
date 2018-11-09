@@ -23,9 +23,6 @@ public class RateActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
-
-<<<<<<< HEAD
-<<<<<<< HEAD
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
@@ -36,12 +33,7 @@ public class RateActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
-=======
 
->>>>>>> 0642d4af281746a9cd87b2f860d0821a1712b349
-=======
-
->>>>>>> 0642d4af281746a9cd87b2f860d0821a1712b349
 
     public void rateMessage(View v)
     {
@@ -64,9 +56,16 @@ public class RateActivity extends AppCompatActivity {
         TextView v2 = (TextView) findViewById(R.id.feedback_message2);
         String s = e.getText().toString();
         v1.setText(s);
-        v1.setBackgroundColor(Color.parseColor("#47a04c"));
-        v2.setBackgroundColor(Color.parseColor("#ffffff"));
-        v2.setText("Thanks for your feedback\nWe will reply as soon as we get your message");
+        if (s.isEmpty()) {
+            v2.setBackgroundColor(Color.parseColor("#ffffff"));
+            v2.setText("Please type something..");
+
+        }
+        else {
+            v1.setBackgroundColor(Color.parseColor("#47a04c"));
+            v2.setBackgroundColor(Color.parseColor("#ffffff"));
+            v2.setText("Thanks for your feedback\nWe will reply as soon as we get your message");
+        }
 
     }
     public void share(View v)
