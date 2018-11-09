@@ -17,7 +17,7 @@ public class EventItem extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        EditText ActionDoneKeyboard = findViewById(R.id.editTxtUsername);
+        EditText ActionDoneKeyboard = findViewById(R.id.txtDescription);
 
         ActionDoneKeyboard.setImeOptions(EditorInfo.IME_ACTION_DONE);
         ActionDoneKeyboard.setRawInputType(InputType.TYPE_CLASS_TEXT);
@@ -29,8 +29,8 @@ public class EventItem extends AppCompatActivity {
 
         TextView TitleText = this.findViewById(R.id.Title);
         TextView PlaceText = this.findViewById(R.id.Place);
-        TextView DateText = this.findViewById(R.id.editTxtPass);
-        TextView DescriptionText = this.findViewById(R.id.editTxtUsername);
+        TextView DateText = this.findViewById(R.id.txtDate);
+        TextView DescriptionText = this.findViewById(R.id.txtDescription);
 
         TitleText.setText(Title);
         PlaceText.setText(Place);

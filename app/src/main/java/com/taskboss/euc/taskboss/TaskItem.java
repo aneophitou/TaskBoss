@@ -2,9 +2,6 @@ package com.taskboss.euc.taskboss;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.MediaStore;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.InputType;
@@ -13,15 +10,11 @@ import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.w3c.dom.Text;
-
-import java.sql.Time;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -32,6 +25,12 @@ String[] MEMBERS = {"Andreas", "Giannis", "Ahmed", "Ola","Assign this task"};
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_task_item);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar2);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Currently Viewing Task");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+toolbar.setTitle("Currently Viewing Task");
 
         EditText ActionDoneKeyboard = findViewById(R.id.txtDescription);
 
@@ -66,14 +65,15 @@ String[] MEMBERS = {"Andreas", "Giannis", "Ahmed", "Ola","Assign this task"};
 
         RadioGroup radioGroup = findViewById(R.id.rgPriority);
         String priority = getIntent().getStringExtra("priority");
-        if(priority.equals("1")){
-            radioGroup.check(R.id.rbLow);
-        }else if(priority.equals("2")){
-            radioGroup.check(R.id.rbMedium);
-        }else if(priority.equals("3")){
-            radioGroup.check(R.id.rbHigh);
+        if(priority != null) {
+            if (priority.equals("1")) {
+                radioGroup.check(R.id.rbLow);
+            } else if (priority.equals("2")) {
+                radioGroup.check(R.id.rbMedium);
+            } else if (priority.equals("3")) {
+                radioGroup.check(R.id.rbHigh);
+            }
         }
-
 
 
         TextView txtDescription = this.findViewById(R.id.txtDescription);
@@ -97,7 +97,15 @@ String[] MEMBERS = {"Andreas", "Giannis", "Ahmed", "Ola","Assign this task"};
           }
         };
         spinner.setAdapter(spinnerAdapter);
+
+        String assignedTo = getIntent().getStringExtra("assignedTo");
         spinner.setSelection(spinnerAdapter.getCount());
+        for(int i = 0; i<MEMBERS.length -1; i++){
+            if (MEMBERS[i].equals(assignedTo)){
+                spinner.setSelection(spinnerAdapter.getPosition(assignedTo));
+            }
+        }
+
 
 
 
@@ -107,7 +115,7 @@ String[] MEMBERS = {"Andreas", "Giannis", "Ahmed", "Ola","Assign this task"};
     public void closeTask(View v){
         Toast.makeText(getApplicationContext(),"Task Closed",Toast.LENGTH_LONG).show();
 
-        Intent intent = new Intent(TaskItem.this,MainActivity.class );
+        Intent intent = new Intent(TaskItem.this,TaskActivity.class );
         startActivity(intent);
     }
 

@@ -1,61 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/bgrepeat"
-
-    android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:orientation="vertical">
 
     <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
+        android:id="@+id/toolbar8"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
-        android:gravity="top"
-        android:minHeight="?attr/actionBarSize">
+        android:layout_height="41dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/gradient"
+        android:minHeight="?attr/actionBarSize"
+        android:layout_alignParentLeft="true"/>
 
-        <Button
 
-            android:id="@+id/MainActionButton"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:onClick="createTask"
-            android:text="Add Task" />
-
-    </android.support.v7.widget.Toolbar>
-
-    <android.support.design.widget.TabLayout
-        android:id="@+id/tabs"
+    <include
+        android:id="@+id/includeProj"
+        layout="@layout/content_project"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/toolbar"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar8"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="0dp"
+        android:layout_alignParentLeft="true">
+
+
+    </include>
+
+
+    <Button
+        android:id="@+id/halkosButton"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerVertical="false"
         android:layout_marginStart="0dp"
         android:layout_marginLeft="0dp"
-        android:layout_marginTop="-2dp"
-        android:minHeight="?actionBarSize"
-        app:tabBackground="@color/colorPrimary"
-        app:tabGravity="fill"
-        app:tabIndicatorColor="@color/TextColor"
-        app:tabIndicatorHeight="5dp"
-        app:tabMode="fixed"
-        app:tabTextColor="@color/TextColor">
+        android:layout_marginTop="168dp"
+        android:gravity=""
+        android:text="Involved: Halkos Project\nGiannis,Ola"
+        android:textAlignment="center"
+        android:visibility="invisible" />
 
-    </android.support.design.widget.TabLayout>
-
-    <android.support.v4.view.ViewPager
-        android:id="@+id/pageview"
+    <Button
+        android:id="@+id/ourProjButton"
+        android:textAlignment="center"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tabs"
+        android:layout_height="75dp"
         android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerVertical="false"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="98dp"
+        android:text="Our Project\nInvolved: Andreas,Giannis,Ahmed,Ola"
+        android:visibility="visible"
         android:layout_alignParentLeft="true"
-        android:layout_marginBottom="-2dp"
-
-        android:background="@drawable/bgrepeat" />
-
+        android:layout_marginLeft="0dp"
+        android:gravity="" />
 </RelativeLayout>

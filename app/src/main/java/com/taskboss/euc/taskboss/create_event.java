@@ -2,8 +2,6 @@ package com.taskboss.euc.taskboss;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.InputType;
@@ -68,6 +66,8 @@ public class create_event extends AppCompatActivity {
         InviteMembers();
         Toast.makeText(this.getApplicationContext(),"Member(s): " + Message + " were invited..." ,Toast.LENGTH_SHORT).show();
         startActivity(new Intent(create_event.this, MainActivity.class));
+        Toast.makeText(this.getApplicationContext(),"Submiting Event...",Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(create_event.this, TaskActivity.class));
     }
 
     public String InviteMembers()

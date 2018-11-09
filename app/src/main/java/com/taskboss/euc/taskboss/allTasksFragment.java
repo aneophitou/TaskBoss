@@ -4,6 +4,7 @@ package com.taskboss.euc.taskboss;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +23,8 @@ public class allTasksFragment extends Fragment {
     ArrayList<String> TIMES = new ArrayList<String>(Arrays.asList("11:20", "10:30", "12:00"));
     ArrayList<String> DESCRIPTIONS = new ArrayList<String>(Arrays.asList("Get candy for Trick or Treat", "Get Some Sleep", "Doctors Appointment"));
     ArrayList<String> PRIORITIES = new ArrayList<String>(Arrays.asList("1", "2", "3"));
+    ArrayList<String> ASSIGNMENTS = new ArrayList<String>(Arrays.asList("Andreas","Giannis","Ahmed"));
+    ArrayAdapter<String> adapter;
 
     public allTasksFragment() {
         // Required empty public constructor
@@ -34,8 +37,9 @@ public class allTasksFragment extends Fragment {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_all_tasks, container, false);
         ListView listView = rootView.findViewById(R.id.taskList);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, TASKS) {
+        adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, TASKS) {
 
+            //code to change the colour of the items in list
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {
                 View view = super.getView(position, convertView, parent);
@@ -51,13 +55,12 @@ public class allTasksFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(getActivity(), TaskItem.class);
 
-
                 intent.putExtra("title", TASKS.get(position));
                 intent.putExtra("date", DATES.get(position));
                 intent.putExtra("description", DESCRIPTIONS.get(position));
                 intent.putExtra("time", TIMES.get(position));
                 intent.putExtra("priority", PRIORITIES.get(position));
-
+                intent.putExtra("assignedTo", ASSIGNMENTS.get(position));
                 startActivity(intent);
 
 
@@ -72,5 +75,23 @@ public class allTasksFragment extends Fragment {
 
         super.onActivityCreated(savedInstanceState);
     }
+    @Override
+    public void onResume() {
+        super.onResume();
+        Bundle bundle = this.getArguments();
+        if (bundle!= null) {
+            TASKS.add(bundle.getString("title"));
+            DATES.add(bundle.getString("date"));
+            TIMES.add(bundle.getString("time"));
+            DESCRIPTIONS.add(bundle.getString("description"));
+            PRIORITIES.add(bundle.getString("priority"));
+            ASSIGNMENTS.add(bundle.getString("assignedTo"));
+
+            adapter.notifyDataSetChanged();
+
+            Log.e("added",bundle.getString("title"));
+        }
+    }
+
 
 }

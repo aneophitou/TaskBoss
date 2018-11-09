@@ -47,9 +47,9 @@ public class SignUpActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         CreateButton = findViewById(R.id.btnCreateAccount);
-        UsernameField = findViewById(R.id.editTxtUsername);
-        PasswordField = findViewById(R.id.editTxtPass);
-        PasswordCheck = findViewById(R.id.editTxtPassCheck);
+        UsernameField = findViewById(R.id.txtDescription);
+        PasswordField = findViewById(R.id.txtDate);
+        PasswordCheck = findViewById(R.id.txtTime);
         PassLabel = findViewById(R.id.txtPassword);
 
         bundle = getIntent().getExtras();
@@ -74,7 +74,7 @@ public class SignUpActivity extends AppCompatActivity {
                 startDelay =  new Runnable() {
                     @Override
                     public void run() {
-                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                        Intent intent = new Intent(getApplicationContext(), TaskActivity.class);
                         startActivity(intent);
                         finish();
                     }
