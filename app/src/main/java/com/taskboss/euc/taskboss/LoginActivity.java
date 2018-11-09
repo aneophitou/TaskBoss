@@ -24,11 +24,14 @@ public class LoginActivity extends Activity {
     //Intent MainActivityConnection = new Intent(LoginActivity.this,TaskActivity.class);
     Handler setDelay;
     Runnable startDelay;
+    String ActivityName = "LOGIN";
 
     public void SignIn(View view) {
         // the sign in function goes to SignIn Activity (not yet created)
         //Thread.sleep(1000);
-        startActivity(new Intent(LoginActivity.this, SignUpActivity.class));
+        Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
+        intent.putExtra("ACTIVITY_NAME",ActivityName);
+        startActivity(intent);
     }
 
     @Override

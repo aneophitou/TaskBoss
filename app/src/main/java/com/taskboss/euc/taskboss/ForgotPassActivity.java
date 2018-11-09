@@ -45,7 +45,7 @@ public class ForgotPassActivity extends AppCompatActivity {
         AnswerField = findViewById(R.id.editTxtEnterAnswer);
         RadioButton1 = findViewById(R.id.radioButton1);
         RadioButton2 = findViewById(R.id.radioButton2);
-        SubmitButton = findViewById(R.id.btnCreateAccount);
+        SubmitButton = findViewById(R.id.btnSendAttedance);
         Question = findViewById(R.id.txtQuestion);
         radioGroupItems = findViewById(R.id.radioGroup);
 
