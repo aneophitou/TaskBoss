@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -20,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbar8);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("TaskBoss");
+        getSupportActionBar().setTitle(getIntent().getStringExtra("Project Name"));
 
         Button createProj = findViewById(R.id.createProjectButton);
         createProj.setOnClickListener(new View.OnClickListener(){
@@ -31,13 +32,21 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button OurProj = findViewById(R.id.ourProjButton);
+        final Button OurProj = findViewById(R.id.ourProjButton);
         Button HalkProj = findViewById(R.id.halkosButton);
         OurProj.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, TaskActivity.class));
+                //code to pass the username
+                Intent intent = new Intent(MainActivity.this, TaskActivity.class);
+                intent.putExtra("username", getIntent().getStringExtra("username"));
+
+                intent.putExtra("Project Name", OurProj.getText().toString());
+                Log.e("msssgy", getIntent().getStringExtra("username"));
+                Log.e("ehrer", OurProj.getText().toString());
+                startActivity(intent);
+                finish();
             }
         });
 

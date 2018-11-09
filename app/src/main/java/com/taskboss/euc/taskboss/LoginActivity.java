@@ -57,7 +57,10 @@ public class LoginActivity extends Activity {
                 startDelay =  new Runnable() {
                     @Override
                     public void run() {
+
                         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                        intent.putExtra("username", UsernameField.getText().toString());
+                        Log.e("username", UsernameField.getText().toString());
                         startActivity(intent);
                         finish();
                     }

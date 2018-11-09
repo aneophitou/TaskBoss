@@ -30,7 +30,7 @@ String[] MEMBERS = {"Andreas", "Giannis", "Ahmed", "Ola","Assign this task"};
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Currently Viewing Task");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-toolbar.setTitle("Currently Viewing Task");
+        toolbar.setTitle("Currently Viewing Task");
 
         EditText ActionDoneKeyboard = findViewById(R.id.txtDescription);
 
@@ -105,9 +105,6 @@ toolbar.setTitle("Currently Viewing Task");
                 spinner.setSelection(spinnerAdapter.getPosition(assignedTo));
             }
         }
-
-
-
 
     }
 

@@ -12,6 +12,7 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -71,11 +72,11 @@ public class TaskActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         fab = findViewById(R.id.MainActionButton);
 
-////        setSupportActionBar(toolbar);
-////        getSupportActionBar().setTitle("TaskBoss");
-//        Toolbar toolbar = findViewById(R.id.toolbar7);
+
+        toolbar.setTitle(getIntent().getStringExtra("Project Name"));
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        currentUser = getIntent().getStringExtra("username");
 
         mPageAdapter = new PageAdapter(getSupportFragmentManager());
         mPageAdapter.addFragment(new tasksFragment(), "Assigned Tasks");
@@ -199,6 +200,12 @@ public class TaskActivity extends AppCompatActivity {
             tfrag.setArguments(bundle);
 
             getSupportFragmentManager().beginTransaction().replace(R.id.allTasksFragment, tfrag).commit();
+            if(currentUser.equals(data.getExtras().getString("assignedTo"))){
+                Fragment tfrag2 = new tasksFragment();
+                tfrag2.setArguments(bundle);
+                getSupportFragmentManager().beginTransaction().replace(R.id.taskFragmentFrame, tfrag2).commit();
+            }
+
         }
     }
 
