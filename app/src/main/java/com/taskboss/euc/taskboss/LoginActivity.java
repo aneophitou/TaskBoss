@@ -36,7 +36,7 @@ public class LoginActivity extends Activity {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_login);
-        Log.d(TAG, "onCreate: started.");
+        //Log.d(TAG, "onCreate: started.");
         ImageView firstImage = findViewById(R.id.AppImage);
         setDelay = new Handler();
 

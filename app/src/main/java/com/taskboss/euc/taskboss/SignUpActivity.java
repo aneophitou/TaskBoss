@@ -32,6 +32,7 @@ public class SignUpActivity extends AppCompatActivity {
 
     String ActivityName = "-1";
     String TextSwitch = "Creating Account...";
+    String RecoverUser = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,11 +53,10 @@ public class SignUpActivity extends AppCompatActivity {
         PassLabel = findViewById(R.id.txtPassword);
 
         bundle = getIntent().getExtras();
-
         if(ActivityName.equals("FORGOT_PASS") && bundle != null)
         {
             ActivityName = bundle.getString("ACTIVITY_NAME");
-            String RecoverUser = bundle.getString("USERNAME_KEY");
+            RecoverUser = bundle.getString("USERNAME_KEY");
 
             UsernameField.setText(RecoverUser);
             UsernameField.setEnabled(false);

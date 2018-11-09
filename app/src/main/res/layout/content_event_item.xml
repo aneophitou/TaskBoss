@@ -63,7 +63,7 @@
             android:background="@drawable/event_item_title"
             android:hint="Place"
             android:padding="3dp"
-            android:textSize="18dp"
+            android:textSize="17dp"
             />
     </LinearLayout>
 
