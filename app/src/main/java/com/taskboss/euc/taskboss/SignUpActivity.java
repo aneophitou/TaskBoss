@@ -46,16 +46,19 @@ public class SignUpActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-        CreateButton = findViewById(R.id.btnCreateAccount);
+        CreateButton = findViewById(R.id.btnSendAttedance);
         UsernameField = findViewById(R.id.txtDescription);
         PasswordField = findViewById(R.id.txtDate);
         PasswordCheck = findViewById(R.id.txtTime);
         PassLabel = findViewById(R.id.txtPassword);
 
         bundle = getIntent().getExtras();
-        if(ActivityName.equals("FORGOT_PASS") && bundle != null)
+
+        ActivityName = bundle.getString("ACTIVITY_NAME");
+
+        if(ActivityName.equals("FORGOT_PASS"))
         {
-            ActivityName = bundle.getString("ACTIVITY_NAME");
+            //ActivityName = bundle.getString("ACTIVITY_NAME");
             RecoverUser = bundle.getString("USERNAME_KEY");
 
             UsernameField.setText(RecoverUser);

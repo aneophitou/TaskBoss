@@ -64,29 +64,71 @@ public class create_event extends AppCompatActivity {
     public void SubmitEvent(View view)
     {
         InviteMembers();
-        Toast.makeText(this.getApplicationContext(),"Member(s): " + Message + " were invited..." ,Toast.LENGTH_SHORT).show();
-        startActivity(new Intent(create_event.this, MainActivity.class));
-        Toast.makeText(this.getApplicationContext(),"Submiting Event...",Toast.LENGTH_SHORT).show();
+        Toast.makeText(this.getApplicationContext(),Message,Toast.LENGTH_SHORT).show();
         startActivity(new Intent(create_event.this, TaskActivity.class));
     }
 
     public String InviteMembers()
     {
-        if(CheckBox1.isChecked())
+        if(CheckBox4.isChecked())
         {
             Message = "Andreas was invited...";
         }
-        if(CheckBox2.isChecked())
+        if(CheckBox3.isChecked())
         {
             Message = "Ahmed was invited...";
         }
-        if(CheckBox3.isChecked())
+        if(CheckBox2.isChecked())
         {
             Message = "Giannis was invited...";
         }
-        if(CheckBox4.isChecked())
+        if(CheckBox1.isChecked())
         {
             Message = "Ola was invited...";
+        }
+        if(CheckBox4.isChecked() && CheckBox3.isChecked())
+        {
+            Message = "Andreas and Ahmed were invited...";
+        }
+        if(CheckBox3.isChecked() && CheckBox2.isChecked())
+        {
+            Message = "Ahmed and Giannis were invited...";
+        }
+        if(CheckBox4.isChecked() && CheckBox1.isChecked())
+        {
+            Message = "Andreas and Ola were invited...";
+        }
+        if(CheckBox4.isChecked() && CheckBox3.isChecked())
+        {
+            Message = "Andreas and Ahmed were invited...";
+        }
+        if(CheckBox2.isChecked() && CheckBox1.isChecked())
+        {
+            Message = "Giannis and Ola were invited...";
+        }
+        if(CheckBox4.isChecked() && CheckBox2.isChecked())
+        {
+            Message = "Andreas and Giannis were invited...";
+        }
+        if(CheckBox3.isChecked() && CheckBox1.isChecked())
+        {
+            Message = "Ahmed and Ola were invited...";
+        }
+        if(CheckBox4.isChecked() && CheckBox3.isChecked() && CheckBox2.isChecked())
+        {
+            Message = "Andreas, Ahmed and Giannis were invited...";
+        }
+        if(CheckBox4.isChecked() && CheckBox3.isChecked() && CheckBox1.isChecked())
+        {
+            Message = "Andreas, Ahmed and Ola were invited...";
+        }
+        if(CheckBox3.isChecked() && CheckBox2.isChecked() && CheckBox1.isChecked())
+        {
+            Message = "Ahmed,Giannis and Ola were invited...";
+        }
+        if(CheckBox4.isChecked() && CheckBox3.isChecked() && CheckBox2.isChecked())
+        {
+            Message = "Andreas, Giannis and Ola were invited...";
         }
         if(CheckBox1.isChecked() && CheckBox2.isChecked() && CheckBox3.isChecked() && CheckBox4.isChecked())
         {
@@ -94,7 +136,7 @@ public class create_event extends AppCompatActivity {
         }
         if(!CheckBox1.isChecked() && !CheckBox2.isChecked() && !CheckBox3.isChecked() && !CheckBox4.isChecked())
         {
-            Message = "No member was invited...";
+            Message = "No members was invited...";
         }
 
         return (Message);
