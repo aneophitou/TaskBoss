@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#e68f8f"
+    android:background="@color/TextColor"
     tools:context=".AboutActivity">
 
     <android.support.v7.widget.Toolbar
@@ -12,11 +13,11 @@
         android:layout_width="match_parent"
         android:layout_height="41dp"
         android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        android:layout_alignParentLeft="true" />
+        android:theme="?attr/actionBarTheme" />
 
     <TextView
         android:id="@+id/textView6"
@@ -42,6 +43,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginTop="45dp"
         android:layout_marginRight="10dp"
+        android:background="@color/TextColor"
         android:text="We are a group of students that will help you manage your tasks with out very simple and powerful app..."
         android:textAllCaps="false"
         android:textSize="18sp"
@@ -49,46 +51,10 @@
         tools:layout_editor_absoluteX="153dp"
         tools:layout_editor_absoluteY="29dp" />
 
-    <Button
-        android:id="@+id/facebook"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/textView3"
-        android:layout_alignLeft="@+id/textView3"
-        android:layout_alignParentTop="false"
-        android:layout_marginStart="15dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="156dp"
-        android:onClick="loadUrl"
-        android:text="facebook" />
-
-    <Button
-        android:id="@+id/twitter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/facebook"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="2dp"
-        android:onClick="loadUrl"
-        android:text="twitter" />
-
-    <Button
-        android:id="@+id/reddit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/facebook"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="3dp"
-        android:layout_marginEnd="18dp"
-        android:layout_marginRight="18dp"
-        android:onClick="loadUrl"
-        android:text="reddit" />
-
     <WebView
         android:id="@+id/web"
         android:layout_width="match_parent"
-        android:layout_height="444dp"
+        android:layout_height="446dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
@@ -96,5 +62,64 @@
         android:layout_marginLeft="0dp"
         android:layout_marginBottom="0dp"
         android:background="@color/TextColor" />
+
+    <ImageButton
+        android:id="@+id/facabook"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="23dp"
+        android:layout_marginLeft="23dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginBottom="0dp"
+        android:clickable="true"
+        android:onClick="loadUrl"
+        app:srcCompat="@drawable/facebookicon" />
+
+    <ImageButton
+        android:id="@+id/twitter"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignBottom="@+id/facabook"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="84dp"
+        android:layout_marginLeft="84dp"
+        android:layout_marginBottom="-1dp"
+        android:clickable="true"
+        android:onClick="loadUrl"
+        app:srcCompat="@drawable/twittericon" />
+
+    <ImageButton
+        android:id="@+id/reddit"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/textView6"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="145dp"
+        android:layout_marginLeft="145dp"
+        android:layout_marginTop="4dp"
+        android:clickable="true"
+        android:onClick="loadUrl"
+        app:srcCompat="@drawable/redditticon" />
+
+    <ImageButton
+        android:id="@+id/ourwebsite"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignTop="@+id/reddit"
+        android:layout_marginStart="11dp"
+        android:layout_marginLeft="11dp"
+        android:layout_marginTop="-1dp"
+        android:layout_toEndOf="@+id/reddit"
+        android:layout_toRightOf="@+id/reddit"
+        android:clickable="true"
+        android:onClick="loadUrl"
+        app:srcCompat="@drawable/ourwebsiteicon" />
+
 
 </RelativeLayout>
