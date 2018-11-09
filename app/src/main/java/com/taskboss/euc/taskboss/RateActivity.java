@@ -25,6 +25,7 @@ public class RateActivity extends AppCompatActivity {
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
@@ -35,6 +36,9 @@ public class RateActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+=======
+
+>>>>>>> 0642d4af281746a9cd87b2f860d0821a1712b349
 =======
 
 >>>>>>> 0642d4af281746a9cd87b2f860d0821a1712b349
