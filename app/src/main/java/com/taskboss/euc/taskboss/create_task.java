@@ -19,6 +19,8 @@ public class create_task extends AppCompatActivity implements AdapterView.OnItem
 
     String assignedTo;
     String priority = "1";
+    String currentUser;
+    String projectName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,8 +75,13 @@ public class create_task extends AppCompatActivity implements AdapterView.OnItem
                 intent.putExtra("time", time.getText().toString());
                 intent.putExtra("priority", priority);
                 intent.putExtra("assignedTo",assignedTo);
-
-
+                currentUser = getIntent().getStringExtra("username");
+                projectName = getIntent().getStringExtra("Project Name");
+                
+                Bundle bundle =new Bundle();
+                bundle.putString("username", currentUser);
+                bundle.putString("Project Name", projectName);
+                intent.putExtras(bundle);
                 Toast.makeText(getApplicationContext(),"Task Created!",Toast.LENGTH_LONG).show();
                 setResult(Activity.RESULT_OK, intent);
                 finish();
