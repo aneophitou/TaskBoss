@@ -18,12 +18,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class allTasksFragment extends Fragment {
-    ArrayList<String> TASKS = new ArrayList<String>(Arrays.asList("Go to Jumbo", "Buy Milk", "Buy Paper A4"));
-    ArrayList<String> DATES = new ArrayList<String>(Arrays.asList("31/10/2018", "05/11/2018", "06/11/2018"));
-    ArrayList<String> TIMES = new ArrayList<String>(Arrays.asList("11:20", "10:30", "12:00"));
-    ArrayList<String> DESCRIPTIONS = new ArrayList<String>(Arrays.asList("Get candy for Trick or Treat", "Get Some Sleep", "Doctors Appointment"));
-    ArrayList<String> PRIORITIES = new ArrayList<String>(Arrays.asList("1", "2", "3"));
-    ArrayList<String> ASSIGNMENTS = new ArrayList<String>(Arrays.asList("Andreas","Giannis","Ahmed"));
+    ArrayList<String> TASKS = new ArrayList<String>(Arrays.asList("Go to Jumbo", "Buy Milk", "Buy Paper A4","task 1", "task 2", "task3"));
+    ArrayList<String> DATES = new ArrayList<String>(Arrays.asList("31/10/2018", "05/11/2018", "06/11/2018","31/10/2018", "05/11/2018","06/11/2018"));
+    ArrayList<String> TIMES = new ArrayList<String>(Arrays.asList("11:20", "10:30", "12:00", "11:20", "10:30", "12:00"));
+    ArrayList<String> DESCRIPTIONS = new ArrayList<String>(Arrays.asList("Get candy for Trick or Treat", "Get Some Sleep", "Doctors Appointment", "Get candy for Trick or Treat", "Get Some Sleep", "Doctors Appointment"));
+    ArrayList<String> PRIORITIES = new ArrayList<String>(Arrays.asList("1", "2", "3", "1", "2", "3"));
+    ArrayList<String> ASSIGNMENTS = new ArrayList<String>(Arrays.asList("Andreas","Giannis","Ahmed","Andreas", "Andreas", "Andreas"));
     ArrayAdapter<String> adapter;
 
     public allTasksFragment() {
@@ -63,7 +63,6 @@ public class allTasksFragment extends Fragment {
                 intent.putExtra("assignedTo", ASSIGNMENTS.get(position));
                 startActivity(intent);
 
-
             }
         });
 
@@ -89,7 +88,7 @@ public class allTasksFragment extends Fragment {
 
             adapter.notifyDataSetChanged();
 
-            Log.e("added",bundle.getString("title"));
+
         }
     }
 

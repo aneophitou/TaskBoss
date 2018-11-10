@@ -1,7 +1,5 @@
 package com.taskboss.euc.taskboss;
 
-import android.app.Activity;
-import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -23,6 +21,7 @@ ArrayList<String> DATES = new ArrayList<String>(Arrays.asList("31/10/2018", "05/
 ArrayList<String> TIMES = new ArrayList<String>(Arrays.asList("11:20", "10:30", "12:00"));
 ArrayList<String> DESCRIPTIONS = new ArrayList<String>(Arrays.asList("Get candy for Trick or Treat", "Get Some Sleep", "Doctors Appointment"));
 ArrayList<String> PRIORITIES = new ArrayList<String>(Arrays.asList("1","2","3"));
+ArrayList<String> ASSIGNMENTS = new ArrayList<String>(Arrays.asList("Andreas", "Andreas", "Andreas"));
 
     ArrayAdapter<String> adapter;
 
@@ -33,7 +32,7 @@ ArrayList<String> PRIORITIES = new ArrayList<String>(Arrays.asList("1","2","3"))
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        Log.e("added",("test3"));
+
 
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_tasks, container, false);
@@ -63,7 +62,7 @@ ArrayList<String> PRIORITIES = new ArrayList<String>(Arrays.asList("1","2","3"))
                 intent.putExtra("description", DESCRIPTIONS.get(position));
                 intent.putExtra("time", TIMES.get(position));
                 intent.putExtra("priority", PRIORITIES.get(position));
-
+                intent.putExtra("assignedTo", ASSIGNMENTS.get(position));
                 startActivity(intent);
             }
         });
@@ -84,9 +83,15 @@ ArrayList<String> PRIORITIES = new ArrayList<String>(Arrays.asList("1","2","3"))
         Bundle bundle = this.getArguments();
         if (bundle!= null) {
             TASKS.add(bundle.getString("title"));
+            DATES.add(bundle.getString("date"));
+            TIMES.add(bundle.getString("time"));
+            DESCRIPTIONS.add(bundle.getString("description"));
+            PRIORITIES.add(bundle.getString("priority"));
+            ASSIGNMENTS.add(bundle.getString("assignedTo"));
+
             adapter.notifyDataSetChanged();
 
-            Log.e("added",bundle.getString("title"));
+
         }
     }
 
