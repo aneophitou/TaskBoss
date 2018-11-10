@@ -27,7 +27,7 @@ public class eventsFragment extends Fragment {
     ArrayList<String> Events = new ArrayList<String>(Arrays.asList("Business Meeting", "Latest Patch discussion", "Shareholders Meeting"));
     ArrayList<String> Places = new ArrayList<String>(Arrays.asList("Senate's Room EUC",
             "6, Diogenis Str., 2404 Engomi, \n" +
-                    "P.O. Box: 22006, 1516 Nicosia-Cyprus\",\"Room 112 EUC", "Room 112 EUC"));
+                    "P.O. Box: 22006, 1516 Nicosia-Cyprus\n","\nRoom 112 EUC", "Room 112 EUC"));
     ArrayList<String> EventDate = new ArrayList<String>(Arrays.asList("11:30 a.m 7/11/2018","12:45 p.m 13/11/2018","17:00 p.m 8/11/2018"));
     ArrayList<String> EventDescription = new ArrayList<String>(Arrays.asList("In our 4th business meeting we are going to discuss about the business benefits of" +
             " the new online store of our company.",

@@ -17,7 +17,6 @@
         android:unfocusedMonthDateColor="@color/TextColorAlternate"
         android:focusedMonthDateColor="@color/TextColorAlternate"
         android:selectedWeekBackgroundColor="@color/TextColorAlternate"
-        
         >
 
     </CalendarView>
