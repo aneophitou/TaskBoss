@@ -22,7 +22,8 @@ ArrayList<String> TIMES = new ArrayList<String>(Arrays.asList("11:20", "10:30", 
 ArrayList<String> DESCRIPTIONS = new ArrayList<String>(Arrays.asList("Get candy for Trick or Treat", "Get Some Sleep", "Doctors Appointment"));
 ArrayList<String> PRIORITIES = new ArrayList<String>(Arrays.asList("1","2","3"));
 ArrayList<String> ASSIGNMENTS = new ArrayList<String>(Arrays.asList("Andreas", "Andreas", "Andreas"));
-
+    String currentUser;
+    String projectName;
 
     ArrayAdapter<String> adapter;
 
@@ -63,6 +64,10 @@ ArrayList<String> ASSIGNMENTS = new ArrayList<String>(Arrays.asList("Andreas", "
                 intent.putExtra("time", TIMES.get(position));
                 intent.putExtra("priority", PRIORITIES.get(position));
                 intent.putExtra("assignedTo", ASSIGNMENTS.get(position));
+                Bundle user = new Bundle();
+                user.putString("username", currentUser);
+                user.putString("Project Name", projectName);
+                intent.putExtras(user);
                 startActivity(intent);
             }
         });

@@ -27,6 +27,7 @@ import java.util.Date;
 
 public class TaskItem extends AppCompatActivity {
 String[] MEMBERS = {"Andreas", "Giannis", "Ahmed", "Ola","Assign this task"};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +51,8 @@ String[] MEMBERS = {"Andreas", "Giannis", "Ahmed", "Ola","Assign this task"};
         txtTitle.setText(title);
         TextView txtDate = this.findViewById(R.id.txtDate);
         Date date = null;
+
+
 
         PrioritySwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -135,8 +138,7 @@ String[] MEMBERS = {"Andreas", "Giannis", "Ahmed", "Ola","Assign this task"};
     public void closeTask(View v){
         Toast.makeText(getApplicationContext(),"Task Closed",Toast.LENGTH_LONG).show();
 
-        Intent intent = new Intent(TaskItem.this,TaskActivity.class );
-        startActivity(intent);
+       onBackPressed();
     }
 
     public void DisablePriority(boolean switcher)

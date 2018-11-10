@@ -75,7 +75,7 @@ public class TaskActivity extends AppCompatActivity {
         tabLayout = findViewById(R.id.tabs);
         Toolbar toolbar = findViewById(R.id.toolbar);
         fab = findViewById(R.id.MainActionButton);
-
+    toolbar.setTitleTextColor(getResources().getColor(android.R.color.white));
         if (savedInstanceState != null){
 
             projectName = savedInstanceState.getString("Project Name");

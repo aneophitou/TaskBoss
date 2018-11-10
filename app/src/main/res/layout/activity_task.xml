@@ -55,22 +55,34 @@
 
     </android.support.v4.view.ViewPager>
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/MainActionButton"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginBottom="0dp">
 
-        android:layout_gravity="bottom|end"
-        android:layout_marginEnd="23dp"
-        android:layout_marginRight="23dp"
-        android:layout_marginBottom="40dp"
-        android:onClick="createTask"
-        android:src="@drawable/add"
-        app:backgroundTintMode="src_over"
-        app:elevation="1dp"
-        app:rippleColor="@color/TextColor">
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/MainActionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
 
-    </android.support.design.widget.FloatingActionButton>
 
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="23dp"
+            android:layout_marginRight="23dp"
+            android:layout_marginBottom="43dp"
+            android:onClick="createTask"
+            android:src="@drawable/add"
+            app:backgroundTintMode="src_over"
+            app:elevation="1dp"
+            app:rippleColor="@color/TextColor">
+
+        </android.support.design.widget.FloatingActionButton>
+
+    </LinearLayout>
 
 </RelativeLayout>
