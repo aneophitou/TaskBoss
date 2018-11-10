@@ -27,7 +27,6 @@ public class EventItem extends AppCompatActivity {
     RadioButton RadioButton2;
     RadioButton RadioButton3;
     Button SendAttendance;
-    Button CloseEvent;
 
     Handler setDelay;
     Runnable startDelay;
@@ -72,7 +71,6 @@ public class EventItem extends AppCompatActivity {
         RadioButton3 = findViewById(R.id.RadioButton3);
         RadioGroup = findViewById(R.id.RadioGroup);
         SendAttendance = findViewById(R.id.btnSendAttedance);
-        CloseEvent = findViewById(R.id.btnCloseEvent);
         setDelay = new Handler();
 
         SendAttendance.setOnClickListener(new View.OnClickListener() {
@@ -98,31 +96,6 @@ public class EventItem extends AppCompatActivity {
                     }
 
                     RadioGroup.setBackgroundResource(R.drawable.greying_field);
-                }
-                else
-                {
-                    Toast.makeText(getApplicationContext(), "Choose participation first...", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-
-        CloseEvent.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                startDelay = new Runnable() {
-                    @Override
-                    public void run() {
-                        Toast.makeText(getApplicationContext(), "Closing Event...", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(EventItem.this, TaskActivity.class);
-                        startActivity(intent);
-                        finish();
-                    }
-                };
-
-                if(RadioButton1.isChecked() || RadioButton2.isChecked() || RadioButton3.isChecked())
-                {
-                    setDelay.postDelayed(startDelay, 1000);
                 }
                 else
                 {
