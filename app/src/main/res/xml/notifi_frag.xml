@@ -6,13 +6,15 @@
         android:id="@+id/notifi_switch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:checked="true"
         android:clickable="true"
-        android:defaultValue="true"
         android:enabled="true"
         android:fadingEdge="horizontal|vertical"
         android:icon="@drawable/notifications"
         android:key="switch_preference_1"
-        android:onClick="createTask"
+        android:onClick="changeSummary"
+        android:summaryOff="Click to switch off"
+        android:summaryOn="Click to switch on"
         android:title="Notifications" />
     <RingtonePreference
         android:layout_width="wrap_content"

@@ -5,11 +5,13 @@
         android:checked="true"
         android:defaultValue="true"
         android:key="check_box_preference_1"
+        android:summaryOn="Click to switch off"
+        android:summaryOff="Click to switch on"
         android:title="Wifi" />
     <CheckBoxPreference
-        android:checked="false"
-        android:defaultValue="false"
         android:gravity="center|end"
         android:key="check_box_preference_2"
+        android:summaryOff="Click to switch on"
+        android:summaryOn="Click to switch off"
         android:title="Mobile data" />
 </PreferenceScreen>
