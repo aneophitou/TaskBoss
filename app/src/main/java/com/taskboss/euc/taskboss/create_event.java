@@ -2,12 +2,14 @@ package com.taskboss.euc.taskboss;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.InputType;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -19,6 +21,9 @@ public class create_event extends AppCompatActivity {
     CheckBox CheckBox3;
     CheckBox CheckBox4;
     String Message;
+    Button Submit;
+    Handler setDelay;
+    Runnable startDelay;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,12 +32,14 @@ public class create_event extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        setDelay = new Handler();
 
         InviteAll = findViewById(R.id.CheckBoxInviteAll);
         CheckBox1 = findViewById(R.id.CheckBoxMember1);
         CheckBox2 = findViewById(R.id.CheckBoxMember2);
         CheckBox3 = findViewById(R.id.CheckBoxMember3);
         CheckBox4 = findViewById(R.id.CheckBoxMember4);
+        Submit = findViewById(R.id.btnSubmitEvent);
 
         InviteAll.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,15 +60,24 @@ public class create_event extends AppCompatActivity {
             }
             });
 
-    }
+        Submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startDelay = new Runnable() {
+                    @Override
+                    public void run() {
+                        startActivity(new Intent(create_event.this, TaskActivity.class));
+                    }
+                };
 
-    public void SubmitEvent(View view)
-    {
-        InviteMembers();
-        Toast.makeText(this.getApplicationContext(),Message,Toast.LENGTH_SHORT).show();
-        startActivity(new Intent(create_event.this, TaskActivity.class));
-    }
+                InviteMembers();
+                Toast.makeText(getApplicationContext(),Message,Toast.LENGTH_SHORT).show();
+                setDelay.postDelayed(startDelay, 1000);
+            }
+        });
 
+    }
+    
     public String InviteMembers()
     {
         if(CheckBox4.isChecked())

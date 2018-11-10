@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.BoringLayout;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -34,17 +35,25 @@ public class CreateProject extends AppCompatActivity {
         Button AddMembers = findViewById(R.id.addListButton);
         MemberToAdd = findViewById(R.id.SprMembers);
         MembersList = findViewById(R.id.txtTeamBox);
-        MembersList.append("\n");
         AddMembers.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
                 String appender = MemberToAdd.getSelectedItem().toString();
                 int ArraySize = 4;
+
                 for(int i = 0; i<ArraySize; i++)
                 {
-                    if(appender.equals(CheckMembers[i]) && CheckMembersUsed[i] == false)
+                    if(appender.equals(CheckMembers[i]) && !CheckMembersUsed[i])
                     {
-                        MembersList.append(appender + "\n");
+                        if(i == 3)
+                        {
+                            MembersList.append(appender);
+                        }
+                        else
+                        {
+                            MembersList.append(appender + "\n");
+                        }
+
                         CheckMembersUsed[i] = true;
                     }
                 }

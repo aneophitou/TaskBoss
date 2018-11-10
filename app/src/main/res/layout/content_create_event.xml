@@ -39,13 +39,13 @@
             android:layout_height="35dp"
             android:textSize="16dp"
             android:layout_marginRight="5dp"
-            android:inputType="text"
+            android:inputType="time"
             android:textStyle="bold"
             android:textColor="#ffffff"
             android:gravity="center"
             android:paddingLeft="5dp"
             android:layout_weight="1"
-            android:hint="When Event Starts?"
+            android:hint="Time Event Starts?"
             android:background="@drawable/event_item_title"
             />
 
@@ -56,11 +56,11 @@
             android:layout_marginLeft="5dp"
             android:textColor="#ffffff"
             android:gravity="center"
-            android:inputType="text"
+            android:inputType="time"
             android:textStyle="bold"
             android:paddingLeft="5dp"
             android:textSize="16dp"
-            android:hint="When Event Finishes?"
+            android:hint="Time Event Finishes?"
             android:layout_weight="1"
             android:background="@drawable/event_item_title"
             />
@@ -73,7 +73,7 @@
         android:hint="Enter Date"
         android:gravity="center"
         android:textSize="20dp"
-        android:inputType="text"
+        android:inputType="date"
         android:textColor="#ffffff"
         android:paddingLeft="5dp"
         android:textStyle="bold"
@@ -185,7 +185,6 @@
         android:textStyle="bold"
         android:textColor="#ffffff"
         android:text="submit"
-        android:onClick="SubmitEvent"
         android:background="@drawable/event_item_title"
         />
 

@@ -91,7 +91,7 @@
         android:id="@+id/startDate"
         android:layout_width="143dp"
         android:layout_height="45dp"
-        android:layout_alignStart="@+id/projSpinner"
+        android:layout_alignStart="@+id/SprMembers"
         android:layout_marginTop="255dp"
         android:background="@drawable/radius_corners"
         android:ems="10"
@@ -100,7 +100,7 @@
         android:paddingLeft="10dp"
         tools:layout_editor_absoluteX="15dp"
         tools:layout_editor_absoluteY="160dp"
-        android:layout_alignLeft="@+id/projSpinner" />
+        android:layout_alignLeft="@+id/SprMembers" />
 
     <EditText
         android:id="@+id/endDate"
@@ -199,7 +199,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="380dp"
+        android:layout_marginTop="390dp"
         android:layout_marginEnd="141dp"
         android:layout_marginRight="141dp"
         android:layout_marginBottom="20dp"
