@@ -10,7 +10,6 @@ import android.view.View;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
-import javax.xml.datatype.Duration;
 
 
 public class SettingsActivity extends AppCompatActivity {
