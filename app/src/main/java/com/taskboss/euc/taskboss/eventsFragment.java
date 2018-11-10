@@ -23,7 +23,7 @@ import java.util.Arrays;
 public class eventsFragment extends Fragment {
     CalendarView calendarView;
     ArrayAdapter<String> listViewAdapter;
-     ArrayList<String> filteredList = new ArrayList<>();
+    ArrayList<String> filteredList = new ArrayList<>();
     ArrayList<String> Events = new ArrayList<String>(Arrays.asList("Business Meeting", "Latest Patch discussion", "Shareholders Meeting"));
     ArrayList<String> Places = new ArrayList<String>(Arrays.asList("Senate's Room EUC",
             "6, Diogenis Str., 2404 Engomi, \n" +
@@ -37,6 +37,7 @@ public class eventsFragment extends Fragment {
                     " after 1 month of the new systems deployment."
             ));
     TextView txtDate;
+    TextView txtNoEvents;
 
     public eventsFragment() {
         // Required empty public constructor
@@ -63,16 +64,17 @@ public class eventsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_events, container, false);
 
+        filteredList.clear();
+        final ListView listView = view.findViewById(R.id.ListView);
+        txtNoEvents = view.findViewById(R.id.txtNoEvents);
+        txtNoEvents.setVisibility(View.VISIBLE);
 
-        ListView listView = view.findViewById(R.id.ListView);
+        listView.setVisibility(View.INVISIBLE);
+        listViewAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, filteredList);
 
+        listView.setAdapter(listViewAdapter);
 
-            filteredList.add("No Events");
-            listViewAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, filteredList);
-
-            listView.setAdapter(listViewAdapter);
-
-            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     Intent intent = new Intent(getActivity(), EventItem.class);
@@ -89,29 +91,33 @@ public class eventsFragment extends Fragment {
         calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
-                //NEED FUNCTION TO SHOW ONLY SELECTED DATE
+
                 String selectedDate = dayOfMonth+"/"+(month+1)+"/"+year;
 
                 txtDate.setText("Events for: "+selectedDate);
                 int listChange = 0;
                 ArrayList<String> templist = new ArrayList<String>();
-                //Log.e("size",String.valueOf(EventDate.size()));
+
                 for (int i = 0; i<EventDate.size(); i++){
-                    Log.e("date", EventDate.get(i));
-                    Log.e("currentDate", selectedDate);
+
+
                     if (EventDate.get(i).toLowerCase().contains(selectedDate.toLowerCase())){
-                        Log.e("date2", EventDate.get(i));
+
                         templist.add(Events.get(i));
                         listChange=1;
                     }
                 }
                 if(listChange ==1){
-                Log.e("added", "string added");
+
                     filteredList.clear();
                     filteredList.addAll(templist);
-                    Log.e("filteredList", filteredList.get(0));
-                    listViewAdapter.notifyDataSetChanged();
 
+                    listViewAdapter.notifyDataSetChanged();
+                    txtNoEvents.setVisibility(view.GONE);
+                    listView.setVisibility(view.VISIBLE);
+                }else{
+                    txtNoEvents.setVisibility(view.VISIBLE);
+                    listView.setVisibility(View.INVISIBLE);
                 }
             }
         });
