@@ -90,6 +90,7 @@
                 android:value="com.taskboss.euc.taskboss.LoginActivity" />
         </activity>
         <activity android:name=".SettingsActivity"
+            android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme"></activity>
         <activity android:name=".AboutActivity"
             android:parentActivityName=".TaskActivity"
