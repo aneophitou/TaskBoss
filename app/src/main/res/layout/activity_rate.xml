@@ -148,6 +148,7 @@
         android:layout_toLeftOf="@+id/textView9"
         android:paddingLeft="10dp"
         android:textColor="#222273"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:layout_marginRight="-292dp" />
 
 </RelativeLayout>

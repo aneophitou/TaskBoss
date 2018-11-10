@@ -45,7 +45,8 @@
         android:layout_marginLeft="0dp"
         android:layout_marginTop="168dp"
         android:gravity=""
-        android:text="Involved: Halkos Project\nGiannis,Ola"
+        android:background="@drawable/spinnerproj"
+        android:text="\nInvolved: Halkos Project\nGiannis,Ola"
         android:textAlignment="center"
         android:visibility="invisible" />
 
@@ -59,7 +60,8 @@
         android:layout_centerVertical="false"
         android:layout_marginStart="0dp"
         android:layout_marginTop="98dp"
-        android:text="Our Project\nInvolved: Andreas,Giannis,Ahmed,Ola"
+        android:background="@drawable/spinproj3"
+        android:text="\nOur Project\nInvolved: Andreas,Giannis,Ahmed,Ola"
         android:visibility="visible"
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="0dp"
