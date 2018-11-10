@@ -47,11 +47,6 @@ public class EventItem extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        EditText ActionDoneKeyboard = findViewById(R.id.txtDescription);
-
-        ActionDoneKeyboard.setImeOptions(EditorInfo.IME_ACTION_DONE);
-        ActionDoneKeyboard.setRawInputType(InputType.TYPE_CLASS_TEXT);
-
         Title = getIntent().getStringExtra("EventTitle");
         Place = getIntent().getStringExtra("EventPlace");
         Date = getIntent().getStringExtra("EventDate");

@@ -13,7 +13,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class create_event extends AppCompatActivity {
-    EditText ActionDoneKeyboard1;
     CheckBox InviteAll;
     CheckBox CheckBox1;
     CheckBox CheckBox2;
@@ -28,12 +27,6 @@ public class create_event extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-        // change the keyboard bottom-right-corner key to "DONE" mode for the last required EditText (the description)
-        ActionDoneKeyboard1 = findViewById(R.id.txtDescription);
-
-        ActionDoneKeyboard1.setImeOptions(EditorInfo.IME_ACTION_DONE);
-        ActionDoneKeyboard1.setRawInputType(InputType.TYPE_CLASS_TEXT);
 
         InviteAll = findViewById(R.id.CheckBoxInviteAll);
         CheckBox1 = findViewById(R.id.CheckBoxMember1);

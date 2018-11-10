@@ -10,9 +10,16 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 public class CreateProject extends AppCompatActivity {
     String projectName = "TaskBoss";
+    Spinner MemberToAdd;
+    Button btnAdd;
+    Button AddMembers;
+    TextView MembersList;
+    String CheckMembers[] = {"Andreas","Ahmed","Giannis","Ola"};
+    Boolean CheckMembersUsed[] = {false,false,false,false};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,9 +30,26 @@ public class CreateProject extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        Spinner comboBox = findViewById(R.id.comboBox1);
-
         Button btnAdd = findViewById(R.id.addProj);
+        Button AddMembers = findViewById(R.id.addListButton);
+        MemberToAdd = findViewById(R.id.SprMembers);
+        MembersList = findViewById(R.id.txtTeamBox);
+        MembersList.append("\n");
+        AddMembers.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                String appender = MemberToAdd.getSelectedItem().toString();
+                int ArraySize = 4;
+                for(int i = 0; i<ArraySize; i++)
+                {
+                    if(appender.equals(CheckMembers[i]) && CheckMembersUsed[i] == false)
+                    {
+                        MembersList.append(appender + "\n");
+                        CheckMembersUsed[i] = true;
+                    }
+                }
+            }
+        });
         btnAdd.setOnClickListener(new View.OnClickListener(){
 
             @Override

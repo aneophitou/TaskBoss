@@ -75,7 +75,6 @@
         android:padding="5dp"
         android:textColor="#ffffff"
         android:background="@drawable/event_item_title"
-        android:imeOptions="actionDone"
         android:textSize="17dp"
         android:inputType="textMultiLine"
         app:layout_constraintBottom_toTopOf="@id/RadioGroup"

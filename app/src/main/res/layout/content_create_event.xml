@@ -59,7 +59,6 @@
             android:inputType="text"
             android:textStyle="bold"
             android:paddingLeft="5dp"
-            android:imeOptions="actionDone"
             android:textSize="16dp"
             android:hint="When Event Finishes?"
             android:layout_weight="1"
