@@ -47,18 +47,6 @@
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="63dp" />
 
-    <Spinner
-        android:id="@+id/comboBox1"
-        android:layout_width="381dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="310dp"
-        android:entries="@array/AddToProject"
-        android:spinnerMode="dialog"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="338dp" />
 
     <TextView
         android:layout_width="85dp"
@@ -66,10 +54,8 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="240dp"
+        android:layout_marginStart="254dp"
         android:layout_marginLeft="240dp"
         android:layout_marginTop="230dp"
         android:gravity="center"
@@ -105,8 +91,7 @@
         android:id="@+id/startDate"
         android:layout_width="143dp"
         android:layout_height="45dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
+        android:layout_alignStart="@+id/projSpinner"
         android:layout_marginTop="255dp"
         android:background="@drawable/radius_corners"
         android:ems="10"
@@ -114,14 +99,15 @@
         android:inputType="date"
         android:paddingLeft="10dp"
         tools:layout_editor_absoluteX="15dp"
-        tools:layout_editor_absoluteY="160dp" />
+        tools:layout_editor_absoluteY="160dp"
+        android:layout_alignLeft="@+id/projSpinner" />
 
     <EditText
         android:id="@+id/endDate"
         android:layout_width="129dp"
         android:layout_height="45dp"
         android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="230dp"
         android:layout_marginLeft="230dp"
@@ -132,12 +118,16 @@
         android:inputType="date"
         android:paddingLeft="10dp"
         tools:layout_editor_absoluteX="220dp"
-        tools:layout_editor_absoluteY="160dp" />
+        tools:layout_editor_absoluteY="160dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true" />
 
     <EditText
         android:id="@+id/projectNameTxt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/projectDescTxt"
+        android:layout_alignRight="@+id/projectDescTxt"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
@@ -150,32 +140,102 @@
         android:inputType="textPersonName"
         android:paddingLeft="10dp" />
 
-    <Switch
-        android:id="@+id/switch1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/spinner"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="340dp"
-        android:text="Switch" />
-
     <Button
-        android:id="@+id/addProj"
-        android:layout_width="120dp"
-        android:layout_height="49dp"
+        android:id="@+id/addMem"
+        android:layout_width="114dp"
+        android:layout_height="39dp"
+        android:layout_below="@+id/projSpinner"
+        android:layout_alignStart="@+id/projSpinner"
+        android:layout_alignLeft="@+id/projSpinner"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="100dp"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="390dp"
-        android:layout_marginEnd="100dp"
-        android:layout_marginRight="100dp"
-        android:layout_marginBottom="90dp"
+        android:layout_marginStart="-2dp"
+        android:layout_marginLeft="-2dp"
+        android:layout_marginTop="355dp"
+        android:layout_marginEnd="248dp"
+        android:layout_marginRight="248dp"
+        android:layout_marginBottom="132dp"
+        android:background="@drawable/spinnerproj"
+        android:text="Add Member"
+        android:textAlignment="center" />
+
+    <Button
+        android:id="@+id/addProj"
+        android:layout_width="103dp"
+        android:layout_height="81dp"
+
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="256dp"
+        android:layout_marginLeft="256dp"
+        android:layout_marginTop="415dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/spinnerproj"
         android:text="Add" />
+
+    <Spinner
+        android:id="@+id/comboBox1"
+        android:layout_width="205dp"
+        android:layout_height="42dp"
+        android:layout_alignLeft="@id/projectDescTxt"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="308dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginRight="17dp"
+        android:layout_marginBottom="176dp"
+        android:layout_toStartOf="@+id/addListButton"
+        android:layout_toLeftOf="@+id/addListButton"
+        android:background="@drawable/spinproj3"
+        android:entries="@array/AssignToIndividualList"
+        android:prompt="@string/ComboBoxDefaultValue"
+        android:spinnerMode="dialog"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/addListButton"
+        android:layout_width="111dp"
+        android:layout_height="51dp"
+        android:layout_alignLeft="@+id/endDate"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="start"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="304dp"
+        android:layout_marginBottom="171dp"
+        android:background="@drawable/spinnerproj"
+        android:text="Add member\nto list"
+        android:textAlignment="center"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="338dp" />
+
+    <TextView
+        android:id="@+id/teamBox"
+        android:layout_width="wrap_content"
+        android:layout_height="107dp"
+        android:layout_alignLeft="@+id/addMem"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="399dp"
+        android:layout_marginEnd="141dp"
+        android:layout_marginRight="141dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/event_item_title"
+        android:hint=""
+        android:imeOptions="actionDone"
+        android:inputType="textMultiLine"
+        android:padding="5dp"
+        android:textColor="#ffffff" />
 
 
 </RelativeLayout>

@@ -10,7 +10,6 @@ import android.view.View;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
-import javax.xml.datatype.Duration;
 
 
 public class SettingsActivity extends AppCompatActivity {
@@ -42,6 +41,7 @@ public class SettingsActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 }
+
     //Code to retain the project name & username
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
@@ -54,6 +54,7 @@ public class SettingsActivity extends AppCompatActivity {
 
         }
     }
+
     public void update(View view)
     {
         RadioButton r1 = findViewById(R.id.auto);

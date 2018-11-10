@@ -39,6 +39,9 @@ public class eventsFragment extends Fragment {
             ));
     TextView txtDate;
     TextView txtNoEvents;
+    Button btnCloseEvent;
+    int GetListItemPosition;
+
 
     Button buttonClose;
 
@@ -46,35 +49,15 @@ public class eventsFragment extends Fragment {
         // Required empty public constructor
     }
 
-    public void CloseEvent(View v)
-    {
-        String RemoveEvent = getActivity().getIntent().getStringExtra("EventTitle");
-        String RemovePlace = getActivity().getIntent().getStringExtra("EventPlace");
-        String RemoveDate = getActivity().getIntent().getStringExtra("EventDate");
-        String RemoveDescription = getActivity().getIntent().getStringExtra("Description");
-
-        RemoveItem(Events,Places,EventDate,EventDescription,RemoveEvent,RemovePlace,RemoveDate,RemoveDescription);
-
-        Events.remove(RemoveEvent);
-        Events.remove(RemoveEvent);
-        Places.remove(RemovePlace);
-        EventDate.remove(RemoveDate);
-        EventDescription.remove(RemoveDescription);
-
-        Toast.makeText(getActivity().getApplicationContext(),"Closing Event...",Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(eventsFragment.this.getActivity(), TaskActivity.class);
-        startActivity(intent);
-    }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_events, container, false);
-
         filteredList.clear();
         final ListView listView = view.findViewById(R.id.ListView);
         txtNoEvents = view.findViewById(R.id.txtNoEvents);
         txtNoEvents.setVisibility(View.VISIBLE);
-
+        btnCloseEvent = (Button) view.findViewById(R.id.btnCloseEvent);
+        btnCloseEvent.setVisibility(View.INVISIBLE);
         listView.setVisibility(View.INVISIBLE);
         listViewAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, filteredList);
 
@@ -83,6 +66,7 @@ public class eventsFragment extends Fragment {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    GetListItemPosition = position;
                     Intent intent = new Intent(getActivity(), EventItem.class);
                     intent.putExtra("EventTitle", Events.get(position));
                     intent.putExtra("EventPlace", Places.get(position));
@@ -91,6 +75,26 @@ public class eventsFragment extends Fragment {
                     startActivity(intent);
                 }
             });
+
+        btnCloseEvent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int ItemToDelete = GetListItemPosition;
+
+                Events.remove(GetListItemPosition);
+                Places.remove(GetListItemPosition);
+                EventDate.remove(GetListItemPosition);
+                EventDescription.remove(GetListItemPosition);
+
+                filteredList.clear();
+
+                listViewAdapter.notifyDataSetChanged();
+
+                btnCloseEvent.setVisibility(view.INVISIBLE);
+                Toast.makeText(getActivity().getApplicationContext(),"Event was Closed",Toast.LENGTH_SHORT).show();
+
+            }
+        });
         txtDate = view.findViewById(R.id.txtTodaysEvents);
         calendarView = view.findViewById(R.id.calendarView);
         buttonClose = view.findViewById(R.id.btnCloseEvent);
@@ -123,6 +127,7 @@ public class eventsFragment extends Fragment {
                     listViewAdapter.notifyDataSetChanged();
                     txtNoEvents.setVisibility(view.GONE);
                     listView.setVisibility(view.VISIBLE);
+                    btnCloseEvent.setVisibility(view.VISIBLE);
                 }else{
                     txtNoEvents.setVisibility(view.VISIBLE);
                     buttonClose.setVisibility(View.INVISIBLE);
@@ -133,26 +138,4 @@ public class eventsFragment extends Fragment {
         });
         return view;
     }
-
-    public void RemoveItem(ArrayList Events,ArrayList Places,ArrayList EventDate,ArrayList EventDescription,String RemoveEvent,String RemovePlace,String RemoveDate,String RemoveDescription)
-    {
-        int EventsCount = Events.size();
-        //int PlacesCount = Places.size();
-        //int DatesCount = EventDate.size();
-        //int DescriptionCount = EventDescription.size();
-
-        for (int i = 0; i < EventsCount; i++) {
-            if(RemoveEvent == Events.get(i))
-            {
-                Events.remove(i);
-            }
-        }
-        for (int i = 0; i < EventsCount; i++) {
-            if(RemoveEvent == Events.get(i))
-            {
-                Events.remove(i);
-            }
-        }
-    }
-
 }

@@ -14,9 +14,9 @@
         android:layout_alignEnd="@+id/action_share"
         android:layout_alignRight="@+id/action_share"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="120dp"
-        android:layout_marginEnd="-13dp"
-        android:layout_marginRight="-13dp"
+        android:layout_marginTop="112dp"
+        android:layout_marginEnd="-11dp"
+        android:layout_marginRight="-11dp"
         android:background="@color/colorPrimaryDark"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -52,7 +52,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="9dp"
         android:layout_marginLeft="9dp"
-        android:layout_marginTop="115dp"
+        android:layout_marginTop="112dp"
         android:layout_toEndOf="@+id/textView5"
         android:layout_toRightOf="@+id/textView5"
         android:onClick="rateMessage"
@@ -67,6 +67,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="182dp"
         android:textSize="24sp" />
 
@@ -97,14 +98,14 @@
 
     <EditText
         android:id="@+id/editText"
-        android:layout_width="383dp"
-        android:layout_height="70dp"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
         android:layout_alignEnd="@+id/rateButton"
         android:layout_alignRight="@+id/rateButton"
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="-6dp"
         android:layout_marginRight="-6dp"
-        android:layout_marginBottom="256dp"
+        android:layout_marginBottom="238dp"
         android:background="@color/cardview_shadow_start_color"
         android:hint="Send us feedback"
         android:inputType="textPersonName"
@@ -117,9 +118,9 @@
         android:layout_alignTop="@+id/editText"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="65dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginRight="5dp"
+        android:layout_marginTop="53dp"
+        android:layout_marginEnd="7dp"
+        android:layout_marginRight="7dp"
         android:onClick="getFeedback"
         android:text="send" />
 
@@ -148,6 +149,7 @@
         android:layout_toLeftOf="@+id/textView9"
         android:paddingLeft="10dp"
         android:textColor="#222273"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:layout_marginRight="-292dp" />
 
 </RelativeLayout>
