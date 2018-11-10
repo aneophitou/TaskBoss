@@ -23,6 +23,7 @@ ArrayList<String> DESCRIPTIONS = new ArrayList<String>(Arrays.asList("Get candy 
 ArrayList<String> PRIORITIES = new ArrayList<String>(Arrays.asList("1","2","3"));
 ArrayList<String> ASSIGNMENTS = new ArrayList<String>(Arrays.asList("Andreas", "Andreas", "Andreas"));
 
+
     ArrayAdapter<String> adapter;
 
     public tasksFragment() {
@@ -50,7 +51,6 @@ ArrayList<String> ASSIGNMENTS = new ArrayList<String>(Arrays.asList("Andreas", "
                 return view;
             }
         };
-        listView.setAdapter(adapter);
 
         //code to handle clicks of the items in the list
         listView.setOnItemClickListener( new AdapterView.OnItemClickListener(){
@@ -67,6 +67,7 @@ ArrayList<String> ASSIGNMENTS = new ArrayList<String>(Arrays.asList("Andreas", "
             }
         });
 
+        listView.setAdapter(adapter);
 
         return rootView;
     }
@@ -75,13 +76,14 @@ ArrayList<String> ASSIGNMENTS = new ArrayList<String>(Arrays.asList("Andreas", "
     public void onActivityCreated(Bundle savedInstanceState) {
 
         super.onActivityCreated(savedInstanceState);
+
     }
 
     @Override
     public void onResume() {
         super.onResume();
         Bundle bundle = this.getArguments();
-        if (bundle!= null) {
+        if (bundle!= null ) {
             TASKS.add(bundle.getString("title"));
             DATES.add(bundle.getString("date"));
             TIMES.add(bundle.getString("time"));

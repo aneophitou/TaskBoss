@@ -204,6 +204,7 @@ public class TaskActivity extends AppCompatActivity {
             bundle.putString("priority", data.getExtras().getString("priority"));
             bundle.putString("assignedTo", data.getExtras().getString("assignedTo"));
 
+
             Fragment tfrag = new allTasksFragment();
             tfrag.setArguments(bundle);
 
@@ -221,7 +222,7 @@ public class TaskActivity extends AppCompatActivity {
     public void onSaveInstanceState(Bundle savedInstanceState){
         savedInstanceState.putString("username", currentUser);
         savedInstanceState.putString("Project Name", projectName);
-        Log.e("logged", "values logged" + currentUser + projectName);
+
 
         super.onSaveInstanceState(savedInstanceState);
     }
