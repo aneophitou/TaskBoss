@@ -92,7 +92,7 @@
         <activity android:name=".SettingsActivity"
             android:theme="@style/AppTheme"></activity>
         <activity android:name=".AboutActivity"
-            android:parentActivityName=".LoginActivity"
+            android:parentActivityName=".TaskActivity"
             android:theme="@style/AppTheme"></activity>
         <activity android:name=".ProfileActivity"
             android:theme="@style/AppTheme">
@@ -100,7 +100,12 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.taskboss.euc.taskboss.TaskActivity" />
         </activity>
-        <activity android:name=".CreateProject"></activity>
+        <activity
+            android:name=".CreateProject"
+            android:label="Create A Project"
+            >
+
+        </activity>
     </application>
 
 </manifest>

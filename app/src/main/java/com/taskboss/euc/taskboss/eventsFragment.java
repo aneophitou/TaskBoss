@@ -45,12 +45,15 @@ public class eventsFragment extends Fragment {
 
     public void CloseEvent(View v)
     {
-        String RemoveTitle = getActivity().getIntent().getStringExtra("EventTitle");
+        String RemoveEvent = getActivity().getIntent().getStringExtra("EventTitle");
         String RemovePlace = getActivity().getIntent().getStringExtra("EventPlace");
         String RemoveDate = getActivity().getIntent().getStringExtra("EventDate");
         String RemoveDescription = getActivity().getIntent().getStringExtra("Description");
 
-        Events.remove(RemoveTitle);
+        RemoveItem(Events,Places,EventDate,EventDescription,RemoveEvent,RemovePlace,RemoveDate,RemoveDescription);
+
+        Events.remove(RemoveEvent);
+        Events.remove(RemoveEvent);
         Places.remove(RemovePlace);
         EventDate.remove(RemoveDate);
         EventDescription.remove(RemoveDescription);
@@ -124,8 +127,25 @@ public class eventsFragment extends Fragment {
         return view;
     }
 
+    public void RemoveItem(ArrayList Events,ArrayList Places,ArrayList EventDate,ArrayList EventDescription,String RemoveEvent,String RemovePlace,String RemoveDate,String RemoveDescription)
+    {
+        int EventsCount = Events.size();
+        //int PlacesCount = Places.size();
+        //int DatesCount = EventDate.size();
+        //int DescriptionCount = EventDescription.size();
 
-
-
+        for (int i = 0; i < EventsCount; i++) {
+            if(RemoveEvent == Events.get(i))
+            {
+                Events.remove(i);
+            }
+        }
+        for (int i = 0; i < EventsCount; i++) {
+            if(RemoveEvent == Events.get(i))
+            {
+                Events.remove(i);
+            }
+        }
+    }
 
 }

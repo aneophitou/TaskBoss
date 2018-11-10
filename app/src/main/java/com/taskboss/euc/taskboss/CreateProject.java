@@ -12,6 +12,8 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 public class CreateProject extends AppCompatActivity {
+    String projectName = "TaskBoss";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +35,7 @@ public class CreateProject extends AppCompatActivity {
                 EditText enDate = findViewById(R.id.endDate);
 
                 Intent intent = new Intent();
-                String projectName = projName.getText().toString();
+                projectName = projName.getText().toString();
                 String startDate = stDate.getText().toString();
                 String endDate = enDate.getText().toString();
 
