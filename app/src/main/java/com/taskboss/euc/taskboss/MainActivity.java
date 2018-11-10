@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setTitle(getIntent().getStringExtra("Project Name"));
 
         Button createProj = findViewById(R.id.createProjectButton);
-        createProj.setOnClickListener(new View.OnClickListener(){
+        createProj.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
         final Button OurProj = findViewById(R.id.ourProjButton);
         Button HalkProj = findViewById(R.id.halkosButton);
-        OurProj.setOnClickListener(new View.OnClickListener(){
+        OurProj.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
@@ -44,15 +44,10 @@ public class MainActivity extends AppCompatActivity {
 
                 intent.putExtra("Project Name", OurProj.getText().toString());
 
-                // the two below commands for error detection are crashing the whole app c/o Giannis A.
-                //Log.e("msssgy", getIntent().getStringExtra("username"));
-                //Log.e("ehrer", OurProj.getText().toString());
                 startActivity(intent);
                 finish();
             }
         });
-
-
     }
 
     @Override
@@ -64,8 +59,8 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        int id=item.getItemId();
-        if (id==R.id.nav_settings){
+        int id = item.getItemId();
+        if (id == R.id.nav_settings) {
             Intent i = new Intent(this, SettingsActivity.class);
             startActivity(i);
 
@@ -80,14 +75,10 @@ public class MainActivity extends AppCompatActivity {
         } else if (id == R.id.action_help) {
             Intent i = new Intent(this, RateActivity.class);
             startActivity(i);
-        }
-        else if (id==R.id.nav_home)
-        {
+        } else if (id == R.id.nav_home) {
             Intent i = new Intent(this, MainActivity.class);
             startActivity(i);
-        }
-        else if (id==R.id.nav_profile)
-        {
+        } else if (id == R.id.nav_profile) {
             Intent i = new Intent(this, ProfileActivity.class);
             startActivity(i);
         }

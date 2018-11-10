@@ -6,6 +6,7 @@ import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -88,5 +89,17 @@ public class create_task extends AppCompatActivity implements AdapterView.OnItem
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
 
+    }
+    //Code to retain the project name & username
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch(item.getItemId()){
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+
+        }
     }
 }

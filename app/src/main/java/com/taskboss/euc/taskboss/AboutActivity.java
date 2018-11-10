@@ -3,6 +3,7 @@ package com.taskboss.euc.taskboss;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -44,6 +45,18 @@ public class AboutActivity extends AppCompatActivity {
             Toast.makeText(this, "Sorry, our website is under maintenance", Toast.LENGTH_LONG).show();
         }
 
+    }
 
+    //Code to retain the project name & username
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch(item.getItemId()){
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+
+        }
     }
 }

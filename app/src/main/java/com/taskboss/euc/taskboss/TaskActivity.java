@@ -29,6 +29,7 @@ public class TaskActivity extends AppCompatActivity {
     TabLayout tabLayout;
 
     String currentUser;
+    String projectName;
 
     FloatingActionButton fab;
     public class PageAdapter extends FragmentStatePagerAdapter {
@@ -72,11 +73,18 @@ public class TaskActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         fab = findViewById(R.id.MainActionButton);
 
-
-        toolbar.setTitle(getIntent().getStringExtra("Project Name"));
+        if (savedInstanceState != null){
+            Log.e("this worked", "this worked");
+            projectName = savedInstanceState.getString("Project Name");
+            currentUser = savedInstanceState.getString("username");
+        }else{
+            Log.e("this worked", "this didnt worked");
+            projectName = getIntent().getStringExtra("Project Name");
+            currentUser = getIntent().getStringExtra("username");
+        }
+        toolbar.setTitle(projectName);
         setSupportActionBar(toolbar);
 
-        currentUser = getIntent().getStringExtra("username");
 
         mPageAdapter = new PageAdapter(getSupportFragmentManager());
         mPageAdapter.addFragment(new tasksFragment(), "Assigned Tasks");
@@ -209,6 +217,14 @@ public class TaskActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState){
+        savedInstanceState.putString("username", currentUser);
+        savedInstanceState.putString("Project Name", projectName);
+        Log.e("logged", "values logged" + currentUser + projectName);
+
+        super.onSaveInstanceState(savedInstanceState);
+    }
 
 
 }

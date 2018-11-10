@@ -3,9 +3,11 @@ package com.taskboss.euc.taskboss;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.InputType;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
@@ -169,6 +171,19 @@ String[] MEMBERS = {"Andreas", "Giannis", "Ahmed", "Ola","Assign this task"};
             rbLow.setTextColor(Color.parseColor("#000000"));
             rbMedium.setTextColor(Color.parseColor("#000000"));
             rbHigh.setTextColor(Color.parseColor("#000000"));
+        }
+    }
+
+    //Code to retain the project name & username
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch(item.getItemId()){
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+
         }
     }
 

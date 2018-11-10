@@ -23,14 +23,16 @@ public class RateActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
+    //Code to retain the project name & username
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()){
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch(item.getItemId()){
             case android.R.id.home:
-                startActivity(new Intent(RateActivity.this, TaskActivity.class));
+                onBackPressed();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
+
         }
     }
 

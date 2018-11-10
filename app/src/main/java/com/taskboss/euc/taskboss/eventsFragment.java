@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -38,6 +39,8 @@ public class eventsFragment extends Fragment {
             ));
     TextView txtDate;
     TextView txtNoEvents;
+
+    Button buttonClose;
 
     public eventsFragment() {
         // Required empty public constructor
@@ -90,6 +93,7 @@ public class eventsFragment extends Fragment {
             });
         txtDate = view.findViewById(R.id.txtTodaysEvents);
         calendarView = view.findViewById(R.id.calendarView);
+        buttonClose = view.findViewById(R.id.btnCloseEvent);
 
         calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
@@ -110,6 +114,7 @@ public class eventsFragment extends Fragment {
                         listChange=1;
                     }
                 }
+                //if an event exists, then hide the textview and show the list. Otherwise, hide the list and the button
                 if(listChange ==1){
 
                     filteredList.clear();
@@ -120,7 +125,9 @@ public class eventsFragment extends Fragment {
                     listView.setVisibility(view.VISIBLE);
                 }else{
                     txtNoEvents.setVisibility(view.VISIBLE);
+                    buttonClose.setVisibility(View.INVISIBLE);
                     listView.setVisibility(View.INVISIBLE);
+
                 }
             }
         });

@@ -42,14 +42,16 @@ public class SettingsActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 }
+    //Code to retain the project name & username
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()){
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch(item.getItemId()){
             case android.R.id.home:
-                startActivity(new Intent(SettingsActivity.this, TaskActivity.class));
+                onBackPressed();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
+
         }
     }
     public void update(View view)
@@ -66,4 +68,6 @@ public class SettingsActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(),"Automatic update is off",Toast.LENGTH_SHORT).show();
         }
     }
+
+
 }
