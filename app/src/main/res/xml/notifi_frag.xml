@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <SwitchPreference
+        android:id="@+id/notifi_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:defaultValue="true"
+        android:enabled="true"
+        android:fadingEdge="horizontal|vertical"
+        android:icon="@drawable/notifications"
+        android:key="switch_preference_1"
+        android:onClick="createTask"
+        android:title="Notifications" />
+    <RingtonePreference
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:icon="@drawable/sounds"
+        android:key="ringtone_preference_1"
+        android:summary="Click to change ringtone"
+        android:title="Notification Ringtone" />
+</PreferenceScreen>

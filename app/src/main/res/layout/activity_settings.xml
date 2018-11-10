@@ -19,4 +19,67 @@
         android:theme="?attr/actionBarTheme"
         app:title="Settings" />
 
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="match_parent"
+        android:layout_height="47dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:text="Check for updates:"
+        android:textSize="18sp" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <RadioButton
+            android:id="@+id/radioButton6"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:background="#3bcf94"
+            android:checked="true"
+            android:gravity="center"
+            android:text="Automatically" />
+
+        <RadioButton
+            android:id="@+id/radioButton7"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_weight="1"
+            android:background="#3bcf94"
+            android:gravity="center_horizontal|center"
+            android:text="Manually" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:text="Internet usage:"
+        android:textSize="18sp" />
+
+    <fragment
+        android:id="@+id/fragment8"
+        android:name="com.taskboss.euc.taskboss.SettingsActivity$SettingsFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="match_parent"
+        android:layout_height="47dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:text="Notifications:"
+        android:textSize="18sp" />
+
+    <fragment
+        android:id="@+id/fragment10"
+        android:name="com.taskboss.euc.taskboss.SettingsActivity$SettingsFragment$NotifiFrag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
 </LinearLayout>

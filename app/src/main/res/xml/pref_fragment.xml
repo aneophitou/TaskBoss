@@ -2,16 +2,14 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
     <CheckBoxPreference
-        android:defaultValue="false"
-        android:key="check_box_preference_1"
-        android:title="Wifi only" />
-    <SwitchPreference
+        android:checked="true"
         android:defaultValue="true"
-        android:enabled="true"
-        android:fadingEdge="horizontal|vertical"
-        android:key="switch_preference_1"
-        android:title="Notification" />
-    <RingtonePreference
-        android:key="ringtone_preference_1"
-        android:title="Notification Ringtone" />
+        android:key="check_box_preference_1"
+        android:title="Wifi" />
+    <CheckBoxPreference
+        android:checked="false"
+        android:defaultValue="false"
+        android:gravity="center|end"
+        android:key="check_box_preference_2"
+        android:title="Mobile data" />
 </PreferenceScreen>
