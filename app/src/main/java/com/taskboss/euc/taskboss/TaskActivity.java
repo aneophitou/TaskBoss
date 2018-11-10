@@ -74,11 +74,11 @@ public class TaskActivity extends AppCompatActivity {
         fab = findViewById(R.id.MainActionButton);
 
         if (savedInstanceState != null){
-            Log.e("this worked", "this worked");
+
             projectName = savedInstanceState.getString("Project Name");
             currentUser = savedInstanceState.getString("username");
         }else{
-            Log.e("this worked", "this didnt worked");
+
             projectName = getIntent().getStringExtra("Project Name");
             currentUser = getIntent().getStringExtra("username");
         }
