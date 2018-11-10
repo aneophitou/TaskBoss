@@ -27,7 +27,7 @@ public class eventsFragment extends Fragment {
     ArrayList<String> Events = new ArrayList<String>(Arrays.asList("Business Meeting", "Latest Patch discussion", "Shareholders Meeting"));
     ArrayList<String> Places = new ArrayList<String>(Arrays.asList("Senate's Room EUC",
             "6, Diogenis Str., 2404 Engomi, \n" +
-                    "P.O. Box: 22006, 1516 Nicosia-Cyprus\",\"Room 112 EUC", "Room 112 EUC"));
+                    "P.O. Box: 22006, 1516 Nicosia-Cyprus\n","\nRoom 112 EUC", "Room 112 EUC"));
     ArrayList<String> EventDate = new ArrayList<String>(Arrays.asList("11:30 a.m 7/11/2018","12:45 p.m 13/11/2018","17:00 p.m 8/11/2018"));
     ArrayList<String> EventDescription = new ArrayList<String>(Arrays.asList("In our 4th business meeting we are going to discuss about the business benefits of" +
             " the new online store of our company.",
@@ -45,12 +45,15 @@ public class eventsFragment extends Fragment {
 
     public void CloseEvent(View v)
     {
-        String RemoveTitle = getActivity().getIntent().getStringExtra("EventTitle");
+        String RemoveEvent = getActivity().getIntent().getStringExtra("EventTitle");
         String RemovePlace = getActivity().getIntent().getStringExtra("EventPlace");
         String RemoveDate = getActivity().getIntent().getStringExtra("EventDate");
         String RemoveDescription = getActivity().getIntent().getStringExtra("Description");
 
-        Events.remove(RemoveTitle);
+        RemoveItem(Events,Places,EventDate,EventDescription,RemoveEvent,RemovePlace,RemoveDate,RemoveDescription);
+
+        Events.remove(RemoveEvent);
+        Events.remove(RemoveEvent);
         Places.remove(RemovePlace);
         EventDate.remove(RemoveDate);
         EventDescription.remove(RemoveDescription);
@@ -124,8 +127,25 @@ public class eventsFragment extends Fragment {
         return view;
     }
 
+    public void RemoveItem(ArrayList Events,ArrayList Places,ArrayList EventDate,ArrayList EventDescription,String RemoveEvent,String RemovePlace,String RemoveDate,String RemoveDescription)
+    {
+        int EventsCount = Events.size();
+        //int PlacesCount = Places.size();
+        //int DatesCount = EventDate.size();
+        //int DescriptionCount = EventDescription.size();
 
-
-
+        for (int i = 0; i < EventsCount; i++) {
+            if(RemoveEvent == Events.get(i))
+            {
+                Events.remove(i);
+            }
+        }
+        for (int i = 0; i < EventsCount; i++) {
+            if(RemoveEvent == Events.get(i))
+            {
+                Events.remove(i);
+            }
+        }
+    }
 
 }

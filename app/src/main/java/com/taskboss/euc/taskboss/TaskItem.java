@@ -1,6 +1,7 @@
 package com.taskboss.euc.taskboss;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -9,9 +10,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
 import android.widget.ArrayAdapter;
+import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,7 +29,7 @@ String[] MEMBERS = {"Andreas", "Giannis", "Ahmed", "Ola","Assign this task"};
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_task_item);
-
+        DisablePriority(false);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar2);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Currently Viewing Task");
@@ -40,9 +44,26 @@ String[] MEMBERS = {"Andreas", "Giannis", "Ahmed", "Ola","Assign this task"};
         String title = getIntent().getStringExtra("title");
         String dateString = getIntent().getStringExtra("date");
         TextView txtTitle = this.findViewById(R.id.txtTaskTitle);
+        Switch PrioritySwitch = findViewById(R.id.SwitchEditPriority);
         txtTitle.setText(title);
         TextView txtDate = this.findViewById(R.id.txtDate);
         Date date = null;
+
+        PrioritySwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                if(isChecked)
+                {
+                    DisablePriority(true);
+                }
+                else
+                {
+                    DisablePriority(false);
+                }
+            }
+        });
+
+
         try {
             date = new SimpleDateFormat("dd/MM/YYYY").parse(dateString);
         } catch (ParseException e) {
@@ -116,5 +137,39 @@ String[] MEMBERS = {"Andreas", "Giannis", "Ahmed", "Ola","Assign this task"};
         startActivity(intent);
     }
 
+    public void DisablePriority(boolean switcher)
+    {
+        RadioButton rbLow = findViewById(R.id.rbLow);
+        RadioButton rbMedium = findViewById(R.id.rbMedium);
+        RadioButton rbHigh= findViewById(R.id.rbHigh);
+
+        rbLow.setEnabled(switcher);
+        rbLow.setFocusableInTouchMode(switcher);
+        rbLow.setFocusable(switcher);
+        rbLow.setClickable(switcher);
+
+        rbMedium.setEnabled(switcher);
+        rbMedium.setFocusableInTouchMode(switcher);
+        rbMedium.setFocusable(switcher);
+        rbMedium.setClickable(switcher);
+
+        rbHigh.setEnabled(switcher);
+        rbHigh.setFocusableInTouchMode(switcher);
+        rbHigh.setFocusable(switcher);
+        rbHigh.setClickable(switcher);
+
+        if(!switcher)
+        {
+            rbLow.setTextColor(Color.parseColor("#9D9D9D"));
+            rbMedium.setTextColor(Color.parseColor("#9D9D9D"));
+            rbHigh.setTextColor(Color.parseColor("#9D9D9D"));
+        }
+        else
+        {
+            rbLow.setTextColor(Color.parseColor("#000000"));
+            rbMedium.setTextColor(Color.parseColor("#000000"));
+            rbHigh.setTextColor(Color.parseColor("#000000"));
+        }
+    }
 
 }

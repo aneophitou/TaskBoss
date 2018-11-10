@@ -67,7 +67,6 @@
         android:background="@drawable/radius_corners"
         android:paddingLeft="15dp"
         android:ems="10"
-        android:imeOptions="actionDone"
         android:inputType="textPersonName"
         android:textSize="22sp" />
 
@@ -105,7 +104,6 @@
         android:layout_marginRight="62dp"
         android:background="@drawable/radius_corners"
         android:ems="10"
-        android:imeOptions="actionDone"
         android:inputType="textPassword"
         android:paddingLeft="15dp"
         android:textSize="22sp" />

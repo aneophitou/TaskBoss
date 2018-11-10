@@ -43,8 +43,10 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("username", getIntent().getStringExtra("username"));
 
                 intent.putExtra("Project Name", OurProj.getText().toString());
-                Log.e("msssgy", getIntent().getStringExtra("username"));
-                Log.e("ehrer", OurProj.getText().toString());
+
+                // the two below commands for error detection are crashing the whole app c/o Giannis A.
+                //Log.e("msssgy", getIntent().getStringExtra("username"));
+                //Log.e("ehrer", OurProj.getText().toString());
                 startActivity(intent);
                 finish();
             }
