@@ -22,6 +22,12 @@
         <item name="android:textColor">@color/TextColor</item>
     </style>
     <style name="CalendarViewTextAlternate" parent = "TextAppearance.AppCompat.Button">
-        <item name="android:textColor">@color/TextColorAlternate</item>
+        <item name="android:textColor">#fff</item>
+        <item name ="android:textStyle">bold</item>
     </style>
+    <style name = "Theme.customCalendar" parent = "Theme.AppCompat">
+        <item name = "android:textColor">#fff</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
 </resources>

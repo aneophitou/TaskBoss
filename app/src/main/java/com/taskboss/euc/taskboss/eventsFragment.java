@@ -59,7 +59,17 @@ public class eventsFragment extends Fragment {
         btnCloseEvent = (Button) view.findViewById(R.id.btnCloseEvent);
         btnCloseEvent.setVisibility(View.INVISIBLE);
         listView.setVisibility(View.INVISIBLE);
-        listViewAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, filteredList);
+        listViewAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, filteredList){
+            //code to change the color of the text in the list
+            @Override
+            public View getView(int position, View convertView, ViewGroup parent) {
+                View view = super.getView(position, convertView, parent);
+                TextView textView = view.findViewById(android.R.id.text1);
+                textView.setTextColor(getResources().getColor(R.color.TextColor));
+
+                return view;
+            }
+        };
 
         listView.setAdapter(listViewAdapter);
 

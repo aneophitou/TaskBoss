@@ -11,13 +11,14 @@
         android:id="@+id/calendarView"
         android:layout_width="match_parent"
         android:layout_height="295dp"
-        android:scrollbarAlwaysDrawVerticalTrack="true"
         android:dateTextAppearance="@style/CalendarViewText"
-        android:weekDayTextAppearance="@style/CalendarViewTextAlternate"
-        android:unfocusedMonthDateColor="@color/TextColorAlternate"
         android:focusedMonthDateColor="@color/TextColorAlternate"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
         android:selectedWeekBackgroundColor="@color/TextColorAlternate"
-        >
+        android:theme="@style/Theme.customCalendar"
+        android:unfocusedMonthDateColor="@color/TextColorAlternate"
+        android:weekDayTextAppearance="@style/CalendarViewTextAlternate">
+
 
     </CalendarView>
 
@@ -27,7 +28,8 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:text="Events for:"
-        android:textColor="@color/TextColor"
+        android:textColor="@color/TextColorAlternate"
+        android:textSize="18sp"
         android:textStyle="bold" />
 
     <TextView
@@ -37,7 +39,7 @@
         android:layout_marginLeft="10dp"
         android:text="No Events for this day"
         android:textColor="@color/TextColorAlternate"
-        android:textSize="24sp" />
+        android:textSize="18sp" />
 
     <ListView
         android:id="@+id/ListView"
