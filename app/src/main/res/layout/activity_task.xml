@@ -19,21 +19,6 @@
 
     </android.support.v7.widget.Toolbar>
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/MainActionButton"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:onClick="createTask"
-        android:src="@drawable/add"
-        app:backgroundTintMode="src_over"
-        app:elevation="1dp"
-        app:rippleColor="@color/TextColor">
-
-    </android.support.design.widget.FloatingActionButton>
-
     <android.support.design.widget.TabLayout
         android:id="@+id/tabs"
         android:layout_width="match_parent"
@@ -61,11 +46,43 @@
         android:layout_below="@+id/tabs"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:layout_marginBottom="-2dp"
+        android:layout_marginStart="0dp"
 
-        android:background="@drawable/bgrepeat" >
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="-5dp"
+        android:layout_marginBottom="-2dp"
+        android:background="@drawable/bgrepeat">
 
     </android.support.v4.view.ViewPager>
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginBottom="0dp">
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/MainActionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="23dp"
+            android:layout_marginRight="23dp"
+            android:layout_marginBottom="43dp"
+            android:onClick="createTask"
+            android:src="@drawable/add"
+            app:backgroundTintMode="src_over"
+            app:elevation="1dp"
+            app:rippleColor="@color/TextColor">
+
+        </android.support.design.widget.FloatingActionButton>
+
+    </LinearLayout>
 
 </RelativeLayout>

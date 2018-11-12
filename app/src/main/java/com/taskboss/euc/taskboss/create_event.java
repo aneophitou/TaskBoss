@@ -66,7 +66,11 @@ public class create_event extends AppCompatActivity {
                 startDelay = new Runnable() {
                     @Override
                     public void run() {
-                        startActivity(new Intent(create_event.this, TaskActivity.class));
+                        Intent intent = new Intent(create_event.this, TaskActivity.class);
+                        intent.putExtra("username", "Testing" );
+                        intent.putExtra("Project Name", "TaskBoss");
+
+                        startActivity(intent);
                     }
                 };
 

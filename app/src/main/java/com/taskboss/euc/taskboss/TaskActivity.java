@@ -19,6 +19,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.Task;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,6 +32,7 @@ public class TaskActivity extends AppCompatActivity {
 
     String currentUser;
     String projectName;
+    Bundle user;
 
     FloatingActionButton fab;
     public class PageAdapter extends FragmentStatePagerAdapter {
@@ -72,13 +75,13 @@ public class TaskActivity extends AppCompatActivity {
         tabLayout = findViewById(R.id.tabs);
         Toolbar toolbar = findViewById(R.id.toolbar);
         fab = findViewById(R.id.MainActionButton);
-
+    toolbar.setTitleTextColor(getResources().getColor(android.R.color.white));
         if (savedInstanceState != null){
-            Log.e("this worked", "this worked");
+
             projectName = savedInstanceState.getString("Project Name");
             currentUser = savedInstanceState.getString("username");
         }else{
-            Log.e("this worked", "this didnt worked");
+
             projectName = getIntent().getStringExtra("Project Name");
             currentUser = getIntent().getStringExtra("username");
         }
@@ -93,6 +96,9 @@ public class TaskActivity extends AppCompatActivity {
         mViewPager.setAdapter(mPageAdapter);
         tabLayout.setupWithViewPager(mViewPager);
 
+        user = new Bundle();
+        user.putString("username", currentUser);
+        user.putString("Project Name", projectName);
 
         // code to switch the top-left button to "ADD TASK" or "ADD EVENT" mode
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -103,7 +109,10 @@ public class TaskActivity extends AppCompatActivity {
                     fab.setOnClickListener(new View.OnClickListener(){
                         @Override
                         public void onClick(View view) {
-                            startActivity(new Intent(TaskActivity.this, create_task.class));
+                            Intent intent = new Intent(TaskActivity.this, create_task.class);
+                            intent.putExtras(user);
+                            startActivity(intent);
+
                         }
                     });
                 } else if (tab.getPosition() == 1) {
@@ -111,7 +120,9 @@ public class TaskActivity extends AppCompatActivity {
                     fab.setOnClickListener(new View.OnClickListener(){
                         @Override
                         public void onClick(View view) {
-                            startActivity(new Intent(TaskActivity.this, create_task.class));
+                            Intent intent = new Intent(TaskActivity.this, create_task.class);
+                            intent.putExtras(user);
+                            startActivity(intent);
                         }
                     });
                 } else if (tab.getPosition() == 2) {
@@ -119,7 +130,9 @@ public class TaskActivity extends AppCompatActivity {
                     fab.setOnClickListener(new View.OnClickListener(){
                         @Override
                         public void onClick(View view) {
-                            startActivity(new Intent(TaskActivity.this, create_event.class));
+                            Intent intent = new Intent(TaskActivity.this, create_event.class);
+                            intent.putExtras(user);
+                            startActivity(intent);
                         }
                     });
                 }
@@ -204,6 +217,7 @@ public class TaskActivity extends AppCompatActivity {
             bundle.putString("priority", data.getExtras().getString("priority"));
             bundle.putString("assignedTo", data.getExtras().getString("assignedTo"));
 
+
             Fragment tfrag = new allTasksFragment();
             tfrag.setArguments(bundle);
 
@@ -221,7 +235,7 @@ public class TaskActivity extends AppCompatActivity {
     public void onSaveInstanceState(Bundle savedInstanceState){
         savedInstanceState.putString("username", currentUser);
         savedInstanceState.putString("Project Name", projectName);
-        Log.e("logged", "values logged" + currentUser + projectName);
+
 
         super.onSaveInstanceState(savedInstanceState);
     }
