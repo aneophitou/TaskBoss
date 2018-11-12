@@ -77,7 +77,7 @@ public class create_event extends AppCompatActivity {
         });
 
     }
-    
+
     public String InviteMembers()
     {
         if(CheckBox4.isChecked())
